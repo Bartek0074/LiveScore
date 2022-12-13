@@ -1,0 +1,16 @@
+@use './variables.scss';
+
+.match-cards {
+	margin-top: 0.5em;
+	border-radius: 10px;
+	padding: 1em;
+	background-color: variables.$light-gray;
+}
+
+@media (min-width: 768px) {
+	.match-cards {
+		margin-top: 0;
+		height: calc(100vh - 80px);
+		overflow: scroll;
+	}
+}

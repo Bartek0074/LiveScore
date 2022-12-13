@@ -1,0 +1,67 @@
+@use './variables.scss';
+
+.nav-box {
+	position: sticky;
+	top: 0;
+	z-index: 1;
+	background-color: variables.$main-color;
+	margin-bottom: 0.5em;
+	.nav {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		padding: 0.25em 0.5em;
+		&__heading {
+			position: relative;
+			font-size: 3rem;
+			font-weight: normal;
+			color: variables.$font-color-light;
+			cursor: pointer;
+			transition: color 0.3s;
+		}
+		&__button {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			padding: 0.5em;
+			font-size: 2rem;
+			border: none;
+			background: none;
+			color: #eee;
+			cursor: pointer;
+			&:hover .icon {
+				transform: rotate(-180deg);
+			}
+			.icon {
+				transition: transform 0.3s;
+			}
+		}
+	}
+}
+
+@media (min-width: 576px) {
+	.nav-box {
+		.nav {
+			padding: 0.5em 0;
+			&__heading {
+				font-size: 3.2rem;
+			}
+			&__button {
+				font-size: 2.2rem;
+			}
+		}
+	}
+}
+
+@media (min-width: 768px) {
+	.nav-box {
+		.nav {
+			&__heading {
+				font-size: 3.6rem;
+			}
+			&__button {
+				font-size: 2.4rem;
+			}
+		}
+	}
+}

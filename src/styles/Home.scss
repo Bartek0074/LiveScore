@@ -1,0 +1,26 @@
+@use './variables.scss';
+
+.home {
+	display: flex;
+	flex-direction: column;
+	&__leagues-bar-desktop {
+		display: none;
+	}
+}
+
+@media (min-width: 768px) {
+	.home {
+		flex-direction: row;
+		&__leagues-bar-mobile {
+			display: none;
+		}
+		&__leagues-bar-desktop {
+			display: block;
+		}
+		&__match-cards {
+            margin-left: auto;
+			padding-left: 0.5em;
+			width: calc(100% - 200px);
+		}
+	}
+}
