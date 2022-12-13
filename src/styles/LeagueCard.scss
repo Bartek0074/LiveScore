@@ -1,0 +1,114 @@
+@use './variables.scss';
+
+.league-card {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	padding: 0em 0.5em;
+	background-color: variables.$secondary-color;
+	&__flag,
+	&__logo {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+	&__logo {
+		padding: 0.25em;
+		cursor: pointer;
+		img {
+			margin-right: 0.5em;
+			height: 40px;
+		}
+	}
+	&__flag {
+		img {
+			margin-right: 0.25em;
+			height: 10px;
+		}
+	}
+	&__info {
+		display: flex;
+		flex-direction: column;
+		align-items: start;
+		.league-card__club-name {
+			font-size: 1.6rem;
+			font-weight: 500;
+			border: none;
+			background: none;
+			cursor: pointer;
+		}
+
+		.league-card__country {
+			display: flex;
+			flex-direction: row;
+			margin-top: 0.1em;
+			color: variables.$font-color-less-darker;
+			&-name {
+				font-size: 1.2rem;
+				text-transform: uppercase;
+			}
+		}
+	}
+
+	&__standings-btn-mobile,
+	&__standings-btn-desktop {
+		display: none;
+		margin-left: auto;
+		border: none;
+		background: none;
+		cursor: pointer;
+	}
+
+	&__standings-btn-mobile {
+		display: block;
+		padding: 0.25em;
+		color: variables.$font-color-dark;
+		.icon {
+			font-size: 3rem;
+		}
+	}
+	&__standings-btn-desktop {
+		display: none;
+		&:hover {
+			text-decoration: underline;
+		}
+	}
+}
+
+@media (min-width: 768px) {
+	.league-card {
+		padding: 0.1em 0.75em;
+		border-radius: 10px;
+		&__flag {
+			img {
+				margin-right: 0.375em;
+				height: 12px;
+			}
+		}
+		&__info {
+			.league-card__club-name {
+				font-size: 1.7rem;
+				&:hover {
+					text-decoration: underline;
+				}
+			}
+
+			.league-card__country {
+				display: flex;
+				align-items: center;
+				margin-top: 0.2em;
+				&-name {
+					font-size: 1.3rem;
+				}
+			}
+		}
+		&__standings-btn-mobile {
+			display: none;
+		}
+		&__standings-btn-desktop {
+			display: block;
+			color: variables.$font-color-less-darker;
+			font-size: 1.5rem;
+		}
+	}
+}

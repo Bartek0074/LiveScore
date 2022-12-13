@@ -2,15 +2,16 @@
 
 .match-cards {
 	margin-top: 0.5em;
-	border-radius: 10px;
-	padding: 1em;
-	background-color: variables.$light-gray;
+	padding-top: 0.5em;
+	background-color: #f4f4f4;
 }
 
 @media (min-width: 768px) {
 	.match-cards {
 		margin-top: 0;
+		padding: 1em;
 		height: calc(100vh - 80px);
+		border-radius: 10px;
 		overflow: scroll;
 	}
 }

@@ -5,7 +5,7 @@
 	top: 72px;
 	width: 200px;
 	height: calc(100vh - 80px);
-	background-color: variables.$light-gray;
+	background-color: variables.$background-color;
 	color: variables.$font-color-dark;
 	border-radius: 10px;
 	overflow: scroll;
@@ -30,10 +30,10 @@
 		border-radius: 5px;
 		transition: background-color 0.3s;
 		&:hover {
-			background-color: variables.$light-gray-hover;
+			background-color: variables.$secondary-color;
 		}
 		&--active {
-			background-color: variables.$light-gray-hover;
+			background-color: variables.$secondary-color;
 		}
 		.leagues-bar-desktop__img-box {
 			display: flex;
