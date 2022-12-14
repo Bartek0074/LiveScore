@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { IoMdPodium } from 'react-icons/io';
+import { IoIosPodium } from 'react-icons/io';
 
 import '../styles/LeagueCard.scss';
 
@@ -20,7 +20,7 @@ export default function LeagueCard({ league }) {
 				</div>
 			</div>
 			<button className='league-card__standings-btn-mobile'>
-				<IoMdPodium className='icon' />
+				<IoIosPodium className='icon' />
 			</button>
 			<button className='league-card__standings-btn-desktop'>Standings</button>
 		</div>

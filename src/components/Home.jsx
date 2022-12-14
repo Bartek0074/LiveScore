@@ -14,11 +14,11 @@ import DatePicker from './DatePicker';
 export default function Home() {
 	const [leagueId, setLeagueId] = useState('all');
 
-// 	useEffect(() => {
-// 		fetchFromAPI('/fixtures?date=2022-11-6&timezone=Europe/Warsaw').then((data) =>
-// 			console.log(data)
-// 		);
-// 	}, []);
+	// useEffect(() => {
+	// 	fetchFromAPI('/fixtures?date=2022-11-6&timezone=Europe/Warsaw').then((data) =>
+	// 		console.log(data)
+	// 	);
+	// }, []);
 // console.log(fixtures.response)
 
 	return (

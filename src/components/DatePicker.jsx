@@ -9,6 +9,7 @@ import {
 
 export default function DatePicker() {
 	const dateArr = getDateArr(Date.now());
+	// const dateArr = getDateArr(1669934622000);
 
 	const [dateIndex, setDateIndex] = useState(2);
 	const [date, setDate] = useState(dateArr[dateIndex]);
@@ -17,17 +18,17 @@ export default function DatePicker() {
 	const leftBtnHandle = () => {
 		if (dateIndex > 0) {
 			setDateIndex(dateIndex - 1);
-		} else console.log('ni ma wcześnij');
+		}
 	};
 	const rightBtnHandle = () => {
 		if (dateIndex < dateArr.length - 1) {
 			setDateIndex(dateIndex + 1);
-		} else console.log('ni ma dalyj');
+		}
 	};
 
 	useEffect(() => {
 		setDate(dateArr[dateIndex]);
-	}, [dateIndex]);
+	}, [dateIndex, dateArr]);
 
 	return (
 		<div className='date-picker'>
@@ -60,7 +61,11 @@ export default function DatePicker() {
 				{dateArr.map((dateEl, id) => {
 					return (
 						<div
-							className={dateEl == date ? 'date-picker__element date-picker__element--active' : 'date-picker__element'}
+							className={
+								dateEl === date
+									? 'date-picker__element date-picker__element--active'
+									: 'date-picker__element'
+							}
 							key={id}
 							onClick={() => {
 								setOpen(!open);
