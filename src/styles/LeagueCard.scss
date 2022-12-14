@@ -62,10 +62,11 @@
 
 	&__standings-btn-mobile {
 		display: block;
-		padding: 0.25em;
+		padding: 0.5em;
+		padding-right: 0.125em;
 		color: variables.$font-color-dark;
 		.icon {
-			font-size: 3rem;
+			font-size: 2.6rem;
 		}
 	}
 	&__standings-btn-desktop {

@@ -49,20 +49,27 @@ export default function MatchCards({ matches, leagueId }) {
 					if (filteredLeagues.includes(leagueId)) {
 						const league = leagues.find((league) => league.id === leagueId);
 						return (
-							<div className='match-cards__element' key={leagueIdKey}>
+							<div key={leagueIdKey} className='match-cards__element'>
 								<LeagueCard league={league} />
-
-								{filteredMatches.map((filteredMatch, filteredMatchId) => {
-									return (
-										<MatchCard match={filteredMatch} key={filteredMatchId} />
-									);
+								{filteredMatches.map((filteredMatch, filteredMatchKey) => {
+									if (filteredMatch.league.id === leagueId) {
+										return (
+											<MatchCard match={filteredMatch} key={filteredMatchKey} />
+										);
+									}
 								})}
 							</div>
 						);
-					} else return null;
+					}
 				})
 			) : (
-				<p>No matches</p>
+				<p>
+					{leagueId === 'all'
+						? 'No matches!'
+						: `No matches in ${
+								leagues.find((league) => league.id === leagueId).name
+						  }!`}
+				</p>
 			)}
 		</div>
 	);

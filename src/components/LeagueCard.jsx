@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { GiPodium } from 'react-icons/gi';
+import { IoMdPodium } from 'react-icons/io';
 
 import '../styles/LeagueCard.scss';
 
@@ -20,7 +20,7 @@ export default function LeagueCard({ league }) {
 				</div>
 			</div>
 			<button className='league-card__standings-btn-mobile'>
-				<GiPodium className='icon' />
+				<IoMdPodium className='icon' />
 			</button>
 			<button className='league-card__standings-btn-desktop'>Standings</button>
 		</div>

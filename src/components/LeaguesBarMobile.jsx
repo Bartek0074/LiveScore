@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-import { RiArrowDownSFill } from 'react-icons/ri';
+import { RiArrowDownSLine } from 'react-icons/ri';
 import { leagues } from '../utils/constants';
 
 import '../styles/LeaguesDropdownMenu.scss';
@@ -28,7 +28,7 @@ export default function LeaguesBarMobile({ setLeagueId }) {
 					</div>
 				) : null}
 				<p className='leagues-dropdown-menu__name'>{leagueName}</p>
-				<RiArrowDownSFill className='icon' />
+				<RiArrowDownSLine className='icon' />
 			</div>
 			<div
 				className={`leagues-dropdown-menu__menu ${

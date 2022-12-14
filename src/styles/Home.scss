@@ -10,17 +10,25 @@
 
 @media (min-width: 768px) {
 	.home {
-		flex-direction: row;
+		display: grid;
+		grid-template-columns: 200px 1fr;
 		&__leagues-bar-mobile {
 			display: none;
 		}
 		&__leagues-bar-desktop {
 			display: block;
+			grid-column: 1/2;
+			grid-row: 1/3;
+		}
+		&__date-picker {
+			grid-column: 2/3;
+			grid-row: 1/2;
+			padding-left: 1em;
 		}
 		&__match-cards {
-            margin-left: auto;
-			padding-left: 0.5em;
-			width: calc(100% - 200px);
+			grid-column: 2/3;
+			grid-row: 2/3;
+			padding-left: 1em;
 		}
 	}
 }

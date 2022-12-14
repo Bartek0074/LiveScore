@@ -20,17 +20,17 @@
 		cursor: pointer;
 		.icon {
 			margin-left: auto;
-			font-size: 2rem;
+			font-size: 2.2rem;
 		}
 	}
 	&__menu {
 		position: absolute;
+		z-index: 1;
 		top: 30px;
 		width: 100%;
 		background-color: variables.$secondary-color;
 		color: variables.$font-color-dark;
 		border: 1px solid variables.$secondary-color-hover;
-
 		border-radius: 10px;
 		overflow: hidden;
 		&--active {

@@ -43,9 +43,6 @@ export default function MatchCard({ match }) {
 					</p>
 				</div>
 			</div>
-			{/* <p>
-				{match.teams.away.name} - {match.teams.home.name}
-			</p> */}
 		</div>
 	);
 }

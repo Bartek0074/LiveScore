@@ -1,0 +1,120 @@
+@use './variables.scss';
+
+.date-picker {
+	position: relative;
+	width: 100%;
+	&__buttons {
+		display: flex;
+		flex-direction: row;
+		height: 40px;
+		border-radius: 10px;
+		margin-top: 0.5em;
+		background-color: variables.$secondary-color;
+		overflow: hidden;
+		.date-picker__btn {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			font-weight: bold;
+			border: none;
+			background: none;
+			cursor: pointer;
+			height: 100%;
+			transition: background-color 0.3s;
+			&:hover {
+				background-color: variables.$secondary-color-hover;
+			}
+			.icon {
+				font-size: 2.2rem;
+			}
+		}
+		.date-picker__left-btn,
+		.date-picker__right-btn {
+			width: 45px;
+		}
+		.date-picker__trigger-btn {
+			width: calc(100% - 90px);
+			.icon {
+				font-size: 2rem;
+				margin-right: 0.25em;
+			}
+		}
+	}
+	&__menu {
+		position: absolute;
+		top: 30px;
+		width: 100%;
+		background-color: variables.$secondary-color;
+		color: variables.$font-color-dark;
+		border: 1px solid variables.$secondary-color-hover;
+		border-radius: 10px;
+		overflow: hidden;
+		&--active {
+			opacity: 1;
+			visibility: visible;
+			transform: translateY(18px);
+			transition: 0.3s ease;
+		}
+
+		&--inactive {
+			opacity: 0;
+			visibility: hidden;
+			transform: translateY(-px);
+			transition: 0.3s ease;
+		}
+
+		.date-picker__element {
+			display: flex;
+			flex-direction: row;
+			align-items: center;
+			justify-content: center;
+			padding: 0 0.75em;
+			height: 40px;
+			border-bottom: 1px solid variables.$secondary-color-hover;
+			cursor: pointer;
+			transition: background-color 0.3s;
+			&:last-child {
+				border-bottom: none;
+			}
+			&:hover {
+				background-color: variables.$secondary-color-hover;
+			}
+			&--active {
+				font-weight: bold;
+				// background-color: variables.$secondary-color-hover;
+			}
+		}
+	}
+}
+
+@media (min-width: 576px) {
+	.date-picker {
+		&__buttons {
+			.date-picker__left-btn,
+			.date-picker__right-btn {
+				width: 60px;
+			}
+			.date-picker__trigger-btn {
+				width: calc(100% - 120px);
+			}
+		}
+	}
+}
+
+@media (min-width: 768px) {
+	.date-picker {
+		&__buttons {
+			.date-picker__left-btn,
+			.date-picker__right-btn {
+				width: 100px;
+			}
+			.date-picker__trigger-btn {
+				width: calc(100% - 200px);
+			}
+		}
+		&__menu {
+			left: 100px;
+			width: calc(100% - 200px);
+		}
+	}
+}

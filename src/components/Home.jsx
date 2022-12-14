@@ -9,12 +9,13 @@ import { fixtures } from '../utils/fixtures';
 import { fetchFromAPI } from '../utils/fetchFromApi';
 
 import '../styles/Home.scss';
+import DatePicker from './DatePicker';
 
 export default function Home() {
 	const [leagueId, setLeagueId] = useState('all');
 
 // 	useEffect(() => {
-// 		fetchFromAPI('/fixtures?date=2022-11-06&timezone=Europe/Warsaw').then((data) =>
+// 		fetchFromAPI('/fixtures?date=2022-11-6&timezone=Europe/Warsaw').then((data) =>
 // 			console.log(data)
 // 		);
 // 	}, []);
@@ -27,6 +28,9 @@ export default function Home() {
 			</div>
 			<div className='home__leagues-bar-desktop'>
 				<LeaguesBarDesktop setLeagueId={setLeagueId} />
+			</div>
+			<div className='home__date-picker'>
+				<DatePicker/>
 			</div>
 			<div className='home__match-cards'>
 				<MatchCards matches={fixtures} leagueId={leagueId} />
