@@ -4,6 +4,12 @@
 	margin-top: 0.5em;
 	padding-top: 0.5em;
 	background-color: #f4f4f4;
+	&__element{
+		margin-bottom: 1em;
+		&:last-child{
+			margin-bottom: 0;
+		}
+	}
 }
 
 @media (min-width: 768px) {

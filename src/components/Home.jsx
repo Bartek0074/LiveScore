@@ -13,12 +13,13 @@ import '../styles/Home.scss';
 export default function Home() {
 	const [leagueId, setLeagueId] = useState('all');
 
-	// useEffect(() => {
-	// 	fetchFromAPI('/fixtures?date=2022-12-14').then((data) =>
-	// 		console.log(data)
-	// 	);
-	// }, []);
+// 	useEffect(() => {
+// 		fetchFromAPI('/fixtures?date=2022-11-06&timezone=Europe/Warsaw').then((data) =>
+// 			console.log(data)
+// 		);
+// 	}, []);
 // console.log(fixtures.response)
+
 	return (
 		<div className='home wrapper'>
 			<div className='home__leagues-bar-mobile'>

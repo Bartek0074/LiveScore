@@ -5,7 +5,6 @@ import { GiPodium } from 'react-icons/gi';
 import '../styles/LeagueCard.scss';
 
 export default function LeagueCard({ league }) {
-	console.log(league);
 	return (
 		<div className='league-card'>
 			<div className='league-card__logo'>

@@ -1,0 +1,69 @@
+@use './variables.scss';
+
+.match-card {
+	display: flex;
+	align-items: center;
+	padding: 0.375em 0.5em;
+	border-bottom: 1px solid variables.$gray;
+	cursor: pointer;
+	transition: background-color 0.3s;
+	&:last-child {
+		border-bottom: none;
+	}
+	&:hover {
+		background-color: variables.$light-gray;
+	}
+	&__time {
+		margin-right: 0.75em;
+		p {
+			color: variables.$font-color-less-darker;
+			font-size: 1.2rem;
+		}
+	}
+	&__teams {
+		display: flex;
+		flex-direction: column;
+		.match-card__team {
+			display: flex;
+			flex-direction: row;
+			align-items: center;
+			&:first-child {
+				margin-bottom: 0.25em;
+			}
+			&-logo {
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				margin-right: 0.25em;
+				img {
+					height: 20px;
+				}
+			}
+			&-name {
+				font-size: 1.4rem;
+			}
+		}
+	}
+	&__scores {
+		display: flex;
+		flex-direction: row;
+		margin-left: auto;
+		.match-card__score {
+			font-size: 1.5rem;
+			&:first-child {
+				margin-right: 0.5em;
+			}
+			&-fulltime,
+			&-halftime {
+				display: flex;
+				justify-content: center;
+			}
+			&-fulltime {
+				font-weight: bold;
+			}
+			&-halftime {
+				color: variables.$font-color-less-darker;
+			}
+		}
+	}
+}
