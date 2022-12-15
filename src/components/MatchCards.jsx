@@ -20,10 +20,10 @@ export default function MatchCards({ matches, leagueId }) {
 		} else {
 			setLeagueIdArr([leagueId]);
 		}
-	}, [leagueId]);
+	}, [leagueId, matches]);
 
 	useEffect(() => {
-		const newFilteredMatches = matches.response.filter((match) => {
+		const newFilteredMatches = matches.filter((match) => {
 			return leagueIdArr.includes(match.league.id);
 		});
 

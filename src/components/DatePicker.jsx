@@ -7,9 +7,8 @@ import {
 	RiCalendar2Line,
 } from 'react-icons/ri';
 
-export default function DatePicker() {
+export default function DatePicker({ setFetchDate }) {
 	const dateArr = getDateArr(Date.now());
-	// const dateArr = getDateArr(1669934622000);
 
 	const [dateIndex, setDateIndex] = useState(2);
 	const [date, setDate] = useState(dateArr[dateIndex]);
@@ -28,7 +27,8 @@ export default function DatePicker() {
 
 	useEffect(() => {
 		setDate(dateArr[dateIndex]);
-	}, [dateIndex, dateArr]);
+		setFetchDate(dateArr[dateIndex]);
+	}, [dateIndex]);
 
 	return (
 		<div className='date-picker'>
@@ -70,6 +70,7 @@ export default function DatePicker() {
 							onClick={() => {
 								setOpen(!open);
 								setDate(dateEl);
+								setFetchDate(dateEl);
 							}}
 						>
 							{dateEl}
