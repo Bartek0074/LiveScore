@@ -2,14 +2,16 @@ import React from 'react';
 
 import { getMatchTime } from '../utils/getMatchTime';
 
+import { useNavigate } from 'react-router-dom';
+
 import '../styles/MatchCard.scss';
 
 export default function MatchCard({ match }) {
-	console.log(match);
+	const navigate = useNavigate();
 	return (
 		<div
 			onClick={() => {
-				console.log(match?.fixture?.id);
+				navigate(`/match/${match?.fixture?.id}`)
 			}}
 			className='match-card'
 		>

@@ -1,0 +1,156 @@
+@use './variables.scss';
+
+.match-detail {
+	margin-top: 0.5em;
+	padding: 0.25em 0;
+	width: 100%;
+	background-color: #f4f4f4;
+	&__result {
+		margin-top: 0.5em;
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+		padding: 0.5em;
+		.match-detail__team {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			&-logo {
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				margin-bottom: 0.375em;
+				width: 65px;
+				height: 65px;
+				background-color: #fff;
+				border-radius: 10px;
+				box-shadow: 0 0 20px #00000010;
+				img {
+					width: 47.5px;
+				}
+			}
+			&-name {
+				p {
+					text-align: center;
+					font-size: 1.5rem;
+				}
+				.match-detail__team-name-bold {
+					font-weight: bold;
+				}
+			}
+		}
+		.match-detail__info {
+			height: 100%;
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			.match-detail__date {
+				color: variables.$font-color-less-darker;
+				text-align: center;
+				font-size: 1.2rem;
+				margin-bottom: 0.25em;
+			}
+			.match-detail__score {
+				font-size: 3.6rem;
+				font-weight: bold;
+				margin-bottom: 0.1em;
+				&--live {
+					color: variables.$font-color-red;
+				}
+			}
+			.match-detail__status {
+				font-size: 1rem;
+				text-align: center;
+				text-transform: uppercase;
+				font-weight: bold;
+				&--live {
+					color: variables.$font-color-red;
+				}
+			}
+		}
+	}
+	&__other-info {
+		border-top: 1px solid variables.$gray;
+		margin: 0.5em;
+		margin-top: 1em;
+		&-heading {
+			margin-top: 0.25em;
+			padding: 0.25em;
+			p {
+				font-weight: bold;
+				text-align: center;
+				text-transform: uppercase;
+				font-size: 1.1rem;
+			}
+		}
+		&-element {
+			margin: 0.5em 0;
+			display: flex;
+			flex-direction: row;
+			justify-content: space-between;
+			.match-detail__other-info-name,
+			.match-detail__other-info-value {
+				font-size: 1.1rem;
+			}
+			.match-detail__other-info-name {
+				text-transform: uppercase;
+			}
+			.match-detail__other-info-value {
+				font-weight: bold;
+			}
+		}
+	}
+}
+
+@media (min-width: 768px) {
+	.match-detail {
+		margin-top: 1em;
+		padding: 0.5em;
+		border-radius: 10px;
+		max-height: calc(100vh - 95px);
+		overflow: scroll;
+		&__result {
+			.match-detail__team {
+				&-logo {
+					width: 85px;
+					height: 85px;
+					img {
+						width: 60px;
+					}
+				}
+				&-name {
+					p {
+						font-size: 1.6rem;
+					}
+				}
+			}
+			.match-detail__info {
+				.match-detail__date {
+					margin-bottom: 0.2em;
+				}
+				.match-detail__score {
+					font-size: 4.8rem;
+					margin-bottom: 0.15em;
+				}
+				.match-detail__status {
+					font-size: 1.2rem;
+				}
+			}
+		}
+		&__other-info {
+			margin-top: 1.5em;
+			&-heading {
+				margin-top: 0.5em;
+				p {
+					font-size: 1.2rem;
+				}
+			}
+			&-element {
+				margin: 0.75em 0;
+				.match-detail__other-info-name,
+				.match-detail__other-info-value {
+					font-size: 1.2rem;
+				}
+			}
+		}
+	}
+}

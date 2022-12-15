@@ -3,6 +3,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Home from './components/Home.jsx';
 import './App.scss';
 import { getDateArr } from './utils/getDateArr';
+import MatchDetail from './components/MatchDetail';
 
 function App() {
 	return (
@@ -10,7 +11,7 @@ function App() {
 			<Nav />
 			<Routes>
 				<Route path='/' exact element={<Home />} />
-				<Route path='/match/:id' exact element={<div>Match</div>} />
+				<Route path='/match/:id' exact element={<MatchDetail/>} />
 			</Routes>
 		</BrowserRouter>
 	);
