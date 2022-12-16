@@ -5,6 +5,9 @@ import LeaguesBarDesktop from './LeaguesBarDesktop';
 import MatchCards from './MatchCards';
 
 import { fixtures } from '../utils/fixtures';
+import { fixtures2 } from '../utils/fixtures2';
+import { fixtures3 } from '../utils/fixtures3';
+import { fixtures4 } from '../utils/fixtures4';
 import { fullTimeFixture } from '../utils/fullTimeFixture';
 import { notStartedFixture } from '../utils/notStartedFixture';
 
@@ -20,7 +23,7 @@ export default function Home() {
 	const [matches, setMatches] = useState([]);
 
 	// useEffect(() => {
-	// 	fetchFromAPI(`/standings?league=39&season=2022`).then(
+	// 	fetchFromAPI(`/fixtures?league=2&season=2020`).then(
 	// 		(data) => {
 	// 			setMatches(data.response);
 	// 			console.log(data);
@@ -36,7 +39,7 @@ export default function Home() {
 
 	// console.log(fetchDate);
 	// console.log(matches);
-	// // console.log(fixtures.response);
+	console.log(fixtures2.response);
 
 	return (
 		<div className='home wrapper'>

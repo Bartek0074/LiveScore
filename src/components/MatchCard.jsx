@@ -11,7 +11,8 @@ export default function MatchCard({ match }) {
 	return (
 		<div
 			onClick={() => {
-				navigate(`/match/${match?.fixture?.id}`)
+				navigate(`/match/${match?.fixture?.id}`);
+				console.log(match?.score?.penalty);
 			}}
 			className='match-card'
 		>
@@ -35,6 +36,8 @@ export default function MatchCard({ match }) {
 				{match?.fixture?.status?.short === 'FT' && <p>Finished</p>}
 				{match?.fixture?.status?.short === 'PST' && <p>Postponed</p>}
 				{match?.fixture?.status?.short === 'CANC' && <p>Cancelled</p>}
+				{match?.fixture?.status?.short === 'AET' && <p>AET</p>}
+				{match?.fixture?.status?.short === 'PEN' && <p>Pen.</p>}
 			</div>
 			<div className='match-card__teams'>
 				<div className='match-card__team'>
@@ -80,6 +83,32 @@ export default function MatchCard({ match }) {
 			</div>
 			<div className='match-card__scores'>
 				<div className='match-card__score'>
+					<div className='match-card__score-extratime'>
+						{match?.fixture?.status?.short === 'AET' && (
+							<p>{match?.goals?.home}</p>
+						)}
+						{match?.fixture?.status?.short === 'PEN' && (
+							<p>
+								{match?.score?.penalty?.home > match?.score?.penalty?.away
+									? match?.goals?.home + 1
+									: match?.goals?.home}
+							</p>
+						)}
+					</div>
+					<div className='match-card__score-extratime'>
+						{match?.fixture?.status?.short === 'AET' && (
+							<p>{match?.goals?.away}</p>
+						)}
+						{match?.fixture?.status?.short === 'PEN' && (
+							<p>
+								{match?.score?.penalty?.home < match?.score?.penalty?.away
+									? match?.goals?.away + 1
+									: match?.goals?.away}
+							</p>
+						)}
+					</div>
+				</div>
+				<div className='match-card__score'>
 					<div className='match-card__score-fulltime'>
 						{match?.fixture?.status?.short === 'NS' && <p>-</p>}
 						{match?.fixture?.status?.short === '1H' && (
@@ -96,6 +125,16 @@ export default function MatchCard({ match }) {
 						)}
 						{match?.fixture?.status?.short === 'PST' && <p>-</p>}
 						{match?.fixture?.status?.short === 'CANC' && <p>-</p>}
+						{match?.fixture?.status?.short === 'AET' && (
+							<p className='match-card__score-fulltime--not-bold'>
+								{match?.score?.fulltime?.home}
+							</p>
+						)}
+						{match?.fixture?.status?.short === 'PEN' && (
+							<p className='match-card__score-fulltime--not-bold'>
+								{match?.score?.fulltime?.home}
+							</p>
+						)}
 					</div>
 					<div className='match-card__score-fulltime'>
 						{match?.fixture?.status?.short === 'NS' && <p>-</p>}
@@ -113,6 +152,16 @@ export default function MatchCard({ match }) {
 						)}
 						{match?.fixture?.status?.short === 'PST' && <p>-</p>}
 						{match?.fixture?.status?.short === 'CANC' && <p>-</p>}
+						{match?.fixture?.status?.short === 'AET' && (
+							<p className='match-card__score-fulltime--not-bold'>
+								{match?.score?.fulltime?.away}
+							</p>
+						)}
+						{match?.fixture?.status?.short === 'PEN' && (
+							<p className='match-card__score-fulltime--not-bold'>
+								{match?.score?.fulltime?.away}
+							</p>
+						)}
 					</div>
 				</div>
 				<div className='match-card__score'>
@@ -132,6 +181,12 @@ export default function MatchCard({ match }) {
 						)}
 						{match?.fixture?.status?.short === 'PST' && null}
 						{match?.fixture?.status?.short === 'CANC' && null}
+						{match?.fixture?.status?.short === 'AET' && (
+							<p>({match?.score?.halftime?.home})</p>
+						)}
+						{match?.fixture?.status?.short === 'PEN' && (
+							<p>({match?.score?.halftime?.home})</p>
+						)}
 					</div>
 					<div className='match-card__score-halftime'>
 						{match?.fixture?.status?.short === 'NS' && null}
@@ -149,6 +204,12 @@ export default function MatchCard({ match }) {
 						)}
 						{match?.fixture?.status?.short === 'PST' && null}
 						{match?.fixture?.status?.short === 'CANC' && null}
+						{match?.fixture?.status?.short === 'AET' && (
+							<p>({match?.score?.halftime?.away})</p>
+						)}
+						{match?.fixture?.status?.short === 'PEN' && (
+							<p>({match?.score?.halftime?.away})</p>
+						)}
 					</div>
 				</div>
 			</div>

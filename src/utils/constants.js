@@ -165,4 +165,11 @@ export const leagues = [
 		name: 'Friendlies Club',
 		logo: 'https://media-1.api-sports.io/football/leagues/667.png',
 	},
+	{
+		id: 2,
+		country: 'World',
+		flag: null,
+		name: 'Champions League',
+		logo: 'https://media-1.api-sports.io/football/leagues/2.png',
+	},
 ];

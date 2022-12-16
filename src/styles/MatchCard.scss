@@ -25,7 +25,7 @@
 			text-align: center;
 			line-height: 1.6rem;
 		}
-		p.match-card__time-live{
+		p.match-card__time-live {
 			font-weight: 600;
 			color: variables.$font-color-red;
 		}
@@ -51,7 +51,7 @@
 			}
 			&-name {
 				font-size: 1.4rem;
-				&-bold{
+				&-bold {
 					font-weight: bold;
 				}
 			}
@@ -63,16 +63,24 @@
 		margin-left: auto;
 		.match-card__score {
 			font-size: 1.5rem;
-			&:first-child {
-				margin-right: 0.5em;
+			&-fulltime {
+				margin-right: 0.375em;
+			}
+			&-extratime {
+				margin-right: 0.75em;
 			}
 			&-fulltime,
 			&-halftime {
 				display: flex;
 				justify-content: center;
 			}
-			&-fulltime {
+			&-fulltime,
+			&-extratime {
 				font-weight: bold;
+			}
+			&-fulltime--not-bold {
+				font-weight: normal;
+				color: variables.$font-color-less-darker;
 			}
 			&-halftime {
 				color: variables.$font-color-less-darker;
@@ -83,7 +91,7 @@
 
 @media (min-width: 768px) {
 	.match-card {
-		&:nth-child(2){
+		&:nth-child(2) {
 			border-top-left-radius: 10px;
 			border-top-right-radius: 10px;
 		}
@@ -92,7 +100,7 @@
 			border-bottom-right-radius: 10px;
 		}
 		&__time {
-			p.match-card__time-live{
+			p.match-card__time-live {
 				font-weight: 400;
 			}
 		}
