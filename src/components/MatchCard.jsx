@@ -8,11 +8,12 @@ import '../styles/MatchCard.scss';
 
 export default function MatchCard({ match }) {
 	const navigate = useNavigate();
+	console.log(match?.teams?.home?.winner);
 	return (
 		<div
 			onClick={() => {
 				navigate(`/match/${match?.fixture?.id}`);
-				console.log(match?.score?.penalty);
+				console.log(match?.fixture?.id);
 			}}
 			className='match-card'
 		>
@@ -45,19 +46,13 @@ export default function MatchCard({ match }) {
 						<img src={match?.teams?.home?.logo} alt='' />
 					</div>
 					<div className='match-card__team-name'>
-						{match?.fixture?.status?.short === 'FT' ? (
-							<p
-								className={`${
-									match?.score?.fulltime?.home > match?.score?.fulltime?.away
-										? 'match-card__team-name-bold'
-										: ''
-								}`}
-							>
-								{match?.teams?.home?.name}
-							</p>
-						) : (
-							<p> {match?.teams?.home?.name} </p>
-						)}
+						<p
+							className={`${
+								match?.teams?.home?.winner && 'match-card__team-name-bold'
+							}`}
+						>
+							{match?.teams?.home?.name}
+						</p>
 					</div>
 				</div>
 				<div className='match-card__team'>
@@ -65,19 +60,13 @@ export default function MatchCard({ match }) {
 						<img src={match?.teams?.away?.logo} alt='' />
 					</div>
 					<div className='match-card__team-name'>
-						{match?.fixture?.status?.short === 'FT' ? (
-							<p
-								className={`${
-									match?.score?.fulltime?.home < match?.score?.fulltime?.away
-										? 'match-card__team-name-bold'
-										: ''
-								}`}
-							>
-								{match?.teams?.away?.name}
-							</p>
-						) : (
-							<p> {match?.teams?.away?.name} </p>
-						)}
+						<p
+							className={`${
+								match?.teams?.away?.winner && 'match-card__team-name-bold'
+							}`}
+						>
+							{match?.teams?.away?.name}
+						</p>
 					</div>
 				</div>
 			</div>

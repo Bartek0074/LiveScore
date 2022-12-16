@@ -5,8 +5,9 @@ export const getDateWithHour = (date) => {
 	}
 
 	let month = new Date(date).getMonth();
-	if (month < 10) {
-		month = '0' + month;
+	let monthPlus = month++;
+	if (monthPlus < 10) {
+		monthPlus = '0' + month;
 	}
 
 	const year = new Date(date).getFullYear();
@@ -21,5 +22,5 @@ export const getDateWithHour = (date) => {
 		minute = '0' + minute;
 	}
 
-	return `${day}.${month + 1}.${year} ${hour}:${minute}`;
+	return `${day}.${monthPlus}.${year} ${hour}:${minute}`;
 };

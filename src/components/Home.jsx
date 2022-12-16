@@ -11,6 +11,7 @@ import { fixtures4 } from '../utils/fixtures4';
 import { fullTimeFixture } from '../utils/fullTimeFixture';
 import { notStartedFixture } from '../utils/notStartedFixture';
 
+
 import { getDate } from '../utils/getDate';
 import { fetchFromAPI } from '../utils/fetchFromApi';
 
@@ -23,7 +24,7 @@ export default function Home() {
 	const [matches, setMatches] = useState([]);
 
 	// useEffect(() => {
-	// 	fetchFromAPI(`/fixtures?league=2&season=2020`).then(
+	// 	fetchFromAPI(`/fixtures?id=590772`).then(
 	// 		(data) => {
 	// 			setMatches(data.response);
 	// 			console.log(data);
@@ -39,7 +40,7 @@ export default function Home() {
 
 	// console.log(fetchDate);
 	// console.log(matches);
-	console.log(fixtures2.response);
+	// console.log(fixtures2.response);
 
 	return (
 		<div className='home wrapper'>
@@ -53,7 +54,7 @@ export default function Home() {
 				<DatePicker setFetchDate={setFetchDate} />
 			</div>
 			<div className='home__match-cards'>
-				<MatchCards matches={fixtures.response} leagueId={leagueId} />
+				<MatchCards matches={fixtures4.response} leagueId={leagueId} />
 			</div>
 		</div>
 	);
