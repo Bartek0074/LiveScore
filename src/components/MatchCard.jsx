@@ -8,7 +8,6 @@ import '../styles/MatchCard.scss';
 
 export default function MatchCard({ match }) {
 	const navigate = useNavigate();
-	console.log(match?.teams?.home?.winner);
 	return (
 		<div
 			onClick={() => {

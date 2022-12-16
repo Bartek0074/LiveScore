@@ -11,17 +11,38 @@ import { fixtures4 } from '../utils/fixtures4';
 import { fullTimeFixture } from '../utils/fullTimeFixture';
 import { notStartedFixture } from '../utils/notStartedFixture';
 
-
 import { getDate } from '../utils/getDate';
 import { fetchFromAPI } from '../utils/fetchFromApi';
 
 import '../styles/Home.scss';
 import DatePicker from './DatePicker';
+import Filters from './Filters';
 
 export default function Home() {
 	const [leagueId, setLeagueId] = useState('all');
 	const [fetchDate, setFetchDate] = useState(getDate(Date.now()));
 	const [matches, setMatches] = useState([]);
+	const [statuses, setStatuses] = useState([
+		'TBD',
+		'NS',
+		'1H',
+		'HT',
+		'2H',
+		'ET',
+		'BT',
+		'P',
+		'SUSP',
+		'INT',
+		'FT',
+		'AET',
+		'PEN',
+		'PST',
+		'CANC',
+		'ABD',
+		'AWD',
+		'WO',
+		'LIVE',
+	]);
 
 	// useEffect(() => {
 	// 	fetchFromAPI(`/fixtures?id=590772`).then(
@@ -53,8 +74,11 @@ export default function Home() {
 			<div className='home__date-picker'>
 				<DatePicker setFetchDate={setFetchDate} />
 			</div>
+			<div className='home__filters'>
+				<Filters setStatuses={setStatuses} />
+			</div>
 			<div className='home__match-cards'>
-				<MatchCards matches={fixtures4.response} leagueId={leagueId} />
+				<MatchCards matches={fixtures.response} statuses={statuses} leagueId={leagueId} />
 			</div>
 		</div>
 	);

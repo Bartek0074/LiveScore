@@ -15,9 +15,9 @@
 
 @media (min-width: 768px) {
 	.match-cards {
-		margin-top: 1em;
+		margin-top: .75em;
 		padding: 1em;
-		height: calc(100vh - 150px);
+		height: calc(100vh - 190px);
 		border-radius: 10px;
 		overflow: scroll;
 	}

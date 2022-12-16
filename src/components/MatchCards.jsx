@@ -5,7 +5,7 @@ import '../styles/MatchCards.scss';
 import LeagueCard from './LeagueCard';
 import MatchCard from './MatchCard';
 
-export default function MatchCards({ matches, leagueId }) {
+export default function MatchCards({ matches, statuses, leagueId }) {
 	const [leagueIdArr, setLeagueIdArr] = useState([]);
 	const [filteredMatches, setFilteredMatches] = useState([]);
 	const [filteredLeagues, setFilteredLeagues] = useState([]);
@@ -13,6 +13,7 @@ export default function MatchCards({ matches, leagueId }) {
 	useEffect(() => {
 		if (leagueId === 'all') {
 			let newLeagueIdArr = [];
+			
 			leagues.forEach((league) => {
 				newLeagueIdArr.push(league.id);
 			});
@@ -24,11 +25,13 @@ export default function MatchCards({ matches, leagueId }) {
 
 	useEffect(() => {
 		const newFilteredMatches = matches.filter((match) => {
-			return leagueIdArr.includes(match.league.id);
+			if (statuses.includes(match?.fixture?.status?.short)) {
+				return leagueIdArr.includes(match.league.id);
+			}
 		});
 
 		setFilteredMatches(newFilteredMatches);
-	}, [leagueIdArr]);
+	}, [leagueIdArr, statuses]);
 
 	useEffect(() => {
 		let newFilteredLeagues = [];

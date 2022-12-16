@@ -3,12 +3,12 @@
 .date-picker {
 	position: relative;
 	width: 100%;
+	margin-top: 0.5em;
 	&__buttons {
 		display: flex;
 		flex-direction: row;
 		height: 40px;
 		border-radius: 10px;
-		margin-top: 0.5em;
 		background-color: variables.$secondary-color;
 		overflow: hidden;
 		.date-picker__btn {
@@ -103,6 +103,7 @@
 
 @media (min-width: 768px) {
 	.date-picker {
+		margin-top: 0.25em;
 		&__buttons {
 			.date-picker__left-btn,
 			.date-picker__right-btn {
