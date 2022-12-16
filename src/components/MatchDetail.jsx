@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 import { getDateWithHour } from '../utils/getDateWithHour';
 import { leagues } from '../utils/constants';
@@ -21,7 +21,9 @@ import { cancelledFixture } from '../utils/cancelledFixture';
 export default function MatchDetail() {
 	const { id } = useParams();
 
-	const fixture = notStartedFixture?.response[0];
+	const fixture = secondHalfFixture?.response[0];
+
+	const [section, setSection] = useState('summary');
 
 	const league = leagues.find((league) => league?.id === fixture?.league?.id);
 
@@ -169,6 +171,65 @@ export default function MatchDetail() {
 					</div>
 				</div>
 			</div>
+
+			{(fixture?.fixture?.status?.short === '1H' ||
+				fixture?.fixture?.status?.short === 'HT' ||
+				fixture?.fixture?.status?.short === '2H' ||
+				fixture?.fixture?.status?.short === 'ET' ||
+				fixture?.fixture?.status?.short === 'BT' ||
+				fixture?.fixture?.status?.short === 'P' ||
+				fixture?.fixture?.status?.short === 'SUSP' ||
+				fixture?.fixture?.status?.short === 'INT' ||
+				fixture?.fixture?.status?.short === 'FT' ||
+				fixture?.fixture?.status?.short === 'AET' ||
+				fixture?.fixture?.status?.short === 'PEN') && (
+				<>
+					<div className='match-detail__section-switcher'>
+						<button
+							onClick={() => {
+								setSection('summary');
+							}}
+							className={
+								section === 'summary'
+									? 'match-detail__section-btn match-detail__section-btn--active'
+									: 'match-detail__section-btn'
+							}
+						>
+							SUMMARY
+						</button>
+						<button
+							onClick={() => {
+								setSection('stats');
+							}}
+							className={
+								section === 'stats'
+									? 'match-detail__section-btn match-detail__section-btn--active'
+									: 'match-detail__section-btn'
+							}
+						>
+							STATS
+						</button>
+						<button
+							onClick={() => {
+								setSection('standings');
+							}}
+							className={
+								section === 'standings'
+									? 'match-detail__section-btn match-detail__section-btn--active'
+									: 'match-detail__section-btn'
+							}
+						>
+							STANDINGS
+						</button>
+					</div>
+					<div className='match-detail__section-box'>
+						{section === 'summary' && <>summary</>}
+						{section === 'stats' && <>stats</>}
+						{section === 'standings' && <>standings</>}
+					</div>
+				</>
+			)}
+
 			{fixture?.fixture?.status?.short !== 'PST' &&
 				fixture?.fixture?.status?.short !== 'CANC' && (
 					<div className='match-detail__other-info'>

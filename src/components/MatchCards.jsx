@@ -13,7 +13,7 @@ export default function MatchCards({ matches, statuses, leagueId }) {
 	useEffect(() => {
 		if (leagueId === 'all') {
 			let newLeagueIdArr = [];
-			
+
 			leagues.forEach((league) => {
 				newLeagueIdArr.push(league.id);
 			});
@@ -25,8 +25,8 @@ export default function MatchCards({ matches, statuses, leagueId }) {
 
 	useEffect(() => {
 		const newFilteredMatches = matches.filter((match) => {
-			if (statuses.includes(match?.fixture?.status?.short)) {
-				return leagueIdArr.includes(match.league.id);
+			if (statuses.includes(match?.fixture?.status?.short) && leagueIdArr.includes(match.league.id)) {
+				return true
 			}
 		});
 
