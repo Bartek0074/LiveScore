@@ -1,0 +1,64 @@
+@use './variables.scss';
+
+.stat {
+	padding: 0.375em 0.125em;
+	&:first-child {
+		padding-top: 0;
+	}
+	&__header {
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+		justify-content: space-between;
+		margin-bottom: 0.25em;
+		.stat__value,
+		.stat__type {
+			font-size: 1.3rem;
+			font-weight: bold;
+		}
+	}
+	&__bar {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		gap: 2px;
+		&-home,
+		&-away {
+			height: 9px;
+			background-color: #33333320;
+		}
+		&-home {
+			display: flex;
+			justify-content: end;
+			border-radius: 3px;
+			&-fill {
+				height: 100%;
+				background-color: variables.$font-color-dark;
+				border-radius: 3px;
+			}
+		}
+		&-away {
+			border-radius: 3px;
+			&-fill {
+				height: 100%;
+				background-color: variables.$font-color-dark;
+				border-radius: 3px;
+			}
+		}
+	}
+}
+
+@media (min-width: 768px) {
+	.stat {
+		padding: 0.5em 0.125em;
+		&__header {
+			margin-bottom: 0.375em;
+			.stat__value,
+			.stat__type {
+				font-size: 1.35rem;
+			}
+		}
+		&__bar {
+			gap: 4px;
+		}
+	}
+}

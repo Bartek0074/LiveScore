@@ -20,17 +20,18 @@ import { postponedFixture } from '../utils/postponedFixture';
 import { cancelledFixture } from '../utils/cancelledFixture';
 import Summary from './Summary';
 import Lineups from './Lineups';
+import Stats from './Stats';
 
 export default function MatchDetail() {
 	const { id } = useParams();
 
-	const fixture = fullTimeFixture?.response[0];
+	const fixture = halfTimeFixture?.response[0];
 
 	const [section, setSection] = useState('summary');
 
 	const league = leagues.find((league) => league?.id === fixture?.league?.id);
 
-	// console.log(fixture);
+	// console.log(fixture?.statistics);
 
 	return (
 		<div className='match-detail match-wrapper'>
@@ -227,7 +228,7 @@ export default function MatchDetail() {
 					</div>
 					<div className='match-detail__section-box'>
 						{section === 'summary' && <Summary match={fixture} />}
-						{section === 'stats' && <>stats</>}
+						{section === 'stats' && <Stats stats={fixture?.statistics} />}
 						{section === 'lineups' && <Lineups match={fixture} />}
 					</div>
 				</>
