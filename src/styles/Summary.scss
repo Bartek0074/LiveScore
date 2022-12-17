@@ -1,0 +1,150 @@
+@use './variables.scss';
+
+.summary {
+	&__element {
+		display: flex;
+		align-items: center;
+		padding: 0.3em 0;
+		width: 100%;
+
+		.summary__minute {
+			margin-right: 0.5em;
+			font-size: 1.3rem;
+			font-weight: bold;
+			color: variables.$font-color-less-darker;
+		}
+
+		.summary__icon {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			border: 1px solid variables.$light-gray;
+			border-radius: 3px;
+			height: 20px;
+			margin-right: 0.25em;
+			.icon {
+				font-size: 1.8rem;
+				&--goal {
+					color: variables.$font-color-dark;
+				}
+				&--own-goal {
+					color: variables.$red;
+				}
+				&--subst {
+					color: variables.$green;
+				}
+				&--warn {
+					font-size: 1.5rem;
+					color: variables.$red;
+					margin: 0 0.1em;
+				}
+			}
+			.card-icon {
+				border-radius: 2px;
+				height: 14px;
+				margin: 0 0.1em;
+				aspect-ratio: 2/3;
+				&--yellow {
+					background-color: variables.$yellow;
+				}
+				&--red {
+					background-color: variables.$red;
+				}
+			}
+			.var-icon {
+				font-size: 1rem;
+				color: #dc0000;
+				padding: 0 0.2em;
+				font-weight: bold;
+			}
+		}
+
+		.summary__player {
+			font-size: 1.3rem;
+			font-weight: bold;
+			margin-right: 0.25em;
+		}
+
+		.summary__assist,
+		.summary__comment {
+			font-size: 1.2rem;
+			color: variables.$font-color-less-darker;
+		}
+
+		&--away {
+			flex-direction: row-reverse;
+			justify-content: end;
+			.summary__minute {
+				margin-left: 0.5em;
+				margin-right: 0;
+			}
+			.summary__icon {
+				margin-right: 0;
+				margin-left: 0.25em;
+			}
+			.summary__player {
+				margin-right: 0;
+				margin-left: 0.25em;
+			}
+		}
+	}
+}
+
+@media (min-width: 768px) {
+	.summary {
+		&__element {
+			padding: 0.4em 0;
+			.summary__minute {
+				margin-right: 0.75em;
+				font-size: 1.4rem;
+			}
+
+			.summary__icon {
+				border-radius: 5px;
+				height: 24px;
+				margin-right: 0.5em;
+				.icon {
+					font-size: 2rem;
+					&--warn {
+						font-size: 1.8rem;
+					}
+				}
+				.card-icon {
+					border-radius: 3px;
+					height: 16px;
+					margin: 0 0.2em;
+				}
+				.var-icon {
+					font-size: 1.2rem;
+					padding: 0 0.3em;
+					letter-spacing: 1px;
+				}
+			}
+
+			.summary__player {
+				font-size: 1.5rem;
+				margin-right: 0.375em;
+			}
+
+			.summary__assist,
+			.summary__comment {
+				font-size: 1.4rem;
+			}
+
+			&--away {
+				.summary__minute {
+					margin-left: 0.75em;
+					margin-right: 0;
+				}
+				.summary__icon {
+					margin-right: 0;
+					margin-left: 0.5em;
+				}
+				.summary__player {
+					margin-right: 0;
+					margin-left: 0.375em;
+				}
+			}
+		}
+	}
+}

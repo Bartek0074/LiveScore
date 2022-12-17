@@ -45,7 +45,7 @@ export default function Home() {
 	]);
 
 	// useEffect(() => {
-	// 	fetchFromAPI(`/fixtures?id=590772`).then(
+	// 	fetchFromAPI(`/fixtures?id=871293`).then(
 	// 		(data) => {
 	// 			setMatches(data.response);
 	// 			console.log(data);

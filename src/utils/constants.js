@@ -172,4 +172,11 @@ export const leagues = [
 		name: 'Champions League',
 		logo: 'https://media-1.api-sports.io/football/leagues/2.png',
 	},
+	{
+		id: 188,
+		country: 'Australia',
+		flag: 'https://media-2.api-sports.io/flags/au.svg',
+		name: 'A-League',
+		logo: 'https://media-1.api-sports.io/football/leagues/188.png',
+	},
 ];

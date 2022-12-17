@@ -1,7 +1,7 @@
-export const fullTimeFixture = {
+export const fullTimeFixture2 = {
 	get: 'fixtures',
 	parameters: {
-		id: '924558',
+		id: '871293',
 	},
 	errors: [],
 	results: 1,
@@ -12,19 +12,19 @@ export const fullTimeFixture = {
 	response: [
 		{
 			fixture: {
-				id: 924558,
-				referee: 'Jonathan Barreiro, Australia',
+				id: 871293,
+				referee: 'D. Schlager',
 				timezone: 'UTC',
-				date: '2022-12-17T02:00:00+00:00',
-				timestamp: 1671242400,
+				date: '2022-11-12T14:30:00+00:00',
+				timestamp: 1668263400,
 				periods: {
-					first: 1671242400,
-					second: 1671246000,
+					first: 1668263400,
+					second: 1668267000,
 				},
 				venue: {
-					id: 130,
-					name: 'Sky Stadium',
-					city: 'Wellington',
+					id: 724,
+					name: 'PreZero Arena',
+					city: 'Sinsheim',
 				},
 				status: {
 					long: 'Match Finished',
@@ -33,40 +33,40 @@ export const fullTimeFixture = {
 				},
 			},
 			league: {
-				id: 188,
-				name: 'A-League',
-				country: 'Australia',
-				logo: 'https://media-6.api-sports.io/football/leagues/188.png',
-				flag: 'https://media-4.api-sports.io/flags/au.svg',
+				id: 78,
+				name: 'Bundesliga',
+				country: 'Germany',
+				logo: 'https://media-4.api-sports.io/football/leagues/78.png',
+				flag: 'https://media-6.api-sports.io/flags/de.svg',
 				season: 2022,
-				round: 'Regular Season - 8',
+				round: 'Regular Season - 15',
 			},
 			teams: {
 				home: {
-					id: 942,
-					name: 'Wellington Phoenix',
-					logo: 'https://media-5.api-sports.io/football/teams/942.png',
-					winner: true,
+					id: 167,
+					name: '1899 Hoffenheim',
+					logo: 'https://media-2.api-sports.io/football/teams/167.png',
+					winner: false,
 				},
 				away: {
-					id: 948,
-					name: 'Adelaide United',
-					logo: 'https://media-4.api-sports.io/football/teams/948.png',
-					winner: false,
+					id: 161,
+					name: 'VfL Wolfsburg',
+					logo: 'https://media-4.api-sports.io/football/teams/161.png',
+					winner: true,
 				},
 			},
 			goals: {
-				home: 3,
-				away: 1,
+				home: 1,
+				away: 2,
 			},
 			score: {
 				halftime: {
-					home: 2,
+					home: 1,
 					away: 1,
 				},
 				fulltime: {
-					home: 3,
-					away: 1,
+					home: 1,
+					away: 2,
 				},
 				extratime: {
 					home: null,
@@ -80,61 +80,39 @@ export const fullTimeFixture = {
 			events: [
 				{
 					time: {
-						elapsed: 2,
-						extra: null,
-					},
-					team: {
-						id: 942,
-						name: 'Wellington Phoenix',
-						logo: 'https://media-2.api-sports.io/football/teams/942.png',
-					},
-					player: {
-						id: 40298,
-						name: 'O. Zawada',
-					},
-					assist: {
-						id: 94346,
-						name: 'T. Payne',
-					},
-					type: 'Goal',
-					detail: 'Normal Goal',
-					comments: null,
-				},
-				{
-					time: {
 						elapsed: 12,
 						extra: null,
 					},
 					team: {
-						id: 948,
-						name: 'Adelaide United',
-						logo: 'https://media-4.api-sports.io/football/teams/948.png',
+						id: 161,
+						name: 'VfL Wolfsburg',
+						logo: 'https://media-5.api-sports.io/football/teams/161.png',
 					},
 					player: {
-						id: 6888,
-						name: 'C. Goodwin',
+						id: 81573,
+						name: 'Omar Marmoush',
 					},
 					assist: {
-						id: null,
-						name: null,
+						id: 30484,
+						name: 'M. Svanberg',
 					},
-					type: 'Goal',
-					detail: 'Normal Goal',
+					type: 'subst',
+					detail: 'Substitution 1',
 					comments: null,
 				},
 				{
 					time: {
-						elapsed: 26,
+						elapsed: 14,
 						extra: null,
 					},
 					team: {
-						id: 948,
-						name: 'Adelaide United',
-						logo: 'https://media-4.api-sports.io/football/teams/948.png',
+						id: 161,
+						name: 'VfL Wolfsburg',
+						logo: 'https://media-1.api-sports.io/football/teams/161.png',
 					},
 					player: {
-						id: 6880,
-						name: 'B. Halloran',
+						id: 1408,
+						name: 'Sebastiaan Bornauw',
 					},
 					assist: {
 						id: null,
@@ -142,29 +120,7 @@ export const fullTimeFixture = {
 					},
 					type: 'Card',
 					detail: 'Yellow Card',
-					comments: 'Tripping',
-				},
-				{
-					time: {
-						elapsed: 37,
-						extra: null,
-					},
-					team: {
-						id: 942,
-						name: 'Wellington Phoenix',
-						logo: 'https://media-6.api-sports.io/football/teams/942.png',
-					},
-					player: {
-						id: 15803,
-						name: 'B. Kraev',
-					},
-					assist: {
-						id: 6932,
-						name: 'C. Elliot',
-					},
-					type: 'Goal',
-					detail: 'Normal Goal',
-					comments: null,
+					comments: 'Foul',
 				},
 				{
 					time: {
@@ -172,83 +128,17 @@ export const fullTimeFixture = {
 						extra: null,
 					},
 					team: {
-						id: 948,
-						name: 'Adelaide United',
-						logo: 'https://media-5.api-sports.io/football/teams/948.png',
+						id: 167,
+						name: '1899 Hoffenheim',
+						logo: 'https://media-1.api-sports.io/football/teams/167.png',
 					},
 					player: {
-						id: 337589,
-						name: 'A. Popovic',
+						id: 715,
+						name: 'C. Baumgartner',
 					},
 					assist: {
-						id: null,
-						name: null,
-					},
-					type: 'Card',
-					detail: 'Yellow Card',
-					comments: 'Tripping',
-				},
-				{
-					time: {
-						elapsed: 51,
-						extra: null,
-					},
-					team: {
-						id: 948,
-						name: 'Adelaide United',
-						logo: 'https://media-6.api-sports.io/football/teams/948.png',
-					},
-					player: {
-						id: 6880,
-						name: 'B. Halloran',
-					},
-					assist: {
-						id: null,
-						name: null,
-					},
-					type: 'Card',
-					detail: 'Yellow Card',
-					comments: 'Foul',
-				},
-				{
-					time: {
-						elapsed: 51,
-						extra: null,
-					},
-					team: {
-						id: 948,
-						name: 'Adelaide United',
-						logo: 'https://media-5.api-sports.io/football/teams/948.png',
-					},
-					player: {
-						id: 6880,
-						name: 'B. Halloran',
-					},
-					assist: {
-						id: null,
-						name: null,
-					},
-					type: 'Card',
-					detail: 'Red Card',
-					comments: 'Foul',
-				},
-				{
-					time: {
-						elapsed: 61,
-						extra: null,
-					},
-					team: {
-						id: 942,
-						name: 'Wellington Phoenix',
-						logo: 'https://media-2.api-sports.io/football/teams/942.png',
-					},
-					player: {
-						id: 10570,
-						name: 'Yan Sasse',
-					},
-					assist: {
-						id: null,
-						name: null,
+						id: 227,
+						name: 'Angeliño',
 					},
 					type: 'Goal',
 					detail: 'Normal Goal',
@@ -256,24 +146,90 @@ export const fullTimeFixture = {
 				},
 				{
 					time: {
-						elapsed: 62,
+						elapsed: 45,
+						extra: 4,
+					},
+					team: {
+						id: 161,
+						name: 'VfL Wolfsburg',
+						logo: 'https://media-4.api-sports.io/football/teams/161.png',
+					},
+					player: {
+						id: 26300,
+						name: 'O. Kabak',
+					},
+					assist: {
+						id: null,
+						name: null,
+					},
+					type: 'Goal',
+					detail: 'Own Goal',
+					comments: null,
+				},
+				{
+					time: {
+						elapsed: 49,
 						extra: null,
 					},
 					team: {
-						id: 948,
-						name: 'Adelaide United',
-						logo: 'https://media-4.api-sports.io/football/teams/948.png',
+						id: 161,
+						name: 'VfL Wolfsburg',
+						logo: 'https://media-6.api-sports.io/football/teams/161.png',
 					},
 					player: {
-						id: 338014,
-						name: 'N. Irankunda',
+						id: 177618,
+						name: 'Kilian Fischer',
 					},
 					assist: {
-						id: 338007,
-						name: 'E. Alagich',
+						id: null,
+						name: null,
 					},
-					type: 'subst',
-					detail: 'Substitution 1',
+					type: 'Card',
+					detail: 'Yellow Card',
+					comments: 'Foul',
+				},
+				{
+					time: {
+						elapsed: 55,
+						extra: null,
+					},
+					team: {
+						id: 161,
+						name: 'VfL Wolfsburg',
+						logo: 'https://media-5.api-sports.io/football/teams/161.png',
+					},
+					player: {
+						id: 152849,
+						name: 'Micky van de Ven',
+					},
+					assist: {
+						id: null,
+						name: null,
+					},
+					type: 'Card',
+					detail: 'Yellow Card',
+					comments: 'Foul',
+				},
+				{
+					time: {
+						elapsed: 56,
+						extra: null,
+					},
+					team: {
+						id: 161,
+						name: 'VfL Wolfsburg',
+						logo: 'https://media-1.api-sports.io/football/teams/161.png',
+					},
+					player: {
+						id: 25917,
+						name: 'R. Baku',
+					},
+					assist: {
+						id: 637,
+						name: 'F. Nmecha',
+					},
+					type: 'Goal',
+					detail: 'Normal Goal',
 					comments: null,
 				},
 				{
@@ -282,20 +238,42 @@ export const fullTimeFixture = {
 						extra: null,
 					},
 					team: {
-						id: 948,
-						name: 'Adelaide United',
-						logo: 'https://media-5.api-sports.io/football/teams/948.png',
+						id: 161,
+						name: 'VfL Wolfsburg',
+						logo: 'https://media-5.api-sports.io/football/teams/161.png',
 					},
 					player: {
-						id: 33145,
-						name: 'H. Ibusuki',
+						id: 40560,
+						name: 'J. Kamiński',
 					},
 					assist: {
-						id: null,
-						name: null,
+						id: 24,
+						name: 'M. Philipp',
 					},
-					type: 'Var',
-					detail: 'Goal Disallowed - offside',
+					type: 'subst',
+					detail: 'Substitution 2',
+					comments: null,
+				},
+				{
+					time: {
+						elapsed: 65,
+						extra: null,
+					},
+					team: {
+						id: 161,
+						name: 'VfL Wolfsburg',
+						logo: 'https://media-4.api-sports.io/football/teams/161.png',
+					},
+					player: {
+						id: 25400,
+						name: 'Y. Gerhardt',
+					},
+					assist: {
+						id: 25410,
+						name: 'J. Guilavogui',
+					},
+					type: 'subst',
+					detail: 'Substitution 3',
 					comments: null,
 				},
 				{
@@ -304,17 +282,17 @@ export const fullTimeFixture = {
 						extra: null,
 					},
 					team: {
-						id: 942,
-						name: 'Wellington Phoenix',
-						logo: 'https://media-6.api-sports.io/football/teams/942.png',
+						id: 167,
+						name: '1899 Hoffenheim',
+						logo: 'https://media-4.api-sports.io/football/teams/167.png',
 					},
 					player: {
-						id: 6865,
-						name: 'K. Barbarouses',
+						id: 90590,
+						name: 'G. Rutter',
 					},
 					assist: {
-						id: 20510,
-						name: 'D. Ball',
+						id: 202501,
+						name: 'F. Asllani',
 					},
 					type: 'subst',
 					detail: 'Substitution 1',
@@ -322,43 +300,21 @@ export const fullTimeFixture = {
 				},
 				{
 					time: {
-						elapsed: 78,
+						elapsed: 74,
 						extra: null,
 					},
 					team: {
-						id: 942,
-						name: 'Wellington Phoenix',
-						logo: 'https://media-5.api-sports.io/football/teams/942.png',
+						id: 167,
+						name: '1899 Hoffenheim',
+						logo: 'https://media-1.api-sports.io/football/teams/167.png',
 					},
 					player: {
-						id: 15803,
-						name: 'B. Kraev',
+						id: 726,
+						name: 'A. Kramarić',
 					},
 					assist: {
-						id: 15803,
-						name: 'B. Kraev',
-					},
-					type: 'Goal',
-					detail: 'Missed Penalty',
-					comments: null,
-				},
-				{
-					time: {
-						elapsed: 80,
-						extra: null,
-					},
-					team: {
-						id: 942,
-						name: 'Wellington Phoenix',
-						logo: 'https://media-1.api-sports.io/football/teams/942.png',
-					},
-					player: {
-						id: 6938,
-						name: 'B. Waine',
-					},
-					assist: {
-						id: 40298,
-						name: 'O. Zawada',
+						id: 22,
+						name: 'J. Bruun Larsen',
 					},
 					type: 'subst',
 					detail: 'Substitution 2',
@@ -366,21 +322,21 @@ export const fullTimeFixture = {
 				},
 				{
 					time: {
-						elapsed: 80,
+						elapsed: 82,
 						extra: null,
 					},
 					team: {
-						id: 942,
-						name: 'Wellington Phoenix',
-						logo: 'https://media-2.api-sports.io/football/teams/942.png',
+						id: 167,
+						name: '1899 Hoffenheim',
+						logo: 'https://media-4.api-sports.io/football/teams/167.png',
 					},
 					player: {
-						id: 179856,
-						name: 'B. Old',
+						id: 1298,
+						name: 'R. Skov',
 					},
 					assist: {
-						id: 10570,
-						name: 'Yan Sasse',
+						id: 709,
+						name: 'P. Kadeřábek',
 					},
 					type: 'subst',
 					detail: 'Substitution 3',
@@ -388,87 +344,43 @@ export const fullTimeFixture = {
 				},
 				{
 					time: {
-						elapsed: 80,
+						elapsed: 89,
 						extra: null,
 					},
 					team: {
-						id: 948,
-						name: 'Adelaide United',
-						logo: 'https://media-1.api-sports.io/football/teams/948.png',
+						id: 161,
+						name: 'VfL Wolfsburg',
+						logo: 'https://media-6.api-sports.io/football/teams/161.png',
 					},
 					player: {
-						id: 6887,
-						name: 'G. Blackwood',
+						id: 177618,
+						name: 'K. Fischer',
 					},
 					assist: {
-						id: 33145,
-						name: 'H. Ibusuki',
+						id: 25404,
+						name: 'J. Roussillon',
 					},
 					type: 'subst',
-					detail: 'Substitution 2',
+					detail: 'Substitution 4',
 					comments: null,
 				},
 				{
 					time: {
-						elapsed: 81,
-						extra: null,
-					},
-					team: {
-						id: 942,
-						name: 'Wellington Phoenix',
-						logo: 'https://media-2.api-sports.io/football/teams/942.png',
-					},
-					player: {
-						id: 20471,
-						name: 'C. Lewis',
-					},
-					assist: {
-						id: null,
-						name: null,
-					},
-					type: 'Card',
-					detail: 'Yellow Card',
-					comments: 'Holding',
-				},
-				{
-					time: {
-						elapsed: 85,
-						extra: null,
-					},
-					team: {
-						id: 942,
-						name: 'Wellington Phoenix',
-						logo: 'https://media-5.api-sports.io/football/teams/942.png',
-					},
-					player: {
-						id: 20397,
-						name: 'S. Wootton',
-					},
-					assist: {
-						id: null,
-						name: null,
-					},
-					type: 'Card',
-					detail: 'Yellow Card',
-					comments: 'Foul',
-				},
-				{
-					time: {
 						elapsed: 90,
-						extra: null,
+						extra: 3,
 					},
 					team: {
-						id: 942,
-						name: 'Wellington Phoenix',
-						logo: 'https://media-2.api-sports.io/football/teams/942.png',
+						id: 167,
+						name: '1899 Hoffenheim',
+						logo: 'https://media-5.api-sports.io/football/teams/167.png',
 					},
 					player: {
-						id: 6934,
-						name: 'A. Rufer',
+						id: 718,
+						name: 'D. Geiger',
 					},
 					assist: {
-						id: 20471,
-						name: 'C. Lewis',
+						id: 334353,
+						name: 'J. Quarshie',
 					},
 					type: 'subst',
 					detail: 'Substitution 4',
@@ -480,352 +392,144 @@ export const fullTimeFixture = {
 						extra: null,
 					},
 					team: {
-						id: 942,
-						name: 'Wellington Phoenix',
-						logo: 'https://media-1.api-sports.io/football/teams/942.png',
+						id: 161,
+						name: 'VfL Wolfsburg',
+						logo: 'https://media-6.api-sports.io/football/teams/161.png',
 					},
 					player: {
-						id: 56321,
-						name: 'N. Pennington',
+						id: 637,
+						name: 'F. Nmecha',
 					},
 					assist: {
-						id: 6961,
-						name: 'S. Ugarkovic',
+						id: 26260,
+						name: 'L. Waldschmidt',
 					},
 					type: 'subst',
 					detail: 'Substitution 5',
 					comments: null,
 				},
-				{
-					time: {
-						elapsed: 90,
-						extra: 3,
-					},
-					team: {
-						id: 948,
-						name: 'Adelaide United',
-						logo: 'https://media-5.api-sports.io/football/teams/948.png',
-					},
-					player: {
-						id: 338014,
-						name: 'N. Irankunda',
-					},
-					assist: {
-						id: null,
-						name: null,
-					},
-					type: 'Card',
-					detail: 'Yellow Card',
-					comments: 'Foul',
-				},
 			],
 			lineups: [
 				{
 					team: {
-						id: 942,
-						name: 'Wellington Phoenix',
-						logo: 'https://media-1.api-sports.io/football/teams/942.png',
+						id: 167,
+						name: '1899 Hoffenheim',
+						logo: 'https://media-4.api-sports.io/football/teams/167.png',
 						colors: {
 							player: {
-								primary: 'f6e552',
-								number: '000000',
-								border: 'f6e552',
+								primary: '0000cc',
+								number: 'ffffff',
+								border: '0000cc',
 							},
 							goalkeeper: {
-								primary: '3333ff',
+								primary: 'd90000',
 								number: 'ffffff',
-								border: '3333ff',
+								border: 'd90000',
 							},
 						},
 					},
-					formation: '4-4-2',
+					coach: {
+						id: 3082,
+						name: 'A. Breitenreiter',
+						photo: 'https://media-5.api-sports.io/football/coachs/3082.png',
+					},
+					formation: '3-4-1-2',
 					startXI: [
 						{
 							player: {
-								id: 6922,
-								name: 'Oliver Sail',
-								number: 20,
+								id: 702,
+								name: 'O. Baumann',
+								number: 1,
 								pos: 'G',
 								grid: '1:1',
 							},
 						},
 						{
 							player: {
-								id: 6932,
-								name: 'Callan Elliot',
-								number: 17,
-								pos: 'D',
-								grid: '2:4',
-							},
-						},
-						{
-							player: {
-								id: 20397,
-								name: 'Scott Wootton',
-								number: 4,
+								id: 713,
+								name: 'K. Vogt',
+								number: 22,
 								pos: 'D',
 								grid: '2:3',
 							},
 						},
 						{
 							player: {
-								id: 94346,
-								name: 'Tim Payne',
-								number: 6,
+								id: 25366,
+								name: 'K. Akpoguma',
+								number: 25,
 								pos: 'D',
 								grid: '2:2',
 							},
 						},
 						{
 							player: {
-								id: 266363,
-								name: 'Lucas Mauragis',
-								number: 12,
-								pos: 'D',
+								id: 227,
+								name: 'Angeliño',
+								number: 11,
+								pos: 'M',
 								grid: '2:1',
 							},
 						},
 						{
 							player: {
-								id: 10570,
-								name: 'Yan Sasse',
-								number: 31,
-								pos: 'M',
+								id: 26300,
+								name: 'O. Kabak',
+								number: 5,
+								pos: 'D',
 								grid: '3:4',
 							},
 						},
 						{
 							player: {
-								id: 6961,
-								name: 'Steven Ugarković',
-								number: 5,
+								id: 718,
+								name: 'D. Geiger',
+								number: 8,
 								pos: 'M',
 								grid: '3:3',
 							},
 						},
 						{
 							player: {
-								id: 20471,
-								name: 'Clayton Lewis',
-								number: 23,
-								pos: 'M',
-								grid: '3:2',
-							},
-						},
-						{
-							player: {
-								id: 15803,
-								name: 'Bozhidar Kraev',
-								number: 11,
-								pos: 'M',
-								grid: '3:1',
-							},
-						},
-						{
-							player: {
-								id: 20510,
-								name: 'David Ball',
-								number: 10,
-								pos: 'F',
-								grid: '4:2',
-							},
-						},
-						{
-							player: {
-								id: 40298,
-								name: 'Oskar Zawada',
-								number: 9,
-								pos: 'F',
-								grid: '4:1',
-							},
-						},
-					],
-					substitutes: [
-						{
-							player: {
-								id: 94360,
-								name: 'Alex Paulsen',
-								number: 40,
-								pos: 'G',
-								grid: null,
-							},
-						},
-						{
-							player: {
-								id: 178330,
-								name: 'Joshua Laws',
-								number: 21,
-								pos: 'D',
-								grid: null,
-							},
-						},
-						{
-							player: {
-								id: 6934,
-								name: 'Alex Rufer',
+								id: 715,
+								name: 'C. Baumgartner',
 								number: 14,
-								pos: 'M',
-								grid: null,
-							},
-						},
-						{
-							player: {
-								id: 179856,
-								name: 'Benjamin Old',
-								number: 8,
-								pos: 'M',
-								grid: null,
-							},
-						},
-						{
-							player: {
-								id: 6865,
-								name: 'Kosta Barbarouses',
-								number: 7,
 								pos: 'F',
-								grid: null,
-							},
-						},
-						{
-							player: {
-								id: 56321,
-								name: 'Nicholas Pennington',
-								number: 13,
-								pos: 'M',
-								grid: null,
-							},
-						},
-						{
-							player: {
-								id: 6938,
-								name: 'Ben Waine',
-								number: 18,
-								pos: 'F',
-								grid: null,
-							},
-						},
-					],
-					coach: {
-						id: 1144,
-						name: 'U. Talay',
-						photo: 'https://media-6.api-sports.io/football/coachs/1144.png',
-					},
-				},
-				{
-					team: {
-						id: 948,
-						name: 'Adelaide United',
-						logo: 'https://media-2.api-sports.io/football/teams/948.png',
-						colors: {
-							player: {
-								primary: 'af162d',
-								number: 'ffffff',
-								border: 'af162d',
-							},
-							goalkeeper: {
-								primary: '3f837d',
-								number: 'ffffff',
-								border: '3f837d',
-							},
-						},
-					},
-					formation: '4-2-3-1',
-					startXI: [
-						{
-							player: {
-								id: 7029,
-								name: 'Joe Gauci',
-								number: 46,
-								pos: 'G',
-								grid: '1:1',
-							},
-						},
-						{
-							player: {
-								id: 47333,
-								name: 'Javi López',
-								number: 21,
-								pos: 'D',
-								grid: '2:4',
-							},
-						},
-						{
-							player: {
-								id: 87837,
-								name: 'Lachlan Barr',
-								number: 13,
-								pos: 'D',
-								grid: '2:3',
-							},
-						},
-						{
-							player: {
-								id: 337589,
-								name: 'Alexandar Popovic',
-								number: 41,
-								pos: 'D',
-								grid: '2:2',
-							},
-						},
-						{
-							player: {
-								id: 6881,
-								name: 'Ryan Kitto',
-								number: 7,
-								pos: 'D',
-								grid: '2:1',
-							},
-						},
-						{
-							player: {
-								id: 6879,
-								name: "Louis D'Arrigo",
-								number: 6,
-								pos: 'M',
 								grid: '3:2',
 							},
 						},
 						{
 							player: {
-								id: 6812,
-								name: 'Juande Prados',
-								number: 28,
+								id: 137210,
+								name: 'A. Stiller',
+								number: 13,
 								pos: 'M',
 								grid: '3:1',
 							},
 						},
 						{
 							player: {
-								id: 6880,
-								name: 'Ben Halloran',
-								number: 26,
-								pos: 'M',
-								grid: '4:3',
-							},
-						},
-						{
-							player: {
-								id: 338007,
-								name: 'Ethan Alagich',
-								number: 55,
-								pos: 'M',
-								grid: '4:2',
-							},
-						},
-						{
-							player: {
-								id: 6888,
-								name: 'Craig Goodwin',
-								number: 11,
-								pos: 'M',
+								id: 726,
+								name: 'A. Kramarić',
+								number: 27,
+								pos: 'F',
 								grid: '4:1',
 							},
 						},
 						{
 							player: {
-								id: 33145,
-								name: 'Hiroshi Ibusuki',
-								number: 9,
+								id: 1298,
+								name: 'R. Skov',
+								number: 29,
+								pos: 'M',
+								grid: '5:2',
+							},
+						},
+						{
+							player: {
+								id: 90590,
+								name: 'G. Rutter',
+								number: 33,
 								pos: 'F',
 								grid: '5:1',
 							},
@@ -834,17 +538,262 @@ export const fullTimeFixture = {
 					substitutes: [
 						{
 							player: {
-								id: 6895,
-								name: 'James Delianov',
-								number: 1,
+								id: 202501,
+								name: 'F. Asllani',
+								number: 44,
+								pos: 'F',
+								grid: null,
+							},
+						},
+						{
+							player: {
+								id: 22,
+								name: 'J. Bruun Larsen',
+								number: 7,
+								pos: 'F',
+								grid: null,
+							},
+						},
+						{
+							player: {
+								id: 709,
+								name: 'P. Kadeřábek',
+								number: 3,
+								pos: 'D',
+								grid: null,
+							},
+						},
+						{
+							player: {
+								id: 334353,
+								name: 'J. Quarshie',
+								number: 48,
+								pos: 'D',
+								grid: null,
+							},
+						},
+						{
+							player: {
+								id: 262845,
+								name: 'Eduardo Quaresma',
+								number: 26,
+								pos: 'D',
+								grid: null,
+							},
+						},
+						{
+							player: {
+								id: 24975,
+								name: 'P. Pentke',
+								number: 12,
 								pos: 'G',
 								grid: null,
 							},
 						},
 						{
 							player: {
-								id: 34338,
-								name: 'Nick Ansell',
+								id: 325975,
+								name: 'T. Bischof',
+								number: 39,
+								pos: 'M',
+								grid: null,
+							},
+						},
+						{
+							player: {
+								id: 328262,
+								name: 'M. Damar',
+								number: 35,
+								pos: 'M',
+								grid: null,
+							},
+						},
+						{
+							player: {
+								id: 24932,
+								name: 'F. Becker',
+								number: 20,
+								pos: 'M',
+								grid: null,
+							},
+						},
+					],
+				},
+				{
+					team: {
+						id: 161,
+						name: 'VfL Wolfsburg',
+						logo: 'https://media-4.api-sports.io/football/teams/161.png',
+						colors: {
+							player: {
+								primary: 'ffffff',
+								number: '0080ff',
+								border: 'ffffff',
+							},
+							goalkeeper: {
+								primary: 'ff0000',
+								number: 'ffffff',
+								border: 'ff0000',
+							},
+						},
+					},
+					coach: {
+						id: 1528,
+						name: 'N. Kovač',
+						photo: 'https://media-6.api-sports.io/football/coachs/1528.png',
+					},
+					formation: '4-5-1',
+					startXI: [
+						{
+							player: {
+								id: 2918,
+								name: 'K. Casteels',
+								number: 1,
+								pos: 'G',
+								grid: '1:1',
+							},
+						},
+						{
+							player: {
+								id: 25208,
+								name: 'Paulo Otávio',
+								number: 6,
+								pos: 'D',
+								grid: '2:4',
+							},
+						},
+						{
+							player: {
+								id: 1408,
+								name: 'S. Bornauw',
+								number: 3,
+								pos: 'D',
+								grid: '2:3',
+							},
+						},
+						{
+							player: {
+								id: 152849,
+								name: 'M. van de Ven',
+								number: 5,
+								pos: 'D',
+								grid: '2:2',
+							},
+						},
+						{
+							player: {
+								id: 177618,
+								name: 'K. Fischer',
+								number: 2,
+								pos: 'D',
+								grid: '2:1',
+							},
+						},
+						{
+							player: {
+								id: 25408,
+								name: 'M. Arnold',
+								number: 27,
+								pos: 'M',
+								grid: '3:5',
+							},
+						},
+						{
+							player: {
+								id: 25400,
+								name: 'Y. Gerhardt',
+								number: 31,
+								pos: 'M',
+								grid: '3:4',
+							},
+						},
+						{
+							player: {
+								id: 25917,
+								name: 'R. Baku',
+								number: 20,
+								pos: 'M',
+								grid: '3:3',
+							},
+						},
+						{
+							player: {
+								id: 637,
+								name: 'F. Nmecha',
+								number: 22,
+								pos: 'M',
+								grid: '3:2',
+							},
+						},
+						{
+							player: {
+								id: 40560,
+								name: 'J. Kamiński',
+								number: 16,
+								pos: 'M',
+								grid: '3:1',
+							},
+						},
+						{
+							player: {
+								id: 81573,
+								name: 'Omar Marmoush',
+								number: 33,
+								pos: 'F',
+								grid: '4:1',
+							},
+						},
+					],
+					substitutes: [
+						{
+							player: {
+								id: 30484,
+								name: 'M. Svanberg',
+								number: 32,
+								pos: 'M',
+								grid: null,
+							},
+						},
+						{
+							player: {
+								id: 24,
+								name: 'M. Philipp',
+								number: 17,
+								pos: 'F',
+								grid: null,
+							},
+						},
+						{
+							player: {
+								id: 25410,
+								name: 'J. Guilavogui',
+								number: 29,
+								pos: 'M',
+								grid: null,
+							},
+						},
+						{
+							player: {
+								id: 25404,
+								name: 'J. Roussillon',
+								number: 15,
+								pos: 'D',
+								grid: null,
+							},
+						},
+						{
+							player: {
+								id: 26260,
+								name: 'L. Waldschmidt',
+								number: 7,
+								pos: 'F',
+								grid: null,
+							},
+						},
+						{
+							player: {
+								id: 20995,
+								name: 'M. Lacroix',
 								number: 4,
 								pos: 'D',
 								grid: null,
@@ -852,63 +801,40 @@ export const fullTimeFixture = {
 						},
 						{
 							player: {
-								id: 297968,
-								name: 'Jonny Yull',
-								number: 37,
-								pos: 'M',
-								grid: null,
-							},
-						},
-						{
-							player: {
-								id: 154860,
-								name: 'Joshua Cavallo',
-								number: 27,
-								pos: 'M',
-								grid: null,
-							},
-						},
-						{
-							player: {
-								id: 6887,
-								name: 'George Blackwood',
-								number: 14,
+								id: 342188,
+								name: 'D. Pejčinović',
+								number: 18,
 								pos: 'F',
 								grid: null,
 							},
 						},
 						{
 							player: {
-								id: 376675,
-								name: 'Panashe Madanha',
-								number: 36,
-								pos: 'F',
+								id: 261210,
+								name: 'P. Schulze',
+								number: 35,
+								pos: 'G',
 								grid: null,
 							},
 						},
 						{
 							player: {
-								id: 338014,
-								name: 'Nestory Irankunda',
-								number: 66,
-								pos: 'F',
+								id: 25396,
+								name: 'P. Pervan',
+								number: 12,
+								pos: 'G',
 								grid: null,
 							},
 						},
 					],
-					coach: {
-						id: 13537,
-						name: 'C. Veart',
-						photo: 'https://media-1.api-sports.io/football/coachs/13537.png',
-					},
 				},
 			],
 			statistics: [
 				{
 					team: {
-						id: 942,
-						name: 'Wellington Phoenix',
-						logo: 'https://media-5.api-sports.io/football/teams/942.png',
+						id: 167,
+						name: '1899 Hoffenheim',
+						logo: 'https://media-6.api-sports.io/football/teams/167.png',
 					},
 					statistics: [
 						{
@@ -917,15 +843,15 @@ export const fullTimeFixture = {
 						},
 						{
 							type: 'Shots off Goal',
-							value: 3,
+							value: 9,
 						},
 						{
 							type: 'Total Shots',
-							value: 17,
+							value: 22,
 						},
 						{
 							type: 'Blocked Shots',
-							value: 6,
+							value: 5,
 						},
 						{
 							type: 'Shots insidebox',
@@ -933,7 +859,7 @@ export const fullTimeFixture = {
 						},
 						{
 							type: 'Shots outsidebox',
-							value: 4,
+							value: 9,
 						},
 						{
 							type: 'Fouls',
@@ -941,19 +867,19 @@ export const fullTimeFixture = {
 						},
 						{
 							type: 'Corner Kicks',
-							value: 16,
+							value: 7,
 						},
 						{
 							type: 'Offsides',
-							value: null,
+							value: 2,
 						},
 						{
 							type: 'Ball Possession',
-							value: '53%',
+							value: '60%',
 						},
 						{
 							type: 'Yellow Cards',
-							value: 2,
+							value: null,
 						},
 						{
 							type: 'Red Cards',
@@ -965,23 +891,23 @@ export const fullTimeFixture = {
 						},
 						{
 							type: 'Total passes',
-							value: 479,
+							value: 472,
 						},
 						{
 							type: 'Passes accurate',
-							value: 413,
+							value: 375,
 						},
 						{
 							type: 'Passes %',
-							value: '86%',
+							value: '79%',
 						},
 					],
 				},
 				{
 					team: {
-						id: 948,
-						name: 'Adelaide United',
-						logo: 'https://media-1.api-sports.io/football/teams/948.png',
+						id: 161,
+						name: 'VfL Wolfsburg',
+						logo: 'https://media-2.api-sports.io/football/teams/161.png',
 					},
 					statistics: [
 						{
@@ -990,27 +916,27 @@ export const fullTimeFixture = {
 						},
 						{
 							type: 'Shots off Goal',
-							value: 1,
-						},
-						{
-							type: 'Total Shots',
-							value: 5,
-						},
-						{
-							type: 'Blocked Shots',
-							value: 1,
-						},
-						{
-							type: 'Shots insidebox',
-							value: 2,
-						},
-						{
-							type: 'Shots outsidebox',
 							value: 3,
 						},
 						{
+							type: 'Total Shots',
+							value: 6,
+						},
+						{
+							type: 'Blocked Shots',
+							value: null,
+						},
+						{
+							type: 'Shots insidebox',
+							value: 5,
+						},
+						{
+							type: 'Shots outsidebox',
+							value: 1,
+						},
+						{
 							type: 'Fouls',
-							value: 13,
+							value: 11,
 						},
 						{
 							type: 'Corner Kicks',
@@ -1018,35 +944,35 @@ export const fullTimeFixture = {
 						},
 						{
 							type: 'Offsides',
-							value: 1,
+							value: 2,
 						},
 						{
 							type: 'Ball Possession',
-							value: '47%',
+							value: '40%',
 						},
 						{
 							type: 'Yellow Cards',
-							value: 4,
+							value: 3,
 						},
 						{
 							type: 'Red Cards',
-							value: 1,
+							value: null,
 						},
 						{
 							type: 'Goalkeeper Saves',
-							value: 4,
+							value: 7,
 						},
 						{
 							type: 'Total passes',
-							value: 444,
+							value: 314,
 						},
 						{
 							type: 'Passes accurate',
-							value: 368,
+							value: 207,
 						},
 						{
 							type: 'Passes %',
-							value: '83%',
+							value: '66%',
 						},
 					],
 				},
@@ -1054,24 +980,23 @@ export const fullTimeFixture = {
 			players: [
 				{
 					team: {
-						id: 942,
-						name: 'Wellington Phoenix',
-						logo: 'https://media-2.api-sports.io/football/teams/942.png',
-						update: '2022-12-17T10:30:20+00:00',
+						id: 167,
+						name: '1899 Hoffenheim',
+						logo: 'https://media-4.api-sports.io/football/teams/167.png',
+						update: '2022-11-15T04:20:31+00:00',
 					},
 					players: [
 						{
 							player: {
-								id: 6922,
-								name: 'Oliver Sail',
-								photo:
-									'https://media-5.api-sports.io/football/players/6922.png',
+								id: 702,
+								name: 'Oliver Baumann',
+								photo: 'https://media-5.api-sports.io/football/players/702.png',
 							},
 							statistics: [
 								{
 									games: {
-										minutes: 95,
-										number: 20,
+										minutes: 90,
+										number: 1,
 										position: 'G',
 										rating: '6.5',
 										captain: true,
@@ -1084,14 +1009,14 @@ export const fullTimeFixture = {
 									},
 									goals: {
 										total: null,
-										conceded: 1,
+										conceded: 2,
 										assists: null,
 										saves: 2,
 									},
 									passes: {
-										total: 22,
+										total: 37,
 										key: null,
-										accuracy: '12',
+										accuracy: '35',
 									},
 									tackles: {
 										total: null,
@@ -1127,17 +1052,275 @@ export const fullTimeFixture = {
 						},
 						{
 							player: {
-								id: 6932,
-								name: 'Callan Elliot',
+								id: 25366,
+								name: 'Kevin Akpoguma',
 								photo:
-									'https://media-4.api-sports.io/football/players/6932.png',
+									'https://media-5.api-sports.io/football/players/25366.png',
 							},
 							statistics: [
 								{
 									games: {
-										minutes: 95,
-										number: 17,
+										minutes: 90,
+										number: 25,
 										position: 'D',
+										rating: '6.7',
+										captain: false,
+										substitute: false,
+									},
+									offsides: null,
+									shots: {
+										total: 1,
+										on: null,
+									},
+									goals: {
+										total: null,
+										conceded: 0,
+										assists: null,
+										saves: null,
+									},
+									passes: {
+										total: 36,
+										key: 1,
+										accuracy: '28',
+									},
+									tackles: {
+										total: 2,
+										blocks: null,
+										interceptions: 1,
+									},
+									duels: {
+										total: 14,
+										won: 6,
+									},
+									dribbles: {
+										attempts: 2,
+										success: null,
+										past: 1,
+									},
+									fouls: {
+										drawn: null,
+										committed: 4,
+									},
+									cards: {
+										yellow: 0,
+										red: 0,
+									},
+									penalty: {
+										won: null,
+										commited: null,
+										scored: 0,
+										missed: 0,
+										saved: null,
+									},
+								},
+							],
+						},
+						{
+							player: {
+								id: 713,
+								name: 'Kevin Vogt',
+								photo: 'https://media-4.api-sports.io/football/players/713.png',
+							},
+							statistics: [
+								{
+									games: {
+										minutes: 90,
+										number: 22,
+										position: 'D',
+										rating: '6.2',
+										captain: false,
+										substitute: false,
+									},
+									offsides: null,
+									shots: {
+										total: null,
+										on: null,
+									},
+									goals: {
+										total: null,
+										conceded: 0,
+										assists: null,
+										saves: null,
+									},
+									passes: {
+										total: 74,
+										key: 1,
+										accuracy: '61',
+									},
+									tackles: {
+										total: null,
+										blocks: null,
+										interceptions: null,
+									},
+									duels: {
+										total: 7,
+										won: 1,
+									},
+									dribbles: {
+										attempts: null,
+										success: null,
+										past: 1,
+									},
+									fouls: {
+										drawn: 1,
+										committed: 4,
+									},
+									cards: {
+										yellow: 0,
+										red: 0,
+									},
+									penalty: {
+										won: null,
+										commited: null,
+										scored: 0,
+										missed: 0,
+										saved: null,
+									},
+								},
+							],
+						},
+						{
+							player: {
+								id: 26300,
+								name: 'Ozan Kabak',
+								photo:
+									'https://media-2.api-sports.io/football/players/26300.png',
+							},
+							statistics: [
+								{
+									games: {
+										minutes: 90,
+										number: 5,
+										position: 'D',
+										rating: '6.7',
+										captain: false,
+										substitute: false,
+									},
+									offsides: null,
+									shots: {
+										total: 4,
+										on: 1,
+									},
+									goals: {
+										total: null,
+										conceded: 0,
+										assists: null,
+										saves: null,
+									},
+									passes: {
+										total: 61,
+										key: null,
+										accuracy: '48',
+									},
+									tackles: {
+										total: 1,
+										blocks: null,
+										interceptions: 3,
+									},
+									duels: {
+										total: 10,
+										won: 5,
+									},
+									dribbles: {
+										attempts: 1,
+										success: null,
+										past: null,
+									},
+									fouls: {
+										drawn: null,
+										committed: 1,
+									},
+									cards: {
+										yellow: 0,
+										red: 0,
+									},
+									penalty: {
+										won: null,
+										commited: null,
+										scored: 0,
+										missed: 0,
+										saved: null,
+									},
+								},
+							],
+						},
+						{
+							player: {
+								id: 1298,
+								name: 'Robert Skov',
+								photo:
+									'https://media-5.api-sports.io/football/players/1298.png',
+							},
+							statistics: [
+								{
+									games: {
+										minutes: 82,
+										number: 29,
+										position: 'M',
+										rating: '6.5',
+										captain: false,
+										substitute: false,
+									},
+									offsides: null,
+									shots: {
+										total: 2,
+										on: 1,
+									},
+									goals: {
+										total: null,
+										conceded: 0,
+										assists: null,
+										saves: null,
+									},
+									passes: {
+										total: 26,
+										key: 2,
+										accuracy: '20',
+									},
+									tackles: {
+										total: 1,
+										blocks: null,
+										interceptions: null,
+									},
+									duels: {
+										total: 8,
+										won: 3,
+									},
+									dribbles: {
+										attempts: 1,
+										success: null,
+										past: 1,
+									},
+									fouls: {
+										drawn: 1,
+										committed: 1,
+									},
+									cards: {
+										yellow: 0,
+										red: 0,
+									},
+									penalty: {
+										won: null,
+										commited: null,
+										scored: 0,
+										missed: 0,
+										saved: null,
+									},
+								},
+							],
+						},
+						{
+							player: {
+								id: 718,
+								name: 'Dennis Geiger',
+								photo: 'https://media-5.api-sports.io/football/players/718.png',
+							},
+							statistics: [
+								{
+									games: {
+										minutes: 89,
+										number: 8,
+										position: 'M',
 										rating: '6.9',
 										captain: false,
 										substitute: false,
@@ -1150,87 +1333,22 @@ export const fullTimeFixture = {
 									goals: {
 										total: null,
 										conceded: 0,
-										assists: 1,
-										saves: null,
-									},
-									passes: {
-										total: 31,
-										key: 1,
-										accuracy: '29',
-									},
-									tackles: {
-										total: 1,
-										blocks: null,
-										interceptions: null,
-									},
-									duels: {
-										total: 10,
-										won: 4,
-									},
-									dribbles: {
-										attempts: null,
-										success: null,
-										past: null,
-									},
-									fouls: {
-										drawn: 1,
-										committed: 2,
-									},
-									cards: {
-										yellow: 0,
-										red: 0,
-									},
-									penalty: {
-										won: null,
-										commited: null,
-										scored: 0,
-										missed: 0,
-										saved: null,
-									},
-								},
-							],
-						},
-						{
-							player: {
-								id: 20397,
-								name: 'Scott Wootton',
-								photo:
-									'https://media-4.api-sports.io/football/players/20397.png',
-							},
-							statistics: [
-								{
-									games: {
-										minutes: 95,
-										number: 4,
-										position: 'D',
-										rating: '6.7',
-										captain: false,
-										substitute: false,
-									},
-									offsides: null,
-									shots: {
-										total: null,
-										on: null,
-									},
-									goals: {
-										total: null,
-										conceded: 0,
 										assists: null,
 										saves: null,
 									},
 									passes: {
-										total: 38,
-										key: null,
-										accuracy: '34',
+										total: 40,
+										key: 1,
+										accuracy: '35',
 									},
 									tackles: {
-										total: null,
+										total: 3,
 										blocks: null,
-										interceptions: 1,
+										interceptions: null,
 									},
 									duels: {
-										total: 5,
-										won: 2,
+										total: 7,
+										won: 4,
 									},
 									dribbles: {
 										attempts: null,
@@ -1242,71 +1360,6 @@ export const fullTimeFixture = {
 										committed: 2,
 									},
 									cards: {
-										yellow: 1,
-										red: 0,
-									},
-									penalty: {
-										won: null,
-										commited: null,
-										scored: 0,
-										missed: 0,
-										saved: null,
-									},
-								},
-							],
-						},
-						{
-							player: {
-								id: 94346,
-								name: 'Tim Payne',
-								photo:
-									'https://media-2.api-sports.io/football/players/94346.png',
-							},
-							statistics: [
-								{
-									games: {
-										minutes: 95,
-										number: 6,
-										position: 'D',
-										rating: '7.7',
-										captain: false,
-										substitute: false,
-									},
-									offsides: null,
-									shots: {
-										total: null,
-										on: null,
-									},
-									goals: {
-										total: null,
-										conceded: 0,
-										assists: 1,
-										saves: null,
-									},
-									passes: {
-										total: 59,
-										key: 1,
-										accuracy: '55',
-									},
-									tackles: {
-										total: null,
-										blocks: null,
-										interceptions: null,
-									},
-									duels: {
-										total: 5,
-										won: 5,
-									},
-									dribbles: {
-										attempts: 1,
-										success: 1,
-										past: null,
-									},
-									fouls: {
-										drawn: 1,
-										committed: null,
-									},
-									cards: {
 										yellow: 0,
 										red: 0,
 									},
@@ -1322,83 +1375,18 @@ export const fullTimeFixture = {
 						},
 						{
 							player: {
-								id: 266363,
-								name: 'Lucas Mauragis',
+								id: 137210,
+								name: 'Angelo Stiller',
 								photo:
-									'https://media-4.api-sports.io/football/players/266363.png',
+									'https://media-2.api-sports.io/football/players/137210.png',
 							},
 							statistics: [
 								{
 									games: {
-										minutes: 95,
-										number: 12,
-										position: 'D',
-										rating: '6.5',
-										captain: false,
-										substitute: false,
-									},
-									offsides: null,
-									shots: {
-										total: null,
-										on: null,
-									},
-									goals: {
-										total: null,
-										conceded: 0,
-										assists: null,
-										saves: null,
-									},
-									passes: {
-										total: 51,
-										key: 1,
-										accuracy: '45',
-									},
-									tackles: {
-										total: 1,
-										blocks: null,
-										interceptions: 2,
-									},
-									duels: {
-										total: 14,
-										won: 5,
-									},
-									dribbles: {
-										attempts: 4,
-										success: 1,
-										past: null,
-									},
-									fouls: {
-										drawn: 3,
-										committed: 2,
-									},
-									cards: {
-										yellow: 0,
-										red: 0,
-									},
-									penalty: {
-										won: null,
-										commited: null,
-										scored: 0,
-										missed: 0,
-										saved: null,
-									},
-								},
-							],
-						},
-						{
-							player: {
-								id: 10570,
-								name: 'Yan Sasse',
-								photo:
-									'https://media-5.api-sports.io/football/players/10570.png',
-							},
-							statistics: [
-								{
-									games: {
-										minutes: 80,
-										number: 31,
+										minutes: 90,
+										number: 13,
 										position: 'M',
-										rating: '7.9',
+										rating: '7',
 										captain: false,
 										substitute: false,
 									},
@@ -1408,28 +1396,28 @@ export const fullTimeFixture = {
 										on: 1,
 									},
 									goals: {
-										total: 1,
+										total: null,
 										conceded: 0,
 										assists: null,
 										saves: null,
 									},
 									passes: {
-										total: 33,
-										key: 1,
-										accuracy: '31',
+										total: 40,
+										key: null,
+										accuracy: '30',
 									},
 									tackles: {
-										total: 1,
+										total: 5,
 										blocks: null,
 										interceptions: 1,
 									},
 									duels: {
-										total: 7,
-										won: 6,
+										total: 10,
+										won: 7,
 									},
 									dribbles: {
-										attempts: 4,
-										success: 4,
+										attempts: null,
+										success: null,
 										past: null,
 									},
 									fouls: {
@@ -1452,25 +1440,88 @@ export const fullTimeFixture = {
 						},
 						{
 							player: {
-								id: 6961,
-								name: 'Steven Ugarković',
-								photo:
-									'https://media-2.api-sports.io/football/players/6961.png',
+								id: 227,
+								name: 'Angeliño',
+								photo: 'https://media-4.api-sports.io/football/players/227.png',
 							},
 							statistics: [
 								{
 									games: {
 										minutes: 90,
-										number: 5,
+										number: 11,
 										position: 'M',
-										rating: '7.2',
+										rating: '8.3',
 										captain: false,
 										substitute: false,
 									},
 									offsides: null,
 									shots: {
-										total: null,
+										total: 1,
 										on: null,
+									},
+									goals: {
+										total: null,
+										conceded: 0,
+										assists: 1,
+										saves: null,
+									},
+									passes: {
+										total: 60,
+										key: 7,
+										accuracy: '43',
+									},
+									tackles: {
+										total: 1,
+										blocks: null,
+										interceptions: 1,
+									},
+									duels: {
+										total: 8,
+										won: 4,
+									},
+									dribbles: {
+										attempts: 1,
+										success: 1,
+										past: 2,
+									},
+									fouls: {
+										drawn: 1,
+										committed: 1,
+									},
+									cards: {
+										yellow: 0,
+										red: 0,
+									},
+									penalty: {
+										won: null,
+										commited: null,
+										scored: 0,
+										missed: 0,
+										saved: null,
+									},
+								},
+							],
+						},
+						{
+							player: {
+								id: 726,
+								name: 'Andrej Kramarić',
+								photo: 'https://media-5.api-sports.io/football/players/726.png',
+							},
+							statistics: [
+								{
+									games: {
+										minutes: 74,
+										number: 27,
+										position: 'F',
+										rating: '6.9',
+										captain: false,
+										substitute: false,
+									},
+									offsides: null,
+									shots: {
+										total: 1,
+										on: 1,
 									},
 									goals: {
 										total: null,
@@ -1479,22 +1530,22 @@ export const fullTimeFixture = {
 										saves: null,
 									},
 									passes: {
-										total: 66,
+										total: 27,
 										key: 1,
-										accuracy: '57',
+										accuracy: '26',
 									},
 									tackles: {
-										total: 2,
+										total: null,
 										blocks: null,
 										interceptions: null,
 									},
 									duels: {
-										total: 5,
-										won: 4,
+										total: 2,
+										won: 1,
 									},
 									dribbles: {
-										attempts: 1,
-										success: 1,
+										attempts: null,
+										success: null,
 										past: null,
 									},
 									fouls: {
@@ -1517,25 +1568,25 @@ export const fullTimeFixture = {
 						},
 						{
 							player: {
-								id: 20471,
-								name: 'Clayton Lewis',
+								id: 90590,
+								name: 'Georginio Rutter',
 								photo:
-									'https://media-6.api-sports.io/football/players/20471.png',
+									'https://media-4.api-sports.io/football/players/90590.png',
 							},
 							statistics: [
 								{
 									games: {
-										minutes: 90,
-										number: 23,
-										position: 'M',
-										rating: '7.5',
+										minutes: 74,
+										number: 33,
+										position: 'F',
+										rating: '6.9',
 										captain: false,
 										substitute: false,
 									},
-									offsides: null,
+									offsides: 1,
 									shots: {
-										total: 1,
-										on: null,
+										total: 2,
+										on: 1,
 									},
 									goals: {
 										total: null,
@@ -1544,30 +1595,30 @@ export const fullTimeFixture = {
 										saves: null,
 									},
 									passes: {
-										total: 76,
+										total: 9,
 										key: 1,
-										accuracy: '68',
+										accuracy: '6',
 									},
 									tackles: {
-										total: 2,
+										total: 1,
 										blocks: null,
-										interceptions: 2,
+										interceptions: 1,
 									},
 									duels: {
-										total: 6,
-										won: 4,
+										total: 14,
+										won: 8,
 									},
 									dribbles: {
-										attempts: null,
-										success: null,
+										attempts: 4,
+										success: 2,
 										past: null,
 									},
 									fouls: {
-										drawn: 1,
-										committed: 3,
+										drawn: 4,
+										committed: 2,
 									},
 									cards: {
-										yellow: 1,
+										yellow: 0,
 										red: 0,
 									},
 									penalty: {
@@ -1582,25 +1633,24 @@ export const fullTimeFixture = {
 						},
 						{
 							player: {
-								id: 15803,
-								name: 'Bozhidar Kraev',
-								photo:
-									'https://media-6.api-sports.io/football/players/15803.png',
+								id: 715,
+								name: 'Christoph Baumgartner',
+								photo: 'https://media-5.api-sports.io/football/players/715.png',
 							},
 							statistics: [
 								{
 									games: {
-										minutes: 95,
-										number: 11,
-										position: 'M',
-										rating: '6.3',
+										minutes: 90,
+										number: 14,
+										position: 'F',
+										rating: '7.9',
 										captain: false,
 										substitute: false,
 									},
 									offsides: null,
 									shots: {
-										total: 3,
-										on: 2,
+										total: 5,
+										on: 3,
 									},
 									goals: {
 										total: 1,
@@ -1611,89 +1661,24 @@ export const fullTimeFixture = {
 									passes: {
 										total: 43,
 										key: 1,
-										accuracy: '33',
+										accuracy: '31',
 									},
 									tackles: {
-										total: 1,
-										blocks: null,
-										interceptions: 3,
-									},
-									duels: {
-										total: 10,
-										won: 3,
-									},
-									dribbles: {
-										attempts: null,
-										success: null,
-										past: null,
-									},
-									fouls: {
-										drawn: 1,
-										committed: 2,
-									},
-									cards: {
-										yellow: 0,
-										red: 0,
-									},
-									penalty: {
-										won: null,
-										commited: null,
-										scored: 0,
-										missed: 1,
-										saved: null,
-									},
-								},
-							],
-						},
-						{
-							player: {
-								id: 20510,
-								name: 'David Ball',
-								photo:
-									'https://media-5.api-sports.io/football/players/20510.png',
-							},
-							statistics: [
-								{
-									games: {
-										minutes: 73,
-										number: 10,
-										position: 'F',
-										rating: '6.6',
-										captain: false,
-										substitute: false,
-									},
-									offsides: null,
-									shots: {
-										total: 2,
-										on: 2,
-									},
-									goals: {
 										total: null,
-										conceded: 0,
-										assists: null,
-										saves: null,
-									},
-									passes: {
-										total: 23,
-										key: 1,
-										accuracy: '19',
-									},
-									tackles: {
-										total: 1,
 										blocks: null,
 										interceptions: null,
 									},
 									duels: {
-										total: 6,
-										won: 4,
+										total: 14,
+										won: 6,
 									},
 									dribbles: {
-										attempts: null,
-										success: null,
+										attempts: 3,
+										success: 1,
 										past: 1,
 									},
 									fouls: {
-										drawn: 2,
+										drawn: 1,
 										committed: null,
 									},
 									cards: {
@@ -1712,81 +1697,16 @@ export const fullTimeFixture = {
 						},
 						{
 							player: {
-								id: 40298,
-								name: 'Oskar Zawada',
+								id: 24975,
+								name: 'Philipp Pentke',
 								photo:
-									'https://media-1.api-sports.io/football/players/40298.png',
-							},
-							statistics: [
-								{
-									games: {
-										minutes: 80,
-										number: 9,
-										position: 'F',
-										rating: '7.3',
-										captain: false,
-										substitute: false,
-									},
-									offsides: null,
-									shots: {
-										total: 2,
-										on: 1,
-									},
-									goals: {
-										total: 1,
-										conceded: 0,
-										assists: null,
-										saves: null,
-									},
-									passes: {
-										total: 13,
-										key: null,
-										accuracy: '10',
-									},
-									tackles: {
-										total: 1,
-										blocks: 1,
-										interceptions: 1,
-									},
-									duels: {
-										total: 9,
-										won: 2,
-									},
-									dribbles: {
-										attempts: 1,
-										success: null,
-										past: null,
-									},
-									fouls: {
-										drawn: null,
-										committed: 3,
-									},
-									cards: {
-										yellow: 0,
-										red: 0,
-									},
-									penalty: {
-										won: null,
-										commited: null,
-										scored: 0,
-										missed: 0,
-										saved: null,
-									},
-								},
-							],
-						},
-						{
-							player: {
-								id: 94360,
-								name: 'Alex Paulsen',
-								photo:
-									'https://media-5.api-sports.io/football/players/94360.png',
+									'https://media-2.api-sports.io/football/players/24975.png',
 							},
 							statistics: [
 								{
 									games: {
 										minutes: null,
-										number: 40,
+										number: 12,
 										position: 'G',
 										rating: null,
 										captain: false,
@@ -1842,16 +1762,145 @@ export const fullTimeFixture = {
 						},
 						{
 							player: {
-								id: 178330,
-								name: 'Joshua Laws',
+								id: 709,
+								name: 'Pavel Kadeřábek',
+								photo: 'https://media-5.api-sports.io/football/players/709.png',
+							},
+							statistics: [
+								{
+									games: {
+										minutes: 8,
+										number: 3,
+										position: 'D',
+										rating: '6.7',
+										captain: false,
+										substitute: true,
+									},
+									offsides: null,
+									shots: {
+										total: null,
+										on: null,
+									},
+									goals: {
+										total: null,
+										conceded: 0,
+										assists: null,
+										saves: null,
+									},
+									passes: {
+										total: 8,
+										key: null,
+										accuracy: '5',
+									},
+									tackles: {
+										total: null,
+										blocks: null,
+										interceptions: null,
+									},
+									duels: {
+										total: 2,
+										won: 1,
+									},
+									dribbles: {
+										attempts: null,
+										success: null,
+										past: null,
+									},
+									fouls: {
+										drawn: 1,
+										committed: null,
+									},
+									cards: {
+										yellow: 0,
+										red: 0,
+									},
+									penalty: {
+										won: null,
+										commited: null,
+										scored: 0,
+										missed: 0,
+										saved: null,
+									},
+								},
+							],
+						},
+						{
+							player: {
+								id: 334353,
+								name: 'Joshua Quarshie',
 								photo:
-									'https://media-4.api-sports.io/football/players/178330.png',
+									'https://media-6.api-sports.io/football/players/334353.png',
+							},
+							statistics: [
+								{
+									games: {
+										minutes: 1,
+										number: 48,
+										position: 'D',
+										rating: null,
+										captain: false,
+										substitute: true,
+									},
+									offsides: null,
+									shots: {
+										total: null,
+										on: null,
+									},
+									goals: {
+										total: null,
+										conceded: 0,
+										assists: null,
+										saves: null,
+									},
+									passes: {
+										total: 1,
+										key: null,
+										accuracy: null,
+									},
+									tackles: {
+										total: null,
+										blocks: null,
+										interceptions: null,
+									},
+									duels: {
+										total: null,
+										won: null,
+									},
+									dribbles: {
+										attempts: null,
+										success: null,
+										past: null,
+									},
+									fouls: {
+										drawn: null,
+										committed: null,
+									},
+									cards: {
+										yellow: 0,
+										red: 0,
+									},
+									penalty: {
+										won: null,
+										commited: null,
+										scored: 0,
+										missed: 0,
+										saved: null,
+									},
+								},
+							],
+						},
+						{
+							player: {
+								id: 262845,
+								name: 'Eduardo Quaresma',
+								photo:
+									'https://media-6.api-sports.io/football/players/262845.png',
 							},
 							statistics: [
 								{
 									games: {
 										minutes: null,
-										number: 21,
+										number: 26,
 										position: 'D',
 										rating: null,
 										captain: false,
@@ -1907,16 +1956,16 @@ export const fullTimeFixture = {
 						},
 						{
 							player: {
-								id: 6934,
-								name: 'Alex Rufer',
+								id: 24932,
+								name: 'Finn Ole Becker',
 								photo:
-									'https://media-5.api-sports.io/football/players/6934.png',
+									'https://media-6.api-sports.io/football/players/24932.png',
 							},
 							statistics: [
 								{
 									games: {
-										minutes: 5,
-										number: 14,
+										minutes: null,
+										number: 20,
 										position: 'M',
 										rating: null,
 										captain: false,
@@ -1934,9 +1983,9 @@ export const fullTimeFixture = {
 										saves: null,
 									},
 									passes: {
-										total: 2,
+										total: null,
 										key: null,
-										accuracy: '2',
+										accuracy: null,
 									},
 									tackles: {
 										total: null,
@@ -1944,8 +1993,8 @@ export const fullTimeFixture = {
 										interceptions: null,
 									},
 									duels: {
-										total: 2,
-										won: 2,
+										total: null,
+										won: null,
 									},
 									dribbles: {
 										attempts: null,
@@ -1953,7 +2002,7 @@ export const fullTimeFixture = {
 										past: null,
 									},
 									fouls: {
-										drawn: 2,
+										drawn: null,
 										committed: null,
 									},
 									cards: {
@@ -1972,18 +2021,18 @@ export const fullTimeFixture = {
 						},
 						{
 							player: {
-								id: 179856,
-								name: 'Benjamin Old',
+								id: 328262,
+								name: 'Muhammed Damar',
 								photo:
-									'https://media-1.api-sports.io/football/players/179856.png',
+									'https://media-2.api-sports.io/football/players/328262.png',
 							},
 							statistics: [
 								{
 									games: {
-										minutes: 15,
-										number: 8,
+										minutes: null,
+										number: 35,
 										position: 'M',
-										rating: '6.9',
+										rating: null,
 										captain: false,
 										substitute: true,
 									},
@@ -1999,12 +2048,141 @@ export const fullTimeFixture = {
 										saves: null,
 									},
 									passes: {
-										total: 7,
-										key: 2,
-										accuracy: '5',
+										total: null,
+										key: null,
+										accuracy: null,
 									},
 									tackles: {
 										total: null,
+										blocks: null,
+										interceptions: null,
+									},
+									duels: {
+										total: null,
+										won: null,
+									},
+									dribbles: {
+										attempts: null,
+										success: null,
+										past: null,
+									},
+									fouls: {
+										drawn: null,
+										committed: null,
+									},
+									cards: {
+										yellow: 0,
+										red: 0,
+									},
+									penalty: {
+										won: null,
+										commited: null,
+										scored: 0,
+										missed: 0,
+										saved: null,
+									},
+								},
+							],
+						},
+						{
+							player: {
+								id: 325975,
+								name: 'Tom Bischof',
+								photo:
+									'https://media-5.api-sports.io/football/players/325975.png',
+							},
+							statistics: [
+								{
+									games: {
+										minutes: null,
+										number: 39,
+										position: 'M',
+										rating: null,
+										captain: false,
+										substitute: true,
+									},
+									offsides: null,
+									shots: {
+										total: null,
+										on: null,
+									},
+									goals: {
+										total: null,
+										conceded: 0,
+										assists: null,
+										saves: null,
+									},
+									passes: {
+										total: null,
+										key: null,
+										accuracy: null,
+									},
+									tackles: {
+										total: null,
+										blocks: null,
+										interceptions: null,
+									},
+									duels: {
+										total: null,
+										won: null,
+									},
+									dribbles: {
+										attempts: null,
+										success: null,
+										past: null,
+									},
+									fouls: {
+										drawn: null,
+										committed: null,
+									},
+									cards: {
+										yellow: 0,
+										red: 0,
+									},
+									penalty: {
+										won: null,
+										commited: null,
+										scored: 0,
+										missed: 0,
+										saved: null,
+									},
+								},
+							],
+						},
+						{
+							player: {
+								id: 22,
+								name: 'Jacob Bruun Larsen',
+								photo: 'https://media-2.api-sports.io/football/players/22.png',
+							},
+							statistics: [
+								{
+									games: {
+										minutes: 16,
+										number: 7,
+										position: 'F',
+										rating: '6.7',
+										captain: false,
+										substitute: true,
+									},
+									offsides: 1,
+									shots: {
+										total: null,
+										on: null,
+									},
+									goals: {
+										total: null,
+										conceded: 0,
+										assists: null,
+										saves: null,
+									},
+									passes: {
+										total: 6,
+										key: null,
+										accuracy: '5',
+									},
+									tackles: {
+										total: 1,
 										blocks: null,
 										interceptions: null,
 									},
@@ -2013,136 +2191,6 @@ export const fullTimeFixture = {
 										won: 1,
 									},
 									dribbles: {
-										attempts: 1,
-										success: 1,
-										past: null,
-									},
-									fouls: {
-										drawn: null,
-										committed: null,
-									},
-									cards: {
-										yellow: 0,
-										red: 0,
-									},
-									penalty: {
-										won: null,
-										commited: null,
-										scored: 0,
-										missed: 0,
-										saved: null,
-									},
-								},
-							],
-						},
-						{
-							player: {
-								id: 6865,
-								name: 'Kosta Barbarouses',
-								photo:
-									'https://media-1.api-sports.io/football/players/6865.png',
-							},
-							statistics: [
-								{
-									games: {
-										minutes: 22,
-										number: 7,
-										position: 'F',
-										rating: '6',
-										captain: false,
-										substitute: true,
-									},
-									offsides: null,
-									shots: {
-										total: 2,
-										on: 2,
-									},
-									goals: {
-										total: null,
-										conceded: 0,
-										assists: null,
-										saves: null,
-									},
-									passes: {
-										total: 13,
-										key: null,
-										accuracy: '11',
-									},
-									tackles: {
-										total: null,
-										blocks: null,
-										interceptions: null,
-									},
-									duels: {
-										total: 1,
-										won: null,
-									},
-									dribbles: {
-										attempts: null,
-										success: null,
-										past: null,
-									},
-									fouls: {
-										drawn: null,
-										committed: 1,
-									},
-									cards: {
-										yellow: 0,
-										red: 0,
-									},
-									penalty: {
-										won: null,
-										commited: null,
-										scored: 0,
-										missed: 0,
-										saved: null,
-									},
-								},
-							],
-						},
-						{
-							player: {
-								id: 56321,
-								name: 'Nicholas Pennington',
-								photo:
-									'https://media-5.api-sports.io/football/players/56321.png',
-							},
-							statistics: [
-								{
-									games: {
-										minutes: 5,
-										number: 13,
-										position: 'M',
-										rating: null,
-										captain: false,
-										substitute: true,
-									},
-									offsides: null,
-									shots: {
-										total: null,
-										on: null,
-									},
-									goals: {
-										total: null,
-										conceded: 0,
-										assists: null,
-										saves: null,
-									},
-									passes: {
-										total: 1,
-										key: null,
-										accuracy: '1',
-									},
-									tackles: {
-										total: null,
-										blocks: null,
-										interceptions: null,
-									},
-									duels: {
-										total: null,
-										won: null,
-									},
-									dribbles: {
 										attempts: null,
 										success: null,
 										past: null,
@@ -2167,18 +2215,18 @@ export const fullTimeFixture = {
 						},
 						{
 							player: {
-								id: 6938,
-								name: 'Ben Waine',
+								id: 202501,
+								name: 'Fisnik Asllani',
 								photo:
-									'https://media-2.api-sports.io/football/players/6938.png',
+									'https://media-2.api-sports.io/football/players/202501.png',
 							},
 							statistics: [
 								{
 									games: {
-										minutes: 15,
-										number: 18,
+										minutes: 16,
+										number: 44,
 										position: 'F',
-										rating: '6.3',
+										rating: '6.7',
 										captain: false,
 										substitute: true,
 									},
@@ -2194,17 +2242,17 @@ export const fullTimeFixture = {
 										saves: null,
 									},
 									passes: {
-										total: 1,
-										key: null,
-										accuracy: '1',
+										total: 4,
+										key: 1,
+										accuracy: '2',
 									},
 									tackles: {
 										total: null,
 										blocks: null,
-										interceptions: null,
+										interceptions: 1,
 									},
 									duels: {
-										total: 2,
+										total: null,
 										won: null,
 									},
 									dribbles: {
@@ -2234,26 +2282,26 @@ export const fullTimeFixture = {
 				},
 				{
 					team: {
-						id: 948,
-						name: 'Adelaide United',
-						logo: 'https://media-5.api-sports.io/football/teams/948.png',
-						update: '2022-12-17T10:30:20+00:00',
+						id: 161,
+						name: 'VfL Wolfsburg',
+						logo: 'https://media-1.api-sports.io/football/teams/161.png',
+						update: '2022-11-15T04:20:32+00:00',
 					},
 					players: [
 						{
 							player: {
-								id: 7029,
-								name: 'Joe Gauci',
+								id: 2918,
+								name: 'Koen Casteels',
 								photo:
-									'https://media-6.api-sports.io/football/players/7029.png',
+									'https://media-5.api-sports.io/football/players/2918.png',
 							},
 							statistics: [
 								{
 									games: {
-										minutes: 95,
-										number: 46,
+										minutes: 90,
+										number: 1,
 										position: 'G',
-										rating: '7.2',
+										rating: '7.9',
 										captain: false,
 										substitute: false,
 									},
@@ -2264,14 +2312,14 @@ export const fullTimeFixture = {
 									},
 									goals: {
 										total: null,
-										conceded: 3,
+										conceded: 1,
 										assists: null,
-										saves: 4,
+										saves: 7,
 									},
 									passes: {
-										total: 23,
+										total: 45,
 										key: null,
-										accuracy: '15',
+										accuracy: '19',
 									},
 									tackles: {
 										total: null,
@@ -2279,8 +2327,8 @@ export const fullTimeFixture = {
 										interceptions: null,
 									},
 									duels: {
-										total: 2,
-										won: 2,
+										total: null,
+										won: null,
 									},
 									dribbles: {
 										attempts: null,
@@ -2288,7 +2336,7 @@ export const fullTimeFixture = {
 										past: null,
 									},
 									fouls: {
-										drawn: 1,
+										drawn: null,
 										committed: null,
 									},
 									cards: {
@@ -2300,25 +2348,25 @@ export const fullTimeFixture = {
 										commited: null,
 										scored: 0,
 										missed: 0,
-										saved: 1,
+										saved: 0,
 									},
 								},
 							],
 						},
 						{
 							player: {
-								id: 47333,
-								name: 'Javi López',
+								id: 177618,
+								name: 'Kilian Fischer',
 								photo:
-									'https://media-5.api-sports.io/football/players/47333.png',
+									'https://media-5.api-sports.io/football/players/177618.png',
 							},
 							statistics: [
 								{
 									games: {
-										minutes: 95,
-										number: 21,
+										minutes: 89,
+										number: 2,
 										position: 'D',
-										rating: '6.7',
+										rating: '6.5',
 										captain: false,
 										substitute: false,
 									},
@@ -2334,157 +2382,27 @@ export const fullTimeFixture = {
 										saves: null,
 									},
 									passes: {
-										total: 47,
-										key: 1,
-										accuracy: '41',
+										total: 36,
+										key: null,
+										accuracy: '27',
 									},
 									tackles: {
-										total: 3,
+										total: null,
 										blocks: null,
-										interceptions: null,
+										interceptions: 2,
 									},
 									duels: {
 										total: 9,
-										won: 6,
+										won: 4,
 									},
 									dribbles: {
-										attempts: null,
-										success: null,
-										past: null,
+										attempts: 1,
+										success: 1,
+										past: 1,
 									},
 									fouls: {
 										drawn: 2,
 										committed: 2,
-									},
-									cards: {
-										yellow: 0,
-										red: 0,
-									},
-									penalty: {
-										won: null,
-										commited: null,
-										scored: 0,
-										missed: 0,
-										saved: null,
-									},
-								},
-							],
-						},
-						{
-							player: {
-								id: 87837,
-								name: 'Lachlan Barr',
-								photo:
-									'https://media-1.api-sports.io/football/players/87837.png',
-							},
-							statistics: [
-								{
-									games: {
-										minutes: 95,
-										number: 13,
-										position: 'D',
-										rating: '6.3',
-										captain: false,
-										substitute: false,
-									},
-									offsides: null,
-									shots: {
-										total: null,
-										on: null,
-									},
-									goals: {
-										total: null,
-										conceded: 0,
-										assists: null,
-										saves: null,
-									},
-									passes: {
-										total: 60,
-										key: null,
-										accuracy: '50',
-									},
-									tackles: {
-										total: 1,
-										blocks: 2,
-										interceptions: 2,
-									},
-									duels: {
-										total: 2,
-										won: 1,
-									},
-									dribbles: {
-										attempts: null,
-										success: null,
-										past: 1,
-									},
-									fouls: {
-										drawn: null,
-										committed: 1,
-									},
-									cards: {
-										yellow: 0,
-										red: 0,
-									},
-									penalty: {
-										won: null,
-										commited: 1,
-										scored: 0,
-										missed: 0,
-										saved: null,
-									},
-								},
-							],
-						},
-						{
-							player: {
-								id: 337589,
-								name: 'Alexandar Popovic',
-								photo:
-									'https://media-5.api-sports.io/football/players/337589.png',
-							},
-							statistics: [
-								{
-									games: {
-										minutes: 95,
-										number: 41,
-										position: 'D',
-										rating: '6.9',
-										captain: false,
-										substitute: false,
-									},
-									offsides: 1,
-									shots: {
-										total: null,
-										on: null,
-									},
-									goals: {
-										total: null,
-										conceded: 0,
-										assists: null,
-										saves: null,
-									},
-									passes: {
-										total: 73,
-										key: null,
-										accuracy: '65',
-									},
-									tackles: {
-										total: 1,
-										blocks: 2,
-										interceptions: null,
-									},
-									duels: {
-										total: 5,
-										won: 3,
-									},
-									dribbles: {
-										attempts: null,
-										success: null,
-										past: 1,
-									},
-									fouls: {
-										drawn: null,
-										committed: 1,
 									},
 									cards: {
 										yellow: 1,
@@ -2502,25 +2420,25 @@ export const fullTimeFixture = {
 						},
 						{
 							player: {
-								id: 6881,
-								name: 'Ryan Kitto',
+								id: 1408,
+								name: 'Sebastiaan Bornauw',
 								photo:
-									'https://media-1.api-sports.io/football/players/6881.png',
+									'https://media-6.api-sports.io/football/players/1408.png',
 							},
 							statistics: [
 								{
 									games: {
-										minutes: 95,
-										number: 7,
+										minutes: 90,
+										number: 3,
 										position: 'D',
-										rating: '6.2',
+										rating: '6.3',
 										captain: false,
 										substitute: false,
 									},
 									offsides: null,
 									shots: {
-										total: null,
-										on: null,
+										total: 1,
+										on: 1,
 									},
 									goals: {
 										total: null,
@@ -2529,30 +2447,30 @@ export const fullTimeFixture = {
 										saves: null,
 									},
 									passes: {
-										total: 35,
+										total: 32,
 										key: 1,
-										accuracy: '27',
+										accuracy: '24',
 									},
 									tackles: {
-										total: 1,
-										blocks: 1,
-										interceptions: 1,
+										total: null,
+										blocks: null,
+										interceptions: null,
 									},
 									duels: {
-										total: 9,
-										won: 4,
+										total: 5,
+										won: 2,
 									},
 									dribbles: {
-										attempts: 1,
+										attempts: null,
 										success: null,
-										past: 2,
+										past: null,
 									},
 									fouls: {
 										drawn: null,
-										committed: null,
+										committed: 2,
 									},
 									cards: {
-										yellow: 0,
+										yellow: 1,
 										red: 0,
 									},
 									penalty: {
@@ -2567,18 +2485,83 @@ export const fullTimeFixture = {
 						},
 						{
 							player: {
-								id: 6879,
-								name: "Louis D'Arrigo",
+								id: 152849,
+								name: 'Micky van de Ven',
 								photo:
-									'https://media-4.api-sports.io/football/players/6879.png',
+									'https://media-1.api-sports.io/football/players/152849.png',
 							},
 							statistics: [
 								{
 									games: {
-										minutes: 95,
+										minutes: 90,
+										number: 5,
+										position: 'D',
+										rating: '6.2',
+										captain: false,
+										substitute: false,
+									},
+									offsides: 1,
+									shots: {
+										total: null,
+										on: null,
+									},
+									goals: {
+										total: null,
+										conceded: 0,
+										assists: null,
+										saves: null,
+									},
+									passes: {
+										total: 27,
+										key: null,
+										accuracy: '22',
+									},
+									tackles: {
+										total: null,
+										blocks: null,
+										interceptions: null,
+									},
+									duels: {
+										total: 4,
+										won: 1,
+									},
+									dribbles: {
+										attempts: null,
+										success: null,
+										past: null,
+									},
+									fouls: {
+										drawn: null,
+										committed: 2,
+									},
+									cards: {
+										yellow: 1,
+										red: 0,
+									},
+									penalty: {
+										won: null,
+										commited: null,
+										scored: 0,
+										missed: 0,
+										saved: null,
+									},
+								},
+							],
+						},
+						{
+							player: {
+								id: 25208,
+								name: 'Paulo Otávio',
+								photo:
+									'https://media-5.api-sports.io/football/players/25208.png',
+							},
+							statistics: [
+								{
+									games: {
+										minutes: 90,
 										number: 6,
-										position: 'M',
-										rating: '7',
+										position: 'D',
+										rating: '7.2',
 										captain: false,
 										substitute: false,
 									},
@@ -2594,22 +2577,22 @@ export const fullTimeFixture = {
 										saves: null,
 									},
 									passes: {
-										total: 45,
-										key: null,
-										accuracy: '40',
+										total: 28,
+										key: 1,
+										accuracy: '21',
 									},
 									tackles: {
-										total: 4,
+										total: 3,
 										blocks: null,
-										interceptions: 2,
+										interceptions: 1,
 									},
 									duels: {
-										total: 7,
+										total: 8,
 										won: 5,
 									},
 									dribbles: {
-										attempts: null,
-										success: null,
+										attempts: 1,
+										success: 1,
 										past: null,
 									},
 									fouls: {
@@ -2632,53 +2615,117 @@ export const fullTimeFixture = {
 						},
 						{
 							player: {
-								id: 6812,
-								name: 'Juande Prados',
+								id: 25917,
+								name: 'Ridle Baku',
 								photo:
-									'https://media-1.api-sports.io/football/players/6812.png',
+									'https://media-6.api-sports.io/football/players/25917.png',
 							},
 							statistics: [
 								{
 									games: {
-										minutes: 95,
-										number: 28,
+										minutes: 90,
+										number: 20,
 										position: 'M',
-										rating: '6.3',
+										rating: '7.6',
 										captain: false,
 										substitute: false,
 									},
-									offsides: null,
+									offsides: 1,
 									shots: {
-										total: null,
-										on: null,
+										total: 2,
+										on: 2,
 									},
 									goals: {
-										total: null,
+										total: 1,
 										conceded: 0,
 										assists: null,
 										saves: null,
 									},
 									passes: {
-										total: 68,
-										key: null,
-										accuracy: '60',
+										total: 18,
+										key: 1,
+										accuracy: '11',
 									},
 									tackles: {
-										total: 1,
+										total: null,
 										blocks: null,
 										interceptions: null,
 									},
 									duels: {
-										total: 6,
-										won: 3,
+										total: 11,
+										won: 7,
 									},
 									dribbles: {
-										attempts: null,
-										success: null,
-										past: 1,
+										attempts: 3,
+										success: 2,
+										past: null,
 									},
 									fouls: {
 										drawn: 2,
+										committed: null,
+									},
+									cards: {
+										yellow: 0,
+										red: 0,
+									},
+									penalty: {
+										won: null,
+										commited: null,
+										scored: 0,
+										missed: 0,
+										saved: null,
+									},
+								},
+							],
+						},
+						{
+							player: {
+								id: 637,
+								name: 'Felix Nmecha',
+								photo: 'https://media-4.api-sports.io/football/players/637.png',
+							},
+							statistics: [
+								{
+									games: {
+										minutes: 89,
+										number: 22,
+										position: 'M',
+										rating: '6.9',
+										captain: false,
+										substitute: false,
+									},
+									offsides: null,
+									shots: {
+										total: 1,
+										on: null,
+									},
+									goals: {
+										total: null,
+										conceded: 0,
+										assists: 1,
+										saves: null,
+									},
+									passes: {
+										total: 27,
+										key: 1,
+										accuracy: '16',
+									},
+									tackles: {
+										total: 1,
+										blocks: null,
+										interceptions: 1,
+									},
+									duels: {
+										total: 12,
+										won: 8,
+									},
+									dribbles: {
+										attempts: 1,
+										success: null,
+										past: null,
+									},
+									fouls: {
+										drawn: 3,
 										committed: 2,
 									},
 									cards: {
@@ -2697,24 +2744,24 @@ export const fullTimeFixture = {
 						},
 						{
 							player: {
-								id: 6880,
-								name: 'Ben Halloran',
+								id: 25408,
+								name: 'Maximilian Arnold',
 								photo:
-									'https://media-2.api-sports.io/football/players/6880.png',
+									'https://media-1.api-sports.io/football/players/25408.png',
 							},
 							statistics: [
 								{
 									games: {
-										minutes: 51,
-										number: 26,
+										minutes: 90,
+										number: 27,
 										position: 'M',
-										rating: '5',
-										captain: false,
+										rating: '7.5',
+										captain: true,
 										substitute: false,
 									},
 									offsides: null,
 									shots: {
-										total: null,
+										total: 1,
 										on: null,
 									},
 									goals: {
@@ -2724,17 +2771,82 @@ export const fullTimeFixture = {
 										saves: null,
 									},
 									passes: {
-										total: 25,
+										total: 36,
+										key: 1,
+										accuracy: '26',
+									},
+									tackles: {
+										total: 3,
+										blocks: 1,
+										interceptions: null,
+									},
+									duels: {
+										total: 8,
+										won: 3,
+									},
+									dribbles: {
+										attempts: null,
+										success: null,
+										past: null,
+									},
+									fouls: {
+										drawn: null,
+										committed: 1,
+									},
+									cards: {
+										yellow: 0,
+										red: 0,
+									},
+									penalty: {
+										won: null,
+										commited: null,
+										scored: 0,
+										missed: 0,
+										saved: null,
+									},
+								},
+							],
+						},
+						{
+							player: {
+								id: 25400,
+								name: 'Yannick Gerhardt',
+								photo:
+									'https://media-2.api-sports.io/football/players/25400.png',
+							},
+							statistics: [
+								{
+									games: {
+										minutes: 65,
+										number: 31,
+										position: 'M',
+										rating: '6.2',
+										captain: false,
+										substitute: false,
+									},
+									offsides: null,
+									shots: {
+										total: 1,
+										on: null,
+									},
+									goals: {
+										total: null,
+										conceded: 0,
+										assists: null,
+										saves: null,
+									},
+									passes: {
+										total: 21,
 										key: null,
-										accuracy: '16',
+										accuracy: '12',
 									},
 									tackles: {
 										total: 1,
-										blocks: null,
-										interceptions: 1,
+										blocks: 1,
+										interceptions: null,
 									},
 									duels: {
-										total: 12,
+										total: 7,
 										won: 3,
 									},
 									dribbles: {
@@ -2744,11 +2856,11 @@ export const fullTimeFixture = {
 									},
 									fouls: {
 										drawn: 1,
-										committed: 4,
+										committed: null,
 									},
 									cards: {
-										yellow: 2,
-										red: 1,
+										yellow: 0,
+										red: 0,
 									},
 									penalty: {
 										won: null,
@@ -2762,18 +2874,18 @@ export const fullTimeFixture = {
 						},
 						{
 							player: {
-								id: 338007,
-								name: 'Ethan Alagich',
+								id: 40560,
+								name: 'Jakub Kamiński',
 								photo:
-									'https://media-4.api-sports.io/football/players/338007.png',
+									'https://media-4.api-sports.io/football/players/40560.png',
 							},
 							statistics: [
 								{
 									games: {
-										minutes: 63,
-										number: 55,
+										minutes: 65,
+										number: 16,
 										position: 'M',
-										rating: '6.3',
+										rating: '6.5',
 										captain: false,
 										substitute: false,
 									},
@@ -2789,152 +2901,22 @@ export const fullTimeFixture = {
 										saves: null,
 									},
 									passes: {
-										total: 14,
+										total: 15,
 										key: null,
-										accuracy: '9',
+										accuracy: '12',
 									},
 									tackles: {
-										total: null,
+										total: 1,
 										blocks: null,
 										interceptions: null,
 									},
 									duels: {
-										total: 8,
-										won: 4,
+										total: 3,
+										won: 1,
 									},
 									dribbles: {
 										attempts: null,
 										success: null,
-										past: 1,
-									},
-									fouls: {
-										drawn: 3,
-										committed: 1,
-									},
-									cards: {
-										yellow: 0,
-										red: 0,
-									},
-									penalty: {
-										won: null,
-										commited: null,
-										scored: 0,
-										missed: 0,
-										saved: null,
-									},
-								},
-							],
-						},
-						{
-							player: {
-								id: 6888,
-								name: 'Craig Goodwin',
-								photo:
-									'https://media-1.api-sports.io/football/players/6888.png',
-							},
-							statistics: [
-								{
-									games: {
-										minutes: 95,
-										number: 11,
-										position: 'M',
-										rating: '7.9',
-										captain: true,
-										substitute: false,
-									},
-									offsides: null,
-									shots: {
-										total: 1,
-										on: 1,
-									},
-									goals: {
-										total: 1,
-										conceded: 0,
-										assists: null,
-										saves: null,
-									},
-									passes: {
-										total: 28,
-										key: 1,
-										accuracy: '25',
-									},
-									tackles: {
-										total: 3,
-										blocks: null,
-										interceptions: 1,
-									},
-									duels: {
-										total: 8,
-										won: 6,
-									},
-									dribbles: {
-										attempts: null,
-										success: null,
-										past: null,
-									},
-									fouls: {
-										drawn: 2,
-										committed: 1,
-									},
-									cards: {
-										yellow: 0,
-										red: 0,
-									},
-									penalty: {
-										won: null,
-										commited: null,
-										scored: 0,
-										missed: 0,
-										saved: null,
-									},
-								},
-							],
-						},
-						{
-							player: {
-								id: 33145,
-								name: 'Hiroshi Ibusuki',
-								photo:
-									'https://media-6.api-sports.io/football/players/33145.png',
-							},
-							statistics: [
-								{
-									games: {
-										minutes: 80,
-										number: 9,
-										position: 'F',
-										rating: '7',
-										captain: false,
-										substitute: false,
-									},
-									offsides: null,
-									shots: {
-										total: 3,
-										on: 2,
-									},
-									goals: {
-										total: null,
-										conceded: 0,
-										assists: null,
-										saves: null,
-									},
-									passes: {
-										total: 14,
-										key: null,
-										accuracy: '10',
-									},
-									tackles: {
-										total: null,
-										blocks: 1,
-										interceptions: null,
-									},
-									duels: {
-										total: 7,
-										won: 2,
-									},
-									dribbles: {
-										attempts: 1,
-										success: 1,
 										past: null,
 									},
 									fouls: {
@@ -2957,16 +2939,81 @@ export const fullTimeFixture = {
 						},
 						{
 							player: {
-								id: 6895,
-								name: 'James Delianov',
+								id: 81573,
+								name: 'Omar Marmoush',
 								photo:
-									'https://media-6.api-sports.io/football/players/6895.png',
+									'https://media-2.api-sports.io/football/players/81573.png',
+							},
+							statistics: [
+								{
+									games: {
+										minutes: 12,
+										number: 33,
+										position: 'F',
+										rating: '6.9',
+										captain: false,
+										substitute: false,
+									},
+									offsides: null,
+									shots: {
+										total: null,
+										on: null,
+									},
+									goals: {
+										total: null,
+										conceded: 0,
+										assists: null,
+										saves: null,
+									},
+									passes: {
+										total: 4,
+										key: null,
+										accuracy: '3',
+									},
+									tackles: {
+										total: 1,
+										blocks: null,
+										interceptions: null,
+									},
+									duels: {
+										total: 4,
+										won: 3,
+									},
+									dribbles: {
+										attempts: 1,
+										success: 1,
+										past: null,
+									},
+									fouls: {
+										drawn: 1,
+										committed: null,
+									},
+									cards: {
+										yellow: 0,
+										red: 0,
+									},
+									penalty: {
+										won: null,
+										commited: null,
+										scored: 0,
+										missed: 0,
+										saved: null,
+									},
+								},
+							],
+						},
+						{
+							player: {
+								id: 261210,
+								name: 'Philipp Schulze',
+								photo:
+									'https://media-1.api-sports.io/football/players/261210.png',
 							},
 							statistics: [
 								{
 									games: {
 										minutes: null,
-										number: 1,
+										number: 35,
 										position: 'G',
 										rating: null,
 										captain: false,
@@ -3022,10 +3069,75 @@ export const fullTimeFixture = {
 						},
 						{
 							player: {
-								id: 34338,
-								name: 'Nick Ansell',
+								id: 25396,
+								name: 'Pavao Pervan',
 								photo:
-									'https://media-4.api-sports.io/football/players/34338.png',
+									'https://media-1.api-sports.io/football/players/25396.png',
+							},
+							statistics: [
+								{
+									games: {
+										minutes: null,
+										number: 12,
+										position: 'G',
+										rating: null,
+										captain: false,
+										substitute: true,
+									},
+									offsides: null,
+									shots: {
+										total: null,
+										on: null,
+									},
+									goals: {
+										total: null,
+										conceded: 0,
+										assists: null,
+										saves: null,
+									},
+									passes: {
+										total: null,
+										key: null,
+										accuracy: null,
+									},
+									tackles: {
+										total: null,
+										blocks: null,
+										interceptions: null,
+									},
+									duels: {
+										total: null,
+										won: null,
+									},
+									dribbles: {
+										attempts: null,
+										success: null,
+										past: null,
+									},
+									fouls: {
+										drawn: null,
+										committed: null,
+									},
+									cards: {
+										yellow: 0,
+										red: 0,
+									},
+									penalty: {
+										won: null,
+										commited: null,
+										scored: 0,
+										missed: 0,
+										saved: null,
+									},
+								},
+							],
+						},
+						{
+							player: {
+								id: 20995,
+								name: 'Maxence Lacroix',
+								photo:
+									'https://media-5.api-sports.io/football/players/20995.png',
 							},
 							statistics: [
 								{
@@ -3087,17 +3199,17 @@ export const fullTimeFixture = {
 						},
 						{
 							player: {
-								id: 297968,
-								name: 'Jonny Yull',
+								id: 25404,
+								name: 'Jérôme Roussillon',
 								photo:
-									'https://media-2.api-sports.io/football/players/297968.png',
+									'https://media-2.api-sports.io/football/players/25404.png',
 							},
 							statistics: [
 								{
 									games: {
-										minutes: null,
-										number: 37,
-										position: 'M',
+										minutes: 1,
+										number: 15,
+										position: 'D',
 										rating: null,
 										captain: false,
 										substitute: true,
@@ -3114,7 +3226,7 @@ export const fullTimeFixture = {
 										saves: null,
 									},
 									passes: {
-										total: null,
+										total: 1,
 										key: null,
 										accuracy: null,
 									},
@@ -3124,8 +3236,8 @@ export const fullTimeFixture = {
 										interceptions: null,
 									},
 									duels: {
-										total: null,
-										won: null,
+										total: 4,
+										won: 1,
 									},
 									dribbles: {
 										attempts: null,
@@ -3134,7 +3246,7 @@ export const fullTimeFixture = {
 									},
 									fouls: {
 										drawn: null,
-										committed: null,
+										committed: 1,
 									},
 									cards: {
 										yellow: 0,
@@ -3152,82 +3264,17 @@ export const fullTimeFixture = {
 						},
 						{
 							player: {
-								id: 154860,
-								name: 'Joshua Cavallo',
+								id: 25410,
+								name: 'Josuha Guilavogui',
 								photo:
-									'https://media-2.api-sports.io/football/players/154860.png',
+									'https://media-5.api-sports.io/football/players/25410.png',
 							},
 							statistics: [
 								{
 									games: {
-										minutes: null,
-										number: 27,
+										minutes: 25,
+										number: 29,
 										position: 'M',
-										rating: null,
-										captain: false,
-										substitute: true,
-									},
-									offsides: null,
-									shots: {
-										total: null,
-										on: null,
-									},
-									goals: {
-										total: null,
-										conceded: 0,
-										assists: null,
-										saves: null,
-									},
-									passes: {
-										total: null,
-										key: null,
-										accuracy: null,
-									},
-									tackles: {
-										total: null,
-										blocks: null,
-										interceptions: null,
-									},
-									duels: {
-										total: null,
-										won: null,
-									},
-									dribbles: {
-										attempts: null,
-										success: null,
-										past: null,
-									},
-									fouls: {
-										drawn: null,
-										committed: null,
-									},
-									cards: {
-										yellow: 0,
-										red: 0,
-									},
-									penalty: {
-										won: null,
-										commited: null,
-										scored: 0,
-										missed: 0,
-										saved: null,
-									},
-								},
-							],
-						},
-						{
-							player: {
-								id: 6887,
-								name: 'George Blackwood',
-								photo:
-									'https://media-2.api-sports.io/football/players/6887.png',
-							},
-							statistics: [
-								{
-									games: {
-										minutes: 15,
-										number: 14,
-										position: 'F',
 										rating: '6.6',
 										captain: false,
 										substitute: true,
@@ -3244,18 +3291,18 @@ export const fullTimeFixture = {
 										saves: null,
 									},
 									passes: {
-										total: 3,
+										total: 4,
 										key: null,
 										accuracy: '2',
 									},
 									tackles: {
-										total: null,
-										blocks: 1,
+										total: 1,
+										blocks: 2,
 										interceptions: null,
 									},
 									duels: {
-										total: null,
-										won: null,
+										total: 4,
+										won: 2,
 									},
 									dribbles: {
 										attempts: null,
@@ -3264,6 +3311,71 @@ export const fullTimeFixture = {
 									},
 									fouls: {
 										drawn: null,
+										committed: 1,
+									},
+									cards: {
+										yellow: 0,
+										red: 0,
+									},
+									penalty: {
+										won: null,
+										commited: null,
+										scored: 0,
+										missed: 0,
+										saved: null,
+									},
+								},
+							],
+						},
+						{
+							player: {
+								id: 30484,
+								name: 'Mattias Svanberg',
+								photo:
+									'https://media-2.api-sports.io/football/players/30484.png',
+							},
+							statistics: [
+								{
+									games: {
+										minutes: 78,
+										number: 32,
+										position: 'M',
+										rating: '6.6',
+										captain: false,
+										substitute: true,
+									},
+									offsides: null,
+									shots: {
+										total: null,
+										on: null,
+									},
+									goals: {
+										total: null,
+										conceded: 0,
+										assists: null,
+										saves: null,
+									},
+									passes: {
+										total: 17,
+										key: 1,
+										accuracy: '11',
+									},
+									tackles: {
+										total: 2,
+										blocks: 1,
+										interceptions: null,
+									},
+									duels: {
+										total: 12,
+										won: 7,
+									},
+									dribbles: {
+										attempts: 2,
+										success: 1,
+										past: 2,
+									},
+									fouls: {
+										drawn: 2,
 										committed: null,
 									},
 									cards: {
@@ -3282,16 +3394,16 @@ export const fullTimeFixture = {
 						},
 						{
 							player: {
-								id: 376675,
-								name: 'Panashe Madanha',
+								id: 342188,
+								name: 'Dženan Pejčinović',
 								photo:
-									'https://media-5.api-sports.io/football/players/376675.png',
+									'https://media-2.api-sports.io/football/players/342188.png',
 							},
 							statistics: [
 								{
 									games: {
 										minutes: null,
-										number: 36,
+										number: 18,
 										position: 'F',
 										rating: null,
 										captain: false,
@@ -3347,18 +3459,18 @@ export const fullTimeFixture = {
 						},
 						{
 							player: {
-								id: 338014,
-								name: 'Nestory Irankunda',
+								id: 26260,
+								name: 'Luca Waldschmidt',
 								photo:
-									'https://media-2.api-sports.io/football/players/338014.png',
+									'https://media-2.api-sports.io/football/players/26260.png',
 							},
 							statistics: [
 								{
 									games: {
-										minutes: 32,
-										number: 66,
+										minutes: 1,
+										number: 7,
 										position: 'F',
-										rating: '6.5',
+										rating: null,
 										captain: false,
 										substitute: true,
 									},
@@ -3374,9 +3486,73 @@ export const fullTimeFixture = {
 										saves: null,
 									},
 									passes: {
-										total: 9,
+										total: 1,
 										key: null,
-										accuracy: '8',
+										accuracy: null,
+									},
+									tackles: {
+										total: null,
+										blocks: null,
+										interceptions: null,
+									},
+									duels: {
+										total: 1,
+										won: null,
+									},
+									dribbles: {
+										attempts: 1,
+										success: null,
+										past: null,
+									},
+									fouls: {
+										drawn: null,
+										committed: null,
+									},
+									cards: {
+										yellow: 0,
+										red: 0,
+									},
+									penalty: {
+										won: null,
+										commited: null,
+										scored: 0,
+										missed: 0,
+										saved: null,
+									},
+								},
+							],
+						},
+						{
+							player: {
+								id: 24,
+								name: 'Maximilian Philipp',
+								photo: 'https://media-1.api-sports.io/football/players/24.png',
+							},
+							statistics: [
+								{
+									games: {
+										minutes: 25,
+										number: 17,
+										position: 'F',
+										rating: '6.7',
+										captain: false,
+										substitute: true,
+									},
+									offsides: null,
+									shots: {
+										total: null,
+										on: null,
+									},
+									goals: {
+										total: null,
+										conceded: 0,
+										assists: null,
+										saves: null,
+									},
+									passes: {
+										total: 2,
+										key: null,
+										accuracy: '1',
 									},
 									tackles: {
 										total: 1,
@@ -3384,20 +3560,20 @@ export const fullTimeFixture = {
 										interceptions: null,
 									},
 									duels: {
-										total: 8,
+										total: 5,
 										won: 3,
 									},
 									dribbles: {
 										attempts: 1,
 										success: null,
-										past: 1,
+										past: null,
 									},
 									fouls: {
 										drawn: 2,
-										committed: 1,
+										committed: null,
 									},
 									cards: {
-										yellow: 1,
+										yellow: 0,
 										red: 0,
 									},
 									penalty: {

@@ -13,15 +13,17 @@ import { firstHalfFixture } from '../utils/firstHalfFixture';
 import { halfTimeFixture } from '../utils/halfTimeFixture';
 import { secondHalfFixture } from '../utils/secondHalfFixture';
 import { fullTimeFixture } from '../utils/fullTimeFixture';
+import { fullTimeFixture2 } from '../utils/fullTimeFixture2';
 import { aetFixture } from '../utils/aetFixture';
 import { penFixture } from '../utils/penFixture';
 import { postponedFixture } from '../utils/postponedFixture';
 import { cancelledFixture } from '../utils/cancelledFixture';
+import Summary from './Summary';
 
 export default function MatchDetail() {
 	const { id } = useParams();
 
-	const fixture = secondHalfFixture?.response[0];
+	const fixture = fullTimeFixture?.response[0];
 
 	const [section, setSection] = useState('summary');
 
@@ -223,7 +225,7 @@ export default function MatchDetail() {
 						</button>
 					</div>
 					<div className='match-detail__section-box'>
-						{section === 'summary' && <>summary</>}
+						{section === 'summary' && <Summary match={fixture} />}
 						{section === 'stats' && <>stats</>}
 						{section === 'standings' && <>standings</>}
 					</div>
