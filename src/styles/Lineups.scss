@@ -1,0 +1,108 @@
+@use './variables.scss';
+
+.lineups {
+	&__formation {
+		display: flex;
+		flex-direction: row;
+		justify-content: space-between;
+		align-items: center;
+	}
+	&__formation,
+	&__starting-lineups-title,
+	&__substitutes-title {
+		margin: 0.75em 0;
+		padding: 0.5em 0.75em;
+		background-color: #e4e4e4;
+		border-radius: 10px;
+		p {
+			font-size: 1.2rem;
+			font-weight: bold;
+			text-align: center;
+			text-transform: uppercase;
+			color: variables.$font-color-less-darker;
+		}
+	}
+
+	&__starting-lineups,
+	&__substitutes {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		.lineups__home,
+		.lineups__away {
+			display: flex;
+			flex-direction: column;
+			.lineups__player {
+				display: flex;
+				align-items: center;
+				padding: 0.25em;
+				&-number-box {
+					display: flex;
+					align-items: center;
+					justify-content: start;
+					width: 22px;
+					height: 100%;
+					.lineups__player-number {
+						font-size: 1.3rem;
+						font-weight: bold;
+						color: variables.$font-color-dark;
+					}
+				}
+				.lineups__player-name {
+					font-size: 1.3rem;
+				}
+				.lineups__goalkeeper,
+				.lineups__captain {
+					font-size: 1.1rem;
+				}
+				.lineups__goalkeeper,
+				.lineups__captain {
+					font-weight: bold;
+				}
+				.lineups__player-name {
+					margin-right: 0.25em;
+				}
+			}
+		}
+		.lineups__away {
+			.lineups__player {
+				flex-direction: row-reverse;
+				justify-content: end;
+				&-number-box {
+					justify-content: end;
+				}
+				.lineups__player-name {
+					margin-right: 0;
+					margin-left: 0.25em;
+					text-align: right;
+				}
+			}
+		}
+	}
+}
+
+@media (min-width: 768px) {
+	.lineups {
+		&__starting-lineups,
+		&__substitutes {
+			.lineups__home,
+			.lineups__away {
+				.lineups__player {
+					padding: 0.3em 0;
+					&-number-box {
+						width: 24px;
+						.lineups__player-number {
+							font-size: 1.4rem;
+						}
+					}
+					.lineups__player-name {
+						font-size: 1.4rem;
+					}
+					.lineups__goalkeeper,
+					.lineups__captain {
+						font-size: 1.2rem;
+					}
+				}
+			}
+		}
+	}
+}

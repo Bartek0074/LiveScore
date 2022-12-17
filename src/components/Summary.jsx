@@ -9,7 +9,6 @@ export default function Summary({ match }) {
 	return (
 		<div className='summary'>
 			{match?.events.map((eventEl, id) => {
-				console.log(eventEl);
 				return (
 					<div
 						key={id}
@@ -19,7 +18,9 @@ export default function Summary({ match }) {
 								: 'summary__element summary__element--away'
 						}
 					>
-						<span className='summary__minute'>{eventEl?.time?.elapsed}'</span>
+						<div className='summary__minute-box'>
+							<span className='summary__minute'>{eventEl?.time?.elapsed}'</span>
+						</div>
 
 						{eventEl?.detail === 'Normal Goal' && (
 							<div className='summary__icon'>

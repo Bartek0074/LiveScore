@@ -19,6 +19,7 @@ import { penFixture } from '../utils/penFixture';
 import { postponedFixture } from '../utils/postponedFixture';
 import { cancelledFixture } from '../utils/cancelledFixture';
 import Summary from './Summary';
+import Lineups from './Lineups';
 
 export default function MatchDetail() {
 	const { id } = useParams();
@@ -29,7 +30,7 @@ export default function MatchDetail() {
 
 	const league = leagues.find((league) => league?.id === fixture?.league?.id);
 
-	console.log(fixture);
+	// console.log(fixture);
 
 	return (
 		<div className='match-detail match-wrapper'>
@@ -197,7 +198,7 @@ export default function MatchDetail() {
 									: 'match-detail__section-btn'
 							}
 						>
-							SUMMARY
+							Summary
 						</button>
 						<button
 							onClick={() => {
@@ -209,25 +210,25 @@ export default function MatchDetail() {
 									: 'match-detail__section-btn'
 							}
 						>
-							STATS
+							Stats
 						</button>
 						<button
 							onClick={() => {
-								setSection('standings');
+								setSection('lineups');
 							}}
 							className={
-								section === 'standings'
+								section === 'lineups'
 									? 'match-detail__section-btn match-detail__section-btn--active'
 									: 'match-detail__section-btn'
 							}
 						>
-							STANDINGS
+							Lineups
 						</button>
 					</div>
 					<div className='match-detail__section-box'>
 						{section === 'summary' && <Summary match={fixture} />}
 						{section === 'stats' && <>stats</>}
-						{section === 'standings' && <>standings</>}
+						{section === 'lineups' && <Lineups match={fixture} />}
 					</div>
 				</>
 			)}

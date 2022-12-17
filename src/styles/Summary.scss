@@ -6,12 +6,17 @@
 		align-items: center;
 		padding: 0.3em 0;
 		width: 100%;
-
-		.summary__minute {
-			margin-right: 0.5em;
-			font-size: 1.3rem;
-			font-weight: bold;
-			color: variables.$font-color-less-darker;
+		.summary__minute-box {
+			display: flex;
+			align-items: center;
+			justify-content: start;
+			width: 25px;
+			height: 100%;
+			.summary__minute {
+				font-size: 1.4rem;
+				font-weight: bold;
+				color: variables.$font-color-less-darker;
+			}
 		}
 
 		.summary__icon {
@@ -19,8 +24,9 @@
 			justify-content: center;
 			align-items: center;
 			border: 1px solid variables.$light-gray;
-			border-radius: 3px;
+			border-radius: 5px;
 			height: 20px;
+			min-width: 20px;
 			margin-right: 0.25em;
 			.icon {
 				font-size: 1.8rem;
@@ -74,9 +80,8 @@
 		&--away {
 			flex-direction: row-reverse;
 			justify-content: end;
-			.summary__minute {
-				margin-left: 0.5em;
-				margin-right: 0;
+			.summary__minute-box {
+				justify-content: end;
 			}
 			.summary__icon {
 				margin-right: 0;
@@ -94,14 +99,13 @@
 	.summary {
 		&__element {
 			padding: 0.4em 0;
-			.summary__minute {
-				margin-right: 0.75em;
-				font-size: 1.4rem;
+			.summary__minute-box {
+				width: 28px;
 			}
-
 			.summary__icon {
-				border-radius: 5px;
+				border-radius: 7px;
 				height: 24px;
+				min-width: 24px;
 				margin-right: 0.5em;
 				.icon {
 					font-size: 2rem;
@@ -115,27 +119,22 @@
 					margin: 0 0.2em;
 				}
 				.var-icon {
-					font-size: 1.2rem;
-					padding: 0 0.3em;
+					font-size: 1.1rem;
+					padding: 0 0.4em;
 					letter-spacing: 1px;
 				}
 			}
 
 			.summary__player {
-				font-size: 1.5rem;
 				margin-right: 0.375em;
 			}
 
 			.summary__assist,
 			.summary__comment {
-				font-size: 1.4rem;
+				font-size: 1.25rem;
 			}
 
 			&--away {
-				.summary__minute {
-					margin-left: 0.75em;
-					margin-right: 0;
-				}
 				.summary__icon {
 					margin-right: 0;
 					margin-left: 0.5em;
