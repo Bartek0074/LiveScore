@@ -8,6 +8,7 @@ import '../styles/MatchCard.scss';
 
 export default function MatchCard({ match }) {
 	const navigate = useNavigate();
+	console.log(match);
 	return (
 		<div
 			onClick={() => {
@@ -33,11 +34,26 @@ export default function MatchCard({ match }) {
 						{match?.fixture?.status?.elapsed}'
 					</p>
 				)}
+				{match?.fixture?.status?.short === 'ET' && (
+					<p className='match-card__time-live'>
+						ET
+						<br />
+						{match?.fixture?.status?.elapsed}'
+					</p>
+				)}
+				{match?.fixture?.status?.short === 'BT' && (
+					<p className='match-card__time-live'>Break Time</p>
+				)}
+				{match?.fixture?.status?.short === 'P' && (
+					<p className='match-card__time-live'>Pen.</p>
+				)}
 				{match?.fixture?.status?.short === 'FT' && <p>Finished</p>}
-				{match?.fixture?.status?.short === 'PST' && <p>Postponed</p>}
-				{match?.fixture?.status?.short === 'CANC' && <p>Cancelled</p>}
 				{match?.fixture?.status?.short === 'AET' && <p>AET</p>}
 				{match?.fixture?.status?.short === 'PEN' && <p>Pen.</p>}
+				{match?.fixture?.status?.short === 'PST' && <p>Postponed</p>}
+				{match?.fixture?.status?.short === 'CANC' && <p>Cancelled</p>}
+				{match?.fixture?.status?.short === 'ABD' && <p>Abandoned</p>}
+				{match?.fixture?.status?.short === 'AWD' && <p>Technical Loss</p>}
 			</div>
 			<div className='match-card__teams'>
 				<div className='match-card__team'>
@@ -72,6 +88,12 @@ export default function MatchCard({ match }) {
 			<div className='match-card__scores'>
 				<div className='match-card__score'>
 					<div className='match-card__score-extratime'>
+						{match?.fixture?.status?.short === 'ET' && (
+							<p>{match?.goals?.home}</p>
+						)}
+						{match?.fixture?.status?.short === 'P' && (
+							<p>{match?.goals?.home}</p>
+						)}
 						{match?.fixture?.status?.short === 'AET' && (
 							<p>{match?.goals?.home}</p>
 						)}
@@ -84,6 +106,12 @@ export default function MatchCard({ match }) {
 						)}
 					</div>
 					<div className='match-card__score-extratime'>
+						{match?.fixture?.status?.short === 'ET' && (
+							<p>{match?.goals?.away}</p>
+						)}
+						{match?.fixture?.status?.short === 'P' && (
+							<p>{match?.goals?.away}</p>
+						)}
 						{match?.fixture?.status?.short === 'AET' && (
 							<p>{match?.goals?.away}</p>
 						)}
@@ -108,11 +136,22 @@ export default function MatchCard({ match }) {
 						{match?.fixture?.status?.short === '2H' && (
 							<p>{match?.goals?.home}</p>
 						)}
+						{match?.fixture?.status?.short === 'ET' && (
+							<p className='match-card__score-fulltime--not-bold'>
+								{match?.score?.fulltime?.home}
+							</p>
+						)}
+						{match?.fixture?.status?.short === 'BT' && (
+							<p>{match?.goals?.home}</p>
+						)}
+						{match?.fixture?.status?.short === 'P' && (
+							<p className='match-card__score-fulltime--not-bold'>
+								{match?.score?.fulltime?.home}
+							</p>
+						)}
 						{match?.fixture?.status?.short === 'FT' && (
 							<p>{match?.score?.fulltime?.home}</p>
 						)}
-						{match?.fixture?.status?.short === 'PST' && <p>-</p>}
-						{match?.fixture?.status?.short === 'CANC' && <p>-</p>}
 						{match?.fixture?.status?.short === 'AET' && (
 							<p className='match-card__score-fulltime--not-bold'>
 								{match?.score?.fulltime?.home}
@@ -122,6 +161,12 @@ export default function MatchCard({ match }) {
 							<p className='match-card__score-fulltime--not-bold'>
 								{match?.score?.fulltime?.home}
 							</p>
+						)}
+						{match?.fixture?.status?.short === 'PST' && <p>-</p>}
+						{match?.fixture?.status?.short === 'CANC' && <p>-</p>}
+						{match?.fixture?.status?.short === 'ABD' && <p>-</p>}
+						{match?.fixture?.status?.short === 'AWD' && (
+							<p>{match?.goals?.home}</p>
 						)}
 					</div>
 					<div className='match-card__score-fulltime'>
@@ -135,11 +180,22 @@ export default function MatchCard({ match }) {
 						{match?.fixture?.status?.short === '2H' && (
 							<p>{match?.goals?.away}</p>
 						)}
+						{match?.fixture?.status?.short === 'ET' && (
+							<p className='match-card__score-fulltime--not-bold'>
+								{match?.score?.fulltime?.away}
+							</p>
+						)}
+						{match?.fixture?.status?.short === 'BT' && (
+							<p>{match?.goals?.away}</p>
+						)}
+						{match?.fixture?.status?.short === 'P' && (
+							<p className='match-card__score-fulltime--not-bold'>
+								{match?.score?.fulltime?.away}
+							</p>
+						)}
 						{match?.fixture?.status?.short === 'FT' && (
 							<p>{match?.score?.fulltime?.away}</p>
 						)}
-						{match?.fixture?.status?.short === 'PST' && <p>-</p>}
-						{match?.fixture?.status?.short === 'CANC' && <p>-</p>}
 						{match?.fixture?.status?.short === 'AET' && (
 							<p className='match-card__score-fulltime--not-bold'>
 								{match?.score?.fulltime?.away}
@@ -149,6 +205,12 @@ export default function MatchCard({ match }) {
 							<p className='match-card__score-fulltime--not-bold'>
 								{match?.score?.fulltime?.away}
 							</p>
+						)}
+						{match?.fixture?.status?.short === 'PST' && <p>-</p>}
+						{match?.fixture?.status?.short === 'CANC' && <p>-</p>}
+						{match?.fixture?.status?.short === 'ABD' && <p>-</p>}
+						{match?.fixture?.status?.short === 'AWD' && (
+							<p>{match?.goals?.away}</p>
 						)}
 					</div>
 				</div>
@@ -162,6 +224,15 @@ export default function MatchCard({ match }) {
 							<p>({match?.score?.halftime?.home})</p>
 						)}
 						{match?.fixture?.status?.short === '2H' && (
+							<p>({match?.score?.halftime?.home})</p>
+						)}
+						{match?.fixture?.status?.short === 'ET' && (
+							<p>({match?.score?.halftime?.home})</p>
+						)}
+						{match?.fixture?.status?.short === 'BT' && (
+							<p>({match?.score?.halftime?.home})</p>
+						)}
+						{match?.fixture?.status?.short === 'P' && (
 							<p>({match?.score?.halftime?.home})</p>
 						)}
 						{match?.fixture?.status?.short === 'FT' && (
@@ -185,6 +256,15 @@ export default function MatchCard({ match }) {
 							<p>({match?.score?.halftime?.away})</p>
 						)}
 						{match?.fixture?.status?.short === '2H' && (
+							<p>({match?.score?.halftime?.away})</p>
+						)}
+						{match?.fixture?.status?.short === 'ET' && (
+							<p>({match?.score?.halftime?.away})</p>
+						)}
+						{match?.fixture?.status?.short === 'BT' && (
+							<p>({match?.score?.halftime?.away})</p>
+						)}
+						{match?.fixture?.status?.short === 'P' && (
 							<p>({match?.score?.halftime?.away})</p>
 						)}
 						{match?.fixture?.status?.short === 'FT' && (

@@ -8,8 +8,11 @@ import { fixtures } from '../utils/fixtures';
 import { fixtures2 } from '../utils/fixtures2';
 import { fixtures3 } from '../utils/fixtures3';
 import { fixtures4 } from '../utils/fixtures4';
+import { fixtures5 } from '../utils/fixtures5';
 import { fullTimeFixture } from '../utils/fullTimeFixture';
-import { notStartedFixture } from '../utils/notStartedFixture';
+import { fixturesWithExtraTime } from '../utils/fixturesWithExtraTime';
+import { fixturesWithBreakTime } from '../utils/fixturesWithBreakTime';
+import { fixturesWithPenInProgress } from '../utils/fixturesWithPenInProgress';
 
 import { getDate } from '../utils/getDate';
 import { fetchFromAPI } from '../utils/fetchFromApi';
@@ -17,11 +20,12 @@ import { fetchFromAPI } from '../utils/fetchFromApi';
 import '../styles/Home.scss';
 import DatePicker from './DatePicker';
 import Filters from './Filters';
+import { penInProgressFixture } from '../utils/penInProgressFixture';
 
 export default function Home() {
 	const [leagueId, setLeagueId] = useState('all');
 	const [fetchDate, setFetchDate] = useState(getDate(Date.now()));
-	const [matches, setMatches] = useState([]);
+	// const [matches, setMatches] = useState([]);
 	const [statuses, setStatuses] = useState([
 		'TBD',
 		'NS',
@@ -44,16 +48,25 @@ export default function Home() {
 		'LIVE',
 	]);
 
-	useEffect(() => {
-		fetchFromAPI(`/fixtures?date=${fetchDate}&timezone=Europe/Warsaw`).then(
-			(data) => {
-				setMatches(data.response);
-				console.log(data);
-			}
-		);
-	}, [fetchDate]);
+	// useEffect(() => {
+	// 	fetchFromAPI(`/fixtures?id=979139&timezone=Europe/Warsaw`).then(
+	// 		(data) => {
+	// 			// setMatches(data.response);
+	// 			console.log(data);
+	// 		}
+	// 	);
+	// }, [fetchDate]);
 
-	// const matches = fixtures.response;
+	// useEffect(() => {
+	// 	fetchFromAPI(`/fixtures?date=${fetchDate}&timezone=Europe/Warsaw`).then(
+	// 		(data) => {
+	// 			setMatches(data.response);
+	// 			console.log(data);
+	// 		}
+	// 	);
+	// }, [fetchDate]);
+
+	const matches = fixtures5.response;
 
 	return (
 		<div className='home wrapper'>

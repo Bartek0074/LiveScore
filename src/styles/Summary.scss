@@ -10,7 +10,7 @@
 			display: flex;
 			align-items: center;
 			justify-content: start;
-			width: 25px;
+			min-width: 27px;
 			height: 100%;
 			.summary__minute {
 				font-size: 1.4rem;
@@ -100,7 +100,7 @@
 		&__element {
 			padding: 0.4em 0;
 			.summary__minute-box {
-				width: 28px;
+				width: 30px;
 			}
 			.summary__icon {
 				border-radius: 7px;

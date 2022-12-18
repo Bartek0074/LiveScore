@@ -152,6 +152,13 @@ export const leagues = [
 		logo: 'https://media-1.api-sports.io/football/leagues/169.png',
 	},
 	{
+		id: 171,
+		country: 'China',
+		flag: 'https://media-2.api-sports.io/flags/cn.svg',
+		name: 'Fa Cup',
+		logo: 'https://media-1.api-sports.io/football/leagues/171.png',
+	},
+	{
 		id: 584,
 		country: 'Libya',
 		flag: 'https://media-2.api-sports.io/flags/ly.svg',
@@ -178,5 +185,19 @@ export const leagues = [
 		flag: 'https://media-2.api-sports.io/flags/au.svg',
 		name: 'A-League',
 		logo: 'https://media-1.api-sports.io/football/leagues/188.png',
+	},
+	{
+		id: 1,
+		country: 'World',
+		flag: null,
+		name: 'World Cup',
+		logo: 'https://media-1.api-sports.io/football/leagues/1.png',
+	},
+	{
+		id: 205,
+		country: 'Turkey',
+		flag: 'https://media-2.api-sports.io/flags/tr.svg',
+		name: '2 Lig',
+		logo: 'https://media-1.api-sports.io/football/leagues/205.png',
 	},
 ];
