@@ -44,24 +44,16 @@ export default function Home() {
 		'LIVE',
 	]);
 
-	// useEffect(() => {
-	// 	fetchFromAPI(`/fixtures?id=871293`).then(
-	// 		(data) => {
-	// 			setMatches(data.response);
-	// 			console.log(data);
-	// 		}
-	// 	);
-	// }, [fetchDate]);
+	useEffect(() => {
+		fetchFromAPI(`/fixtures?date=${fetchDate}&timezone=Europe/Warsaw`).then(
+			(data) => {
+				setMatches(data.response);
+				console.log(data);
+			}
+		);
+	}, [fetchDate]);
 
-	// console.log('Not started:')
-	// console.log(notStartedFixture.response)
-	// console.log('-------------')
-	// console.log('Full time:')
-	// console.log(fullTimeFixture.response)
-
-	// console.log(fetchDate);
-	// console.log(matches);
-	// console.log(fixtures2.response);
+	// const matches = fixtures.response;
 
 	return (
 		<div className='home wrapper'>
@@ -78,7 +70,7 @@ export default function Home() {
 				<Filters setStatuses={setStatuses} />
 			</div>
 			<div className='home__match-cards'>
-				<MatchCards matches={fixtures.response} statuses={statuses} leagueId={leagueId} />
+				<MatchCards matches={matches} statuses={statuses} leagueId={leagueId} />
 			</div>
 		</div>
 	);

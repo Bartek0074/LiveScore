@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 import { getDateWithHour } from '../utils/getDateWithHour';
 import { leagues } from '../utils/constants';
@@ -7,6 +7,8 @@ import LeagueCard from './LeagueCard';
 import { useParams } from 'react-router-dom';
 
 import '../styles/MatchDetail.scss';
+
+import { fetchFromAPI } from '../utils/fetchFromApi';
 
 import { notStartedFixture } from '../utils/notStartedFixture';
 import { firstHalfFixture } from '../utils/firstHalfFixture';
@@ -25,13 +27,24 @@ import Stats from './Stats';
 export default function MatchDetail() {
 	const { id } = useParams();
 
-	const fixture = halfTimeFixture?.response[0];
-
+	const [match, setMatch] = useState([]);
+	const [league, setLeague] = useState();
 	const [section, setSection] = useState('summary');
 
-	const league = leagues.find((league) => league?.id === fixture?.league?.id);
+	useEffect(() => {
+		fetchFromAPI(`/fixtures?id=${id}&timezone=Europe/Warsaw`).then((data) => {
+			setMatch(data?.response[0]);
+			console.log(data?.response[0]);
+		});
+	}, [id]);
 
-	// console.log(fixture?.statistics);
+	useEffect(() => {
+		const newLeague = leagues.find((leagueEl) => leagueEl?.id === league?.id);
+		setLeague(newLeague);
+	}, [match]);
+
+	// const match = cancelledFixture.response[0];
+	// const league = leagues.find((leagueEl) => leagueEl?.id === league?.id);
 
 	return (
 		<div className='match-detail match-wrapper'>
@@ -39,154 +52,154 @@ export default function MatchDetail() {
 			<div className='match-detail__result'>
 				<div className='match-detail__team'>
 					<div className='match-detail__team-logo'>
-						<img src={fixture?.teams?.home?.logo} alt='' />
+						<img src={match?.teams?.home?.logo} alt='' />
 					</div>
 					<div className='match-detail__team-name'>
 						<p
 							className={`${
-								fixture?.teams?.home?.winner
+								match?.teams?.home?.winner
 									? 'match-detail__team-name-bold'
 									: ''
 							}`}
 						>
-							{fixture?.teams?.home?.name}
+							{match?.teams?.home?.name}
 						</p>
 					</div>
 				</div>
 				<div className='match-detail__info'>
 					<p
 						className={`${
-							fixture?.fixture?.status?.short !== 'PST' &&
-							fixture?.fixture?.status?.short !== 'CANC'
+							match?.fixture?.status?.short !== 'PST' &&
+							match?.fixture?.status?.short !== 'CANC'
 								? 'match-detail__date'
 								: 'match-detail__date match-detail__date--line-through'
 						}`}
 					>
-						{getDateWithHour(fixture?.fixture?.date)}
+						{getDateWithHour(match?.fixture?.date)}
 					</p>
 
-					{fixture?.fixture?.status?.short === 'NS' && (
+					{match?.fixture?.status?.short === 'NS' && (
 						<p className='match-detail__score'>-</p>
 					)}
-					{fixture?.fixture?.status?.short === '1H' && (
+					{match?.fixture?.status?.short === '1H' && (
 						<p className='match-detail__score match-detail__score--live'>
-							{fixture?.goals?.home}-{fixture?.goals?.away}
+							{match?.goals?.home}-{match?.goals?.away}
 						</p>
 					)}
-					{fixture?.fixture?.status?.short === 'HT' && (
+					{match?.fixture?.status?.short === 'HT' && (
 						<p className='match-detail__score match-detail__score--live'>
-							{fixture?.goals?.home}-{fixture?.goals?.away}
+							{match?.goals?.home}-{match?.goals?.away}
 						</p>
 					)}
-					{fixture?.fixture?.status?.short === '2H' && (
+					{match?.fixture?.status?.short === '2H' && (
 						<p className='match-detail__score match-detail__score--live'>
-							{fixture?.goals?.home}-{fixture?.goals?.away}
+							{match?.goals?.home}-{match?.goals?.away}
 						</p>
 					)}
-					{fixture?.fixture?.status?.short === 'FT' && (
+					{match?.fixture?.status?.short === 'FT' && (
 						<p className='match-detail__score'>
-							{fixture?.goals?.home}-{fixture?.goals?.away}
+							{match?.goals?.home}-{match?.goals?.away}
 						</p>
 					)}
-					{fixture?.fixture?.status?.short === 'AET' && (
+					{match?.fixture?.status?.short === 'AET' && (
 						<p className='match-detail__score'>
-							{fixture?.goals?.home}-{fixture?.goals?.away}
+							{match?.goals?.home}-{match?.goals?.away}
 						</p>
 					)}
-					{fixture?.fixture?.status?.short === 'PEN' && (
+					{match?.fixture?.status?.short === 'PEN' && (
 						<p className='match-detail__score'>
-							{fixture?.teams?.home?.winner
-								? fixture?.goals?.home + 1
-								: fixture?.goals?.home}
+							{match?.teams?.home?.winner
+								? match?.goals?.home + 1
+								: match?.goals?.home}
 							-
-							{fixture?.teams?.away?.winner
-								? fixture?.goals?.away + 1
-								: fixture?.goals?.away}
+							{match?.teams?.away?.winner
+								? match?.goals?.away + 1
+								: match?.goals?.away}
 						</p>
 					)}
-					{fixture?.fixture?.status?.short === 'PST' && (
+					{match?.fixture?.status?.short === 'PST' && (
 						<p className='match-detail__score'>-</p>
 					)}
-					{fixture?.fixture?.status?.short === 'CANC' && (
+					{match?.fixture?.status?.short === 'CANC' && (
 						<p className='match-detail__score'>-</p>
 					)}
 
-					{fixture?.fixture?.status?.short === 'AET' && (
+					{match?.fixture?.status?.short === 'AET' && (
 						<p className='match-detail__score-second'>
-							({fixture?.score?.fulltime?.home}-{fixture?.score?.fulltime?.away}
+							({match?.score?.fulltime?.home}-{match?.score?.fulltime?.away}
 							)
 						</p>
 					)}
-					{fixture?.fixture?.status?.short === 'PEN' && (
+					{match?.fixture?.status?.short === 'PEN' && (
 						<p className='match-detail__score-second'>
-							({fixture?.score?.fulltime?.home}-{fixture?.score?.fulltime?.away}
+							({match?.score?.fulltime?.home}-{match?.score?.fulltime?.away}
 							)
 						</p>
 					)}
 
-					{fixture?.fixture?.status?.short === 'NS' && (
+					{match?.fixture?.status?.short === 'NS' && (
 						<p className='match-detail__status'>Not started</p>
 					)}
-					{fixture?.fixture?.status?.short === '1H' && (
+					{match?.fixture?.status?.short === '1H' && (
 						<p className='match-detail__status match-detail__status--live'>
-							1st half - {fixture?.fixture?.status?.elapsed}'
+							1st half - {match?.fixture?.status?.elapsed}'
 						</p>
 					)}
-					{fixture?.fixture?.status?.short === 'HT' && (
+					{match?.fixture?.status?.short === 'HT' && (
 						<p className='match-detail__status match-detail__status--live'>
 							Half time
 						</p>
 					)}
-					{fixture?.fixture?.status?.short === '2H' && (
+					{match?.fixture?.status?.short === '2H' && (
 						<p className='match-detail__status match-detail__status--live'>
-							2nd half - {fixture?.fixture?.status?.elapsed}'
+							2nd half - {match?.fixture?.status?.elapsed}'
 						</p>
 					)}
-					{fixture?.fixture?.status?.short === 'FT' && (
+					{match?.fixture?.status?.short === 'FT' && (
 						<p className='match-detail__status'>Finished</p>
 					)}
-					{fixture?.fixture?.status?.short === 'AET' && (
+					{match?.fixture?.status?.short === 'AET' && (
 						<p className='match-detail__status'>After extra time</p>
 					)}
-					{fixture?.fixture?.status?.short === 'PEN' && (
+					{match?.fixture?.status?.short === 'PEN' && (
 						<p className='match-detail__status'>After penalties</p>
 					)}
-					{fixture?.fixture?.status?.short === 'PST' && (
+					{match?.fixture?.status?.short === 'PST' && (
 						<p className='match-detail__status'>Postponed</p>
 					)}
-					{fixture?.fixture?.status?.short === 'CANC' && (
+					{match?.fixture?.status?.short === 'CANC' && (
 						<p className='match-detail__status'>Cancelled</p>
 					)}
 				</div>
 				<div className='match-detail__team'>
 					<div className='match-detail__team-logo'>
-						<img src={fixture?.teams?.away?.logo} alt='' />
+						<img src={match?.teams?.away?.logo} alt='' />
 					</div>
 					<div className='match-detail__team-name'>
 						<p
 							className={`${
-								fixture?.teams?.away?.winner
+								match?.teams?.away?.winner
 									? 'match-detail__team-name-bold'
 									: ''
 							}`}
 						>
-							{fixture?.teams?.away?.name}
+							{match?.teams?.away?.name}
 						</p>
 					</div>
 				</div>
 			</div>
 
-			{(fixture?.fixture?.status?.short === '1H' ||
-				fixture?.fixture?.status?.short === 'HT' ||
-				fixture?.fixture?.status?.short === '2H' ||
-				fixture?.fixture?.status?.short === 'ET' ||
-				fixture?.fixture?.status?.short === 'BT' ||
-				fixture?.fixture?.status?.short === 'P' ||
-				fixture?.fixture?.status?.short === 'SUSP' ||
-				fixture?.fixture?.status?.short === 'INT' ||
-				fixture?.fixture?.status?.short === 'FT' ||
-				fixture?.fixture?.status?.short === 'AET' ||
-				fixture?.fixture?.status?.short === 'PEN') && (
+			{(match?.fixture?.status?.short === '1H' ||
+				match?.fixture?.status?.short === 'HT' ||
+				match?.fixture?.status?.short === '2H' ||
+				match?.fixture?.status?.short === 'ET' ||
+				match?.fixture?.status?.short === 'BT' ||
+				match?.fixture?.status?.short === 'P' ||
+				match?.fixture?.status?.short === 'SUSP' ||
+				match?.fixture?.status?.short === 'INT' ||
+				match?.fixture?.status?.short === 'FT' ||
+				match?.fixture?.status?.short === 'AET' ||
+				match?.fixture?.status?.short === 'PEN') && (
 				<>
 					<div className='match-detail__section-switcher'>
 						<button
@@ -227,15 +240,15 @@ export default function MatchDetail() {
 						</button>
 					</div>
 					<div className='match-detail__section-box'>
-						{section === 'summary' && <Summary match={fixture} />}
-						{section === 'stats' && <Stats stats={fixture?.statistics} />}
-						{section === 'lineups' && <Lineups match={fixture} />}
+						{section === 'summary' && <Summary match={match} />}
+						{section === 'stats' && <Stats stats={match?.statistics} />}
+						{section === 'lineups' && <Lineups match={match} />}
 					</div>
 				</>
 			)}
 
-			{fixture?.fixture?.status?.short !== 'PST' &&
-				fixture?.fixture?.status?.short !== 'CANC' && (
+			{match?.fixture?.status?.short !== 'PST' &&
+				match?.fixture?.status?.short !== 'CANC' && (
 					<div className='match-detail__other-info'>
 						<div className='match-detail__other-info-heading'>
 							<p>Match information</p>
@@ -243,13 +256,13 @@ export default function MatchDetail() {
 						<div className='match-detail__other-info-element'>
 							<p className='match-detail__other-info-name'>referee:</p>
 							<p className='match-detail__other-info-value'>
-								{fixture?.fixture?.referee}
+								{match?.fixture?.referee}
 							</p>
 						</div>
 						<div className='match-detail__other-info-element'>
 							<p className='match-detail__other-info-name'>venue:</p>
 							<p className='match-detail__other-info-value'>
-								{fixture?.fixture?.venue?.name} ({fixture?.fixture?.venue?.city}
+								{match?.fixture?.venue?.name} ({match?.fixture?.venue?.city}
 								)
 							</p>
 						</div>
