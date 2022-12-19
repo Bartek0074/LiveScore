@@ -257,8 +257,7 @@ export default function MatchDetail() {
 				match?.fixture?.status?.short === 'INT' ||
 				match?.fixture?.status?.short === 'FT' ||
 				match?.fixture?.status?.short === 'AET' ||
-				match?.fixture?.status?.short === 'PEN' ||
-				match?.fixture?.status?.short === 'ABD') && (
+				match?.fixture?.status?.short === 'PEN') && (
 				<>
 					<div className='match-detail__section-switcher'>
 						<button

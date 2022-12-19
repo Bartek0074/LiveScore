@@ -1,105 +1,125 @@
 import React from 'react';
-
-import { BiRefresh, BiFootball } from 'react-icons/bi';
-import { IoMdWarning } from 'react-icons/io';
-
+import SummaryEvent from './SummaryEvent';
 import '../styles/Summary.scss';
 
 export default function Summary({ match }) {
+	// console.log(match);
 	return (
 		<div className='summary'>
-			{match.events[0] ? (
+			{(match?.fixture?.status?.short === '1H' ||
+				match?.fixture?.status?.short === 'HT' ||
+				match?.fixture?.status?.short === '2H' ||
+				match?.fixture?.status?.short === 'ET' ||
+				match?.fixture?.status?.short === 'BT' ||
+				match?.fixture?.status?.short === 'P' ||
+				match?.fixture?.status?.short === 'SUSP' ||
+				match?.fixture?.status?.short === 'INT' ||
+				match?.fixture?.status?.short === 'FT' ||
+				match?.fixture?.status?.short === 'AET' ||
+				match?.fixture?.status?.short === 'PEN') && (
 				<>
+					<div className='summary__section'>
+						<p className='summary__section-title'>1st half</p>
+						<p className='summary__section-score'>
+							{match?.fixture?.status?.short === '1H' &&
+								`${match?.goals?.home} - ${match?.goals?.away}`}
+							{(match?.fixture?.status?.short === 'HT' ||
+								match?.fixture?.status?.short === '2H' ||
+								match?.fixture?.status?.short === 'ET' ||
+								match?.fixture?.status?.short === 'P' ||
+								match?.fixture?.status?.short === 'FT' ||
+								match?.fixture?.status?.short === 'AET' ||
+								match?.fixture?.status?.short === 'PEN') &&
+								`${match?.score?.halftime?.home} - ${match?.score?.halftime?.away}`}
+						</p>
+					</div>
 					{match?.events.map((eventEl, id) => {
-						return (
-							<div
-								key={id}
-								className={
-									eventEl?.team?.name === match?.teams?.home?.name
-										? 'summary__element summary__element--home'
-										: 'summary__element summary__element--away'
-								}
-							>
-								<div className='summary__minute-box'>
-									<span className='summary__minute'>
-										{eventEl?.time?.elapsed}'
-									</span>
-								</div>
-
-								{eventEl?.detail === 'Normal Goal' && (
-									<div className='summary__icon'>
-										<BiFootball className='icon icon--goal' />
-									</div>
-								)}
-								{eventEl?.detail === 'Own Goal' && (
-									<div className='summary__icon'>
-										<BiFootball className='icon icon--own-goal' />
-									</div>
-								)}
-								{eventEl?.detail === 'Penalty' && (
-									<div className='summary__icon'>
-										<BiFootball className='icon icon--goal' />
-									</div>
-								)}
-								{eventEl?.detail === 'Yellow Card' && (
-									<div className='summary__icon'>
-										<div className='card-icon card-icon--yellow'></div>
-									</div>
-								)}
-								{eventEl?.detail === 'Red Card' && (
-									<div className='summary__icon'>
-										<div className='card-icon card-icon--red'></div>
-									</div>
-								)}
-								{eventEl?.type === 'subst' && (
-									<div className='summary__icon'>
-										<BiRefresh className='icon icon--subst' />
-									</div>
-								)}
-								{eventEl?.type === 'Var' && (
-									<div className='summary__icon'>
-										<div className='var-icon'>VAR</div>
-									</div>
-								)}
-								{eventEl?.detail === 'Missed Penalty' && (
-									<div className='summary__icon'>
-										<IoMdWarning className='icon icon--warn' />
-									</div>
-								)}
-
-								<span className='summary__player'>{eventEl?.player?.name}</span>
-
-								{eventEl?.assist?.name &&
-									eventEl?.detail !== 'Missed Penalty' && (
-										<span className='summary__assist'>
-											{eventEl?.assist?.name}
-										</span>
-									)}
-
-								{eventEl?.comments && (
-									<span className='summary__comment'>
-										({eventEl?.comments})
-									</span>
-								)}
-
-								{eventEl?.detail === 'Own Goal' && (
-									<span className='summary__comment'>(Own goal)</span>
-								)}
-								{eventEl?.detail === 'Penalty' && (
-									<span className='summary__comment'>(Penalty)</span>
-								)}
-								{eventEl?.type === 'Var' && (
-									<span className='summary__comment'>({eventEl?.detail})</span>
-								)}
-								{eventEl?.detail === 'Missed Penalty' && (
-									<span className='summary__comment'>(Penalty missed)</span>
-								)}
-							</div>
-						);
+						if (eventEl?.time?.elapsed <= 45) {
+							return <SummaryEvent match={match} eventEl={eventEl} key={id} />;
+						}
 					})}
 				</>
-			) : (
-				<p>Nothing happened yet</p>
+			)}
+			{(match?.fixture?.status?.short === '2H' ||
+				match?.fixture?.status?.short === 'ET' ||
+				match?.fixture?.status?.short === 'BT' ||
+				match?.fixture?.status?.short === 'P' ||
+				match?.fixture?.status?.short === 'SUSP' ||
+				match?.fixture?.status?.short === 'INT' ||
+				match?.fixture?.status?.short === 'FT' ||
+				match?.fixture?.status?.short === 'AET' ||
+				match?.fixture?.status?.short === 'PEN') && (
+				<>
+					<div className='summary__section'>
+						<p className='summary__section-title'>2nd half</p>
+						<p className='summary__section-score'>
+							{match?.fixture?.status?.short === '2H' &&
+								`${match?.goals?.home} - ${match?.goals?.away}`}
+							{(match?.fixture?.status?.short === 'ET' ||
+								match?.fixture?.status?.short === 'P' ||
+								match?.fixture?.status?.short === 'FT' ||
+								match?.fixture?.status?.short === 'AET' ||
+								match?.fixture?.status?.short === 'PEN') &&
+								`${
+									match?.score?.fulltime?.home - match?.score?.halftime?.home
+								} - ${
+									match?.score?.fulltime?.away - match?.score?.halftime?.away
+								}`}
+						</p>
+					</div>
+					{match?.events.map((eventEl, id) => {
+						if (eventEl?.time?.elapsed <= 90 && eventEl?.time?.elapsed > 45) {
+							return <SummaryEvent match={match} eventEl={eventEl} key={id} />;
+						}
+					})}
+				</>
+			)}
+			{(match?.fixture?.status?.short === 'ET' ||
+				match?.fixture?.status?.short === 'BT' ||
+				match?.fixture?.status?.short === 'P' ||
+				match?.fixture?.status?.short === 'SUSP' ||
+				match?.fixture?.status?.short === 'INT' ||
+				match?.fixture?.status?.short === 'AET' ||
+				match?.fixture?.status?.short === 'PEN') && (
+				<>
+					<div className='summary__section'>
+						<p className='summary__section-title'>extra time</p>
+						<p className='summary__section-score'>
+							{(match?.fixture?.status?.short === 'ET' ||
+								match?.fixture?.status?.short === 'P' ||
+								match?.fixture?.status?.short === 'AET' ||
+								match?.fixture?.status?.short === 'PEN') &&
+								`${match?.goals?.home - match?.score?.fulltime?.home} - ${
+									match?.goals?.away - match?.score?.fulltime?.away
+								}`}
+						</p>
+					</div>
+					{match?.events.map((eventEl, id) => {
+						if (
+							eventEl?.time?.elapsed <= 120 &&
+							eventEl?.time?.elapsed > 90 &&
+							eventEl?.comments !== 'Penalty Shootout'
+						) {
+							return <SummaryEvent match={match} eventEl={eventEl} key={id} />;
+						}
+					})}
+				</>
+			)}
+			{(match?.fixture?.status?.short === 'P' ||
+				match?.fixture?.status?.short === 'PEN') && (
+				<>
+					<div className='summary__section'>
+						<p className='summary__section-title'>penalties</p>
+						<p className='summary__section-score'>
+							{match?.score?.penalty?.home} - {match?.score?.penalty?.away}
+						</p>
+					</div>
+					{match?.events.map((eventEl, id) => {
+						if (eventEl?.comments === 'Penalty Shootout') {
+							return <SummaryEvent match={match} eventEl={eventEl} key={id} />;
+						}
+					})}
+				</>
 			)}
 		</div>
 	);
