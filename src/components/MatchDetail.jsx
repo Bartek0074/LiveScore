@@ -52,7 +52,7 @@ export default function MatchDetail() {
 	const match = penInProgressFixture.response[0];
 	const league = leagues.find((leagueEl) => leagueEl?.id === match.league?.id);
 
-	console.log(match);
+	// console.log(match);
 
 	return (
 		<div className='match-detail match-wrapper'>

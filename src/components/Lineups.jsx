@@ -1,6 +1,7 @@
 import React from 'react';
 
 import '../styles/Lineups.scss';
+import LineupsPlayer from './LineupsPlayer';
 
 export default function Lineups({ match }) {
 	return (
@@ -26,23 +27,13 @@ export default function Lineups({ match }) {
 									}
 								)[0];
 								return (
-									<div className='lineups__player' key={playerId}>
-										<div className='lineups__player-number-box'>
-											<span className='lineups__player-number'>
-												{player?.player?.number}
-											</span>
-										</div>
-										<span className='lineups__player-name'>
-											{player?.player?.name}
-										</span>
-										{playerDetail?.statistics[0]?.games?.position === 'G' && (
-											<span className='lineups__goalkeeper'>(G)</span>
-										)}
-
-										{playerDetail?.statistics[0]?.games?.captain && (
-											<span className='lineups__goalkeeper'>(C)</span>
-										)}
-									</div>
+									<LineupsPlayer
+										player={player}
+										playerDetail={playerDetail}
+										home={true}
+										match={match}
+										key={playerId}
+									/>
 								);
 							})}
 						</div>
@@ -55,23 +46,13 @@ export default function Lineups({ match }) {
 									}
 								)[0];
 								return (
-									<div className='lineups__player' key={playerId}>
-										<div className='lineups__player-number-box'>
-											<span className='lineups__player-number'>
-												{player?.player?.number}
-											</span>
-										</div>
-										<span className='lineups__player-name'>
-											{player?.player?.name}
-										</span>
-										{playerDetail?.statistics[0]?.games?.position === 'G' && (
-											<span className='lineups__goalkeeper'>(G)</span>
-										)}
-
-										{playerDetail?.statistics[0]?.games?.captain && (
-											<span className='lineups__goalkeeper'>(C)</span>
-										)}
-									</div>
+									<LineupsPlayer
+										player={player}
+										playerDetail={playerDetail}
+										home={false}
+										match={match}
+										key={playerId}
+									/>
 								);
 							})}
 						</div>
@@ -90,23 +71,13 @@ export default function Lineups({ match }) {
 									}
 								)[0];
 								return (
-									<div className='lineups__player' key={playerId}>
-										<div className='lineups__player-number-box'>
-											<span className='lineups__player-number'>
-												{player?.player?.number}
-											</span>
-										</div>
-										<span className='lineups__player-name'>
-											{player?.player?.name}
-										</span>
-										{playerDetail?.statistics[0]?.games?.position === 'G' && (
-											<span className='lineups__goalkeeper'>(G)</span>
-										)}
-
-										{playerDetail?.statistics[0]?.games?.captain && (
-											<span className='lineups__goalkeeper'>(C)</span>
-										)}
-									</div>
+									<LineupsPlayer
+										player={player}
+										playerDetail={playerDetail}
+										home={true}
+										match={match}
+										key={playerId}
+									/>
 								);
 							})}
 						</div>
@@ -119,23 +90,13 @@ export default function Lineups({ match }) {
 									}
 								)[0];
 								return (
-									<div className='lineups__player' key={playerId}>
-										<div className='lineups__player-number-box'>
-											<span className='lineups__player-number'>
-												{player?.player?.number}
-											</span>
-										</div>
-										<span className='lineups__player-name'>
-											{player?.player?.name}
-										</span>
-										{playerDetail?.statistics[0]?.games?.position === 'G' && (
-											<span className='lineups__goalkeeper'>(G)</span>
-										)}
-
-										{playerDetail?.statistics[0]?.games?.captain && (
-											<span className='lineups__goalkeeper'>(C)</span>
-										)}
-									</div>
+									<LineupsPlayer
+										player={player}
+										playerDetail={playerDetail}
+										home={false}
+										match={match}
+										key={playerId}
+									/>
 								);
 							})}
 						</div>

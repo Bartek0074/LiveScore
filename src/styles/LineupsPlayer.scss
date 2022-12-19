@@ -1,0 +1,186 @@
+@use './variables.scss';
+
+.lineups-player {
+	height: 24px;
+	display: flex;
+	align-items: center;
+	padding: 0.25em;
+	// &:nth-child(even) {
+	// 	background-color: #fff;
+	// }
+	&__number-box {
+		display: flex;
+		align-items: center;
+		justify-content: start;
+		width: 20px;
+		height: 100%;
+		.lineups-player__number {
+			font-size: 1.2rem;
+			font-weight: bold;
+			color: variables.$font-color-dark;
+		}
+	}
+	.lineups-player__name {
+		font-size: 1.3rem;
+	}
+	.lineups-player__goalkeeper,
+	.lineups-player__captain {
+		font-size: 1.2rem;
+	}
+	.lineups-player__goalkeeper,
+	.lineups-player__captain {
+		font-weight: bold;
+		margin-right: 0.25em;
+	}
+	.lineups-player__name {
+		margin-right: 0.25em;
+	}
+
+	&__icon {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		border: 1px solid variables.$light-gray;
+		border-radius: 5px;
+		height: 20px;
+		min-width: 20px;
+		margin: 0 1px;
+
+		.icon {
+			font-size: 1.8rem;
+			&--goal {
+				color: variables.$font-color-dark;
+				&-number {
+					letter-spacing: 1px;
+					font-weight: bold;
+					font-size: 1.3rem;
+					margin-right: 1px;
+				}
+			}
+			&--own-goal {
+				color: variables.$red;
+			}
+			&--subst {
+				color: variables.$green;
+			}
+			&--warn {
+				font-size: 1.5rem;
+				color: variables.$red;
+				margin: 0 0.1em;
+			}
+		}
+		.card-icon {
+			border-radius: 2px;
+			height: 14px;
+			margin: 0 0.1em;
+			aspect-ratio: 2/3;
+			&--yellow {
+				background-color: variables.$yellow;
+			}
+			&--second-yellow {
+				position: relative;
+				background-color: variables.$yellow;
+				overflow: hidden;
+				&::before {
+					position: absolute;
+					content: '';
+					left: 0;
+					top: 0;
+					width: 0;
+					height: 0;
+					border-top: 12px solid transparent;
+					border-right: 9.5px solid transparent;
+
+					border-top: 15px solid variables.$red;
+				}
+			}
+			&--red {
+				background-color: variables.$red;
+			}
+		}
+		.var-icon {
+			font-size: 1rem;
+			color: #dc0000;
+			padding: 0 0.2em;
+			font-weight: bold;
+		}
+	}
+	.lineups-player__subst-name {
+		display: none;
+	}
+	&--away {
+		flex-direction: row-reverse;
+		justify-content: end;
+		.lineups-player__number-box {
+			justify-content: end;
+		}
+		.lineups-player__name {
+			margin-right: 0;
+			margin-left: 0.25em;
+		}
+		.lineups-player__goalkeeper,
+		.lineups-player__captain {
+			margin-left: 0.25em;
+			margin-right: 0em;
+		}
+	}
+}
+
+@media (min-width: 768px) {
+	.lineups-player {
+		height: 30px;
+		// padding: 0.3em 0;
+		&__number-box {
+			width: 24px;
+			.lineups-player__number {
+				font-size: 1.4rem;
+			}
+		}
+		.lineups-player__name {
+			font-size: 1.4rem;
+		}
+		.lineups-player__goalkeeper,
+		.lineups-player__captain {
+			font-size: 1.2rem;
+		}
+		&__icon {
+			border-radius: 7px;
+			height: 24px;
+			min-width: 24px;
+			.icon {
+				font-size: 2rem;
+				&--warn {
+					font-size: 1.8rem;
+				}
+			}
+			.card-icon {
+				border-radius: 3px;
+				height: 16px;
+				margin: 0 0.2em;
+				&--second-yellow {
+					&::before {
+						border-right: 10px solid transparent;
+						border-top: 16px solid variables.$red;
+					}
+				}
+			}
+			.var-icon {
+				font-size: 1.1rem;
+				padding: 0 0.4em;
+				letter-spacing: 1px;
+			}
+		}
+		.lineups-player__subst-name {
+			display: block;
+			font-size: 1.3rem;
+			color: variables.$font-color-less-darker;
+			margin-left: 0.25em;
+		}
+		&--away {
+			.lineups-player__subst-name {
+				margin-left: 0em;
+				margin-right: 0.25em;
+			}
+		}
+	}
+}
