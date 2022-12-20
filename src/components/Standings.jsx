@@ -15,10 +15,24 @@ export default function Standings() {
 	// 		}
 	// 	);
 	// }, [id]);
-	console.log(standings);
+	console.log(standings?.response[0]);
 	return (
 		<div className='standings match-wrapper'>
-			<div className='standings__header'></div>
+			<div className='standings__header'>
+				<img
+					src={standings?.response[0]?.league?.logo}
+					alt={`${standings?.response[0]?.league?.name} logo`}
+					className='standings__league-logo'
+				/>
+				<p className='standings__league-name'>
+					{standings?.response[0]?.league?.name}
+				</p>
+
+				<p className='standings__season'>
+					{standings?.response[0]?.league?.season}/
+					{standings?.response[0]?.league?.season + 1}
+				</p>
+			</div>
 			<div className='standings__box standings__box--mobile'>
 				<div className='standings__element standings__element-header'>
 					<div className='standings__rank'>

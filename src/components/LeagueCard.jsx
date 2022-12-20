@@ -11,11 +11,19 @@ export default function LeagueCard({ league }) {
 		<div className='league-card'>
 			{league && (
 				<>
-					<div className='league-card__logo'>
+					<div
+						onClick={() => navigate(`/standings/${league?.id}`)}
+						className='league-card__logo'
+					>
 						<img src={league.logo} alt='' />
 					</div>
 					<div className='league-card__info'>
-						<button className='league-card__club-name'>{league.name}</button>
+						<button
+							onClick={() => navigate(`/standings/${league?.id}`)}
+							className='league-card__club-name'
+						>
+							{league.name}
+						</button>
 						<div className='league-card__country'>
 							<div className='league-card__flag'>
 								<img src={league.flag} alt='' />

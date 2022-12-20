@@ -5,6 +5,25 @@
 	padding: 0.25em 0;
 	width: 100%;
 	background-color: #f4f4f4;
+	&__header {
+		padding: 1em 0;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		.standings__league-logo {
+			height: 100px;
+			margin-bottom: 0.25em;
+		}
+		.standings__league-name {
+			font-size: 2rem;
+			font-weight: bold;
+		}
+		.standings__season {
+			font-size: 1.4rem;
+			color: variables.$font-color-less-darker;
+		}
+	}
 	&__box {
 		.standings__element {
 			display: flex;
@@ -62,7 +81,7 @@
 		}
 		.standings__element-header {
 			background-color: #e4e4e4;
-			padding: 0.5em .125em;
+			padding: 0.5em 0.125em;
 			font-size: 1.2rem;
 			margin-bottom: 0.5em;
 			border-bottom: none;
@@ -97,6 +116,17 @@
 		border-radius: 10px;
 		height: calc(100vh - 95px);
 		overflow: scroll;
+		&__header {
+			.standings__league-logo {
+				height: 140px;
+			}
+			.standings__league-name {
+				font-size: 2.8rem;
+			}
+			.standings__season {
+				font-size: 1.8rem;
+			}
+		}
 		&__box {
 			&--mobile {
 				display: none;
