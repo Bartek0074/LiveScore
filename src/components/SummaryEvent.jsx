@@ -22,7 +22,6 @@ export default function SummaryEvent({ match, eventEl }) {
 					</span>
 				</div>
 			)}
-
 			{eventEl?.detail === 'Normal Goal' && (
 				<div className='summary-event__icon'>
 					<BiFootball className='icon icon--goal' />

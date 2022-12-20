@@ -4,6 +4,7 @@ import Home from './components/Home.jsx';
 import './App.scss';
 import { getDateArr } from './utils/getDateArr';
 import MatchDetail from './components/MatchDetail';
+import Standings from './components/Standings';
 
 function App() {
 	return (
@@ -11,7 +12,8 @@ function App() {
 			<Nav />
 			<Routes>
 				<Route path='/' exact element={<Home />} />
-				<Route path='/match/:id' exact element={<MatchDetail/>} />
+				<Route path='/match/:id' element={<MatchDetail/>} />
+				<Route path='/standings/:id' element={<Standings/>} />
 			</Routes>
 		</BrowserRouter>
 	);

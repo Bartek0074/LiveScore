@@ -49,7 +49,7 @@ export default function MatchDetail() {
 	// 	setLeague(newLeague);
 	// }, [match]);
 
-	const match = penInProgressFixture.response[0];
+	const match = fullTimeFixture.response[0];
 	const league = leagues.find((leagueEl) => leagueEl?.id === match.league?.id);
 
 	// console.log(match);

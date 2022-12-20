@@ -4,8 +4,6 @@ import { BiRefresh, BiFootball } from 'react-icons/bi';
 import '../styles/LineupsPlayer.scss';
 
 export default function LineupsPlayer({ player, playerDetail, match, home }) {
-	// console.log(match?.events);
-	console.log(playerDetail);
 	return (
 		<div
 			className={

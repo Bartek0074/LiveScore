@@ -1,10 +1,13 @@
 import React from 'react';
 
 import { IoIosPodium } from 'react-icons/io';
+import { useNavigate } from 'react-router-dom';
 
 import '../styles/LeagueCard.scss';
 
-export default function LeagueCard({ league }) {	return (
+export default function LeagueCard({ league }) {
+	const navigate = useNavigate();
+	return (
 		<div className='league-card'>
 			{league && (
 				<>
@@ -20,10 +23,16 @@ export default function LeagueCard({ league }) {	return (
 							<p className='league-card__country-name'>{league.country}</p>
 						</div>
 					</div>
-					<button className='league-card__standings-btn-mobile'>
+					<button
+						onClick={() => navigate(`/standings/${league?.id}`)}
+						className='league-card__standings-btn-mobile'
+					>
 						<IoIosPodium className='icon' />
 					</button>
-					<button className='league-card__standings-btn-desktop'>
+					<button
+						onClick={() => navigate(`/standings/${league?.id}`)}
+						className='league-card__standings-btn-desktop'
+					>
 						Standings
 					</button>
 				</>
