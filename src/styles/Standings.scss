@@ -30,7 +30,7 @@
 			align-items: center;
 			border-bottom: 1px solid variables.$light-gray;
 			font-size: 1.3rem;
-			padding: 0.375em 0.125em;
+			padding: 0.375em 0.25em;
 			transition: background-color 0.3s;
 			&:hover {
 				background-color: #e4e4e4;
@@ -49,13 +49,39 @@
 				justify-content: center;
 				align-items: center;
 				margin-right: 0.75em;
-				width: 20px;
+				font-size: 1.2rem;
+				width: 22px;
 				font-weight: bold;
-				height: 20px;
-				// background-color: red;
+				height: 22px;
 				border-radius: 5px;
-				// color: white;
-				// font-weight: bold;
+				&--first-standing {
+					color: variables.$font-color-light;
+					background-color: rgb(0, 70, 130);
+				}
+				&--second-standing-prom {
+					color: variables.$font-color-light;
+					background-color: rgb(4, 130, 0);
+				}
+				&--second-standing-rel {
+					color: variables.$font-color-light;
+					background-color: rgb(130, 115, 0);
+				}
+				&--third-standing-prom {
+					color: variables.$font-color-light;
+					background-color: rgb(130, 115, 0);
+				}
+				&--third-standing-rel {
+					color: variables.$font-color-light;
+					background-color: rgb(130, 17, 0);
+				}
+				&--fourth-standing {
+					color: variables.$font-color-light;
+					background-color: rgb(130, 13, 0);
+				}
+				&--fifth-standing {
+					color: variables.$font-color-light;
+					background-color: rgb(60, 3, 14);
+				}
 			}
 			.standings__team-logo {
 				display: flex;
@@ -81,7 +107,7 @@
 		}
 		.standings__element-header {
 			background-color: #e4e4e4;
-			padding: 0.5em 0.125em;
+			padding: 0.5em 0.25em;
 			font-size: 1.2rem;
 			margin-bottom: 0.5em;
 			border-bottom: none;
@@ -105,6 +131,47 @@
 		}
 		&--desktop {
 			display: none;
+		}
+	}
+	.standings__legend {
+		margin-top: .5em;
+		&-element {
+			display: flex;
+			align-items: center;
+			padding: 0.125em 0.5em;
+
+			.standings__legend-square {
+				width: 14px;
+				height: 14px;
+				border-radius: 4px;
+				background-color: red;
+				margin-right: 0.5em;
+				&--first-standing {
+					background-color: rgb(0, 70, 130);
+				}
+				&--second-standing-prom {
+					background-color: rgb(4, 130, 0);
+				}
+				&--second-standing-rel {
+					background-color: rgb(130, 115, 0);
+				}
+				&--third-standing-prom {
+					background-color: rgb(130, 115, 0);
+				}
+				&--third-standing-rel {
+					background-color: rgb(130, 17, 0);
+				}
+				&--fourth-standing {
+					background-color: rgb(130, 13, 0);
+				}
+				&--fifth-standing {
+					background-color: rgb(60, 3, 14);
+				}
+			}
+			.standings__legend-label{
+				font-size: 1.2rem;
+				color: variables.$font-color-less-darker;
+			}
 		}
 	}
 }
@@ -135,7 +202,7 @@
 				display: block;
 			}
 			.standings__element {
-				padding: 0.375em 0.25em;
+				padding: 0.375em;
 				font-size: 1.4rem;
 				.standings__team-logo {
 					img {
@@ -168,7 +235,7 @@
 				}
 			}
 			.standings__element-header {
-				padding: 0.5em 0.25em;
+				padding: 0.5em 0.375em;
 				font-size: 1.3rem;
 				.standings__form-match-label {
 					display: flex;

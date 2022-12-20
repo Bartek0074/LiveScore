@@ -1,21 +1,36 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { fetchFromAPI } from '../utils/fetchFromApi';
-import { standings } from '../utils/standings';
+import { standingsPremier } from '../utils/standingsPremier';
+import { standingsChampionship } from '../utils/standingsChampionship';
+import { standingsEkstra } from '../utils/standingsEkstra';
+import { standings1liga } from '../utils/standings1liga';
+import { standingsItaly } from '../utils/standingsItaly';
 import '../styles/Standings.scss';
 
 export default function Standings() {
 	const { id } = useParams();
 	// const [standings, setStandings] = useState([]);
 	// useEffect(() => {
-	// 	fetchFromAPI(`/standings?league=${id}&season=2022`).then(
+	// 	fetchFromAPI(`/standings?league=107&season=2022`).then(
 	// 		(data) => {
 	// 			// setStandings(data.response);
 	// 			console.log(data);
 	// 		}
 	// 	);
 	// }, [id]);
-	console.log(standings?.response[0]);
+	// console.log(standings?.response[0]?.league?.standings)
+	const standings = standings1liga;
+	let standingsDescriptions = [];
+	standings?.response[0]?.league?.standings[0].forEach((standing) => {
+		if (
+			standing.description &&
+			!standingsDescriptions.includes(standing.description)
+		) {
+			standingsDescriptions.push(standing.description);
+		}
+	});
+	// console.log(standingsDescriptions);
 	return (
 		<div className='standings match-wrapper'>
 			<div className='standings__header'>
@@ -53,9 +68,79 @@ export default function Standings() {
 					(standingsEl, standingsElId) => {
 						return (
 							<div className='standings__element' key={standingsElId}>
-								<div className='standings__rank'>
-									<span>{standingsEl?.rank}.</span>
-								</div>
+								{standingsEl?.description === standingsDescriptions[0] && (
+									<div
+										className={
+											'standings__rank standings__rank--first-standing'
+										}
+									>
+										<span>{standingsEl?.rank}.</span>
+									</div>
+								)}
+								{standingsEl?.description === standingsDescriptions[1] &&
+									(standingsEl?.description.includes('Promotion') ||
+										standingsEl?.description.includes('Qualifiers')) && (
+										<div
+											className={
+												'standings__rank standings__rank--second-standing-prom'
+											}
+										>
+											<span>{standingsEl?.rank}.</span>
+										</div>
+									)}
+								{standingsEl?.description === standingsDescriptions[1] &&
+									standingsEl?.description.includes('Relegation') && (
+										<div
+											className={
+												'standings__rank standings__rank--second-standing-rel'
+											}
+										>
+											<span>{standingsEl?.rank}.</span>
+										</div>
+									)}
+								{standingsEl?.description === standingsDescriptions[2] &&
+									standingsEl?.description.includes('Promotion') && (
+										<div
+											className={
+												'standings__rank standings__rank--third-standing-prom'
+											}
+										>
+											<span>{standingsEl?.rank}.</span>
+										</div>
+									)}
+								{standingsEl?.description === standingsDescriptions[2] &&
+									standingsEl?.description.includes('Relegation') && (
+										<div
+											className={
+												'standings__rank standings__rank--third-standing-rel'
+											}
+										>
+											<span>{standingsEl?.rank}.</span>
+										</div>
+									)}
+								{standingsEl?.description === standingsDescriptions[3] && (
+									<div
+										className={
+											'standings__rank standings__rank--fourth-standing'
+										}
+									>
+										<span>{standingsEl?.rank}.</span>
+									</div>
+								)}
+								{standingsEl?.description === standingsDescriptions[4] && (
+									<div
+										className={
+											'standings__rank standings__rank--fifth-standing'
+										}
+									>
+										<span>{standingsEl?.rank}.</span>
+									</div>
+								)}
+								{standingsEl?.description === null && (
+									<div className={'standings__rank'}>
+										<span>{standingsEl?.rank}.</span>
+									</div>
+								)}
 								<div className='standings__team-logo'>
 									<img src={standingsEl?.team?.logo} alt='' />
 								</div>
@@ -115,9 +200,79 @@ export default function Standings() {
 					(standingsEl, standingsElId) => {
 						return (
 							<div className='standings__element' key={standingsElId}>
-								<div className='standings__rank'>
-									<span>{standingsEl?.rank}.</span>
-								</div>
+								{standingsEl?.description === standingsDescriptions[0] && (
+									<div
+										className={
+											'standings__rank standings__rank--first-standing'
+										}
+									>
+										<span>{standingsEl?.rank}.</span>
+									</div>
+								)}
+								{standingsEl?.description === standingsDescriptions[1] &&
+									(standingsEl?.description.includes('Promotion') ||
+										standingsEl?.description.includes('Qualifiers')) && (
+										<div
+											className={
+												'standings__rank standings__rank--second-standing-prom'
+											}
+										>
+											<span>{standingsEl?.rank}.</span>
+										</div>
+									)}
+								{standingsEl?.description === standingsDescriptions[1] &&
+									standingsEl?.description.includes('Relegation') && (
+										<div
+											className={
+												'standings__rank standings__rank--second-standing-rel'
+											}
+										>
+											<span>{standingsEl?.rank}.</span>
+										</div>
+									)}
+								{standingsEl?.description === standingsDescriptions[2] &&
+									standingsEl?.description.includes('Promotion') && (
+										<div
+											className={
+												'standings__rank standings__rank--third-standing-prom'
+											}
+										>
+											<span>{standingsEl?.rank}.</span>
+										</div>
+									)}
+								{standingsEl?.description === standingsDescriptions[2] &&
+									standingsEl?.description.includes('Relegation') && (
+										<div
+											className={
+												'standings__rank standings__rank--third-standing-rel'
+											}
+										>
+											<span>{standingsEl?.rank}.</span>
+										</div>
+									)}
+								{standingsEl?.description === standingsDescriptions[3] && (
+									<div
+										className={
+											'standings__rank standings__rank--fourth-standing'
+										}
+									>
+										<span>{standingsEl?.rank}.</span>
+									</div>
+								)}
+								{standingsEl?.description === standingsDescriptions[4] && (
+									<div
+										className={
+											'standings__rank standings__rank--fifth-standing'
+										}
+									>
+										<span>{standingsEl?.rank}.</span>
+									</div>
+								)}
+								{standingsEl?.description === null && (
+									<div className={'standings__rank'}>
+										<span>{standingsEl?.rank}.</span>
+									</div>
+								)}
 								<div className='standings__team-logo'>
 									<img src={standingsEl?.team?.logo} alt='' />
 								</div>
@@ -181,6 +336,73 @@ export default function Standings() {
 						);
 					}
 				)}
+			</div>
+			<div className='standings__legend'>
+				{standingsDescriptions.map((description, descriptionId) => {
+					if (description === standingsDescriptions[0]) {
+						return (
+							<div className='standings__legend-element' key={descriptionId}>
+								<div className='standings__legend-square standings__legend-square--first-standing'></div>
+								<p className='standings__legend-label'>{description}</p>
+							</div>
+						);
+					} else if (
+						description === standingsDescriptions[1] &&
+						(description.includes('Promotion') ||
+							description.includes('Qualifiers'))
+					) {
+						return (
+							<div className='standings__legend-element' key={descriptionId}>
+								<div className='standings__legend-square standings__legend-square--second-standing-prom'></div>
+								<p className='standings__legend-label'>{description}</p>
+							</div>
+						);
+					} else if (
+						description === standingsDescriptions[1] &&
+						description.includes('Relegation')
+					) {
+						return (
+							<div className='standings__legend-element' key={descriptionId}>
+								<div className='standings__legend-square standings__legend-square--second-standing-rel'></div>
+								<p className='standings__legend-label'>{description}</p>
+							</div>
+						);
+					} else if (
+						description === standingsDescriptions[2] &&
+						description.includes('Promotion')
+					) {
+						return (
+							<div className='standings__legend-element' key={descriptionId}>
+								<div className='standings__legend-square standings__legend-square--third-standing-prom'></div>
+								<p className='standings__legend-label'>{description}</p>
+							</div>
+						);
+					} else if (
+						description === standingsDescriptions[2] &&
+						description.includes('Relegation')
+					) {
+						return (
+							<div className='standings__legend-element' key={descriptionId}>
+								<div className='standings__legend-square standings__legend-square--third-standing-rel'></div>
+								<p className='standings__legend-label'>{description}</p>
+							</div>
+						);
+					} else if (description === standingsDescriptions[3]) {
+						return (
+							<div className='standings__legend-element' key={descriptionId}>
+								<div className='standings__legend-square standings__legend-square--fourth'></div>
+								<p className='standings__legend-label'>{description}</p>
+							</div>
+						);
+					} else if (description === standingsDescriptions[4]) {
+						return (
+							<div className='standings__legend-element' key={descriptionId}>
+								<div className='standings__legend-square standings__legend-square--fifth'></div>
+								<p className='standings__legend-label'>{description}</p>
+							</div>
+						);
+					}
+				})}
 			</div>
 		</div>
 	);

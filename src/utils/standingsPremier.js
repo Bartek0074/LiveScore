@@ -1,4 +1,4 @@
-export const standings = {
+export const standingsPremier = {
 	get: 'standings',
 	parameters: {
 		league: '39',
