@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+
 import '../styles/Filters.scss';
 
 export default function Filters({ setStatuses }) {
@@ -24,8 +25,8 @@ export default function Filters({ setStatuses }) {
 				'CANC',
 				'ABD',
 				'AWD',
-				'WO',
-				'LIVE',
+				// 'WO',
+				// 'LIVE',
 			]);
 		} else if (filter === 'live') {
 			setStatuses(['1H', 'HT', '2H', 'ET', 'BT', 'P', 'SUSP', 'INT']);

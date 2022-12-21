@@ -1,41 +1,17 @@
 import React, { useState, useEffect } from 'react';
-
-import { getDateWithHour } from '../utils/getDateWithHour';
-import { leagues } from '../utils/constants';
-import LeagueCard from './LeagueCard';
-
 import { useParams } from 'react-router-dom';
-
-import '../styles/MatchDetail.scss';
-
-import { fetchFromAPI } from '../utils/fetchFromApi';
-
-import { TBDfixture } from '../utils/TBDfixture';
-import { notStartedFixture } from '../utils/notStartedFixture';
-import { firstHalfFixture } from '../utils/firstHalfFixture';
-import { halfTimeFixture } from '../utils/halfTimeFixture';
-import { secondHalfFixture } from '../utils/secondHalfFixture';
-import { extraTimeFixture } from '../utils/extraTimeFixture';
-import { breakTimeFixture } from '../utils/breakTimeFixture';
-import { penInProgressFixture } from '../utils/penInProgressFixture';
-import { fullTimeFixture } from '../utils/fullTimeFixture';
-import { fullTimeFixture2 } from '../utils/fullTimeFixture2';
-import { aetFixture } from '../utils/aetFixture';
-import { penFixture } from '../utils/penFixture';
-import { postponedFixture } from '../utils/postponedFixture';
-import { cancelledFixture } from '../utils/cancelledFixture';
-import { matchAbandoned } from '../utils/matchAbandoned';
-import { technicalLossFixture } from '../utils/technicalLossFixture';
-
-import { standingsPremier } from '../utils/standingsPremier';
-import { standingsChampionship } from '../utils/standingsChampionship';
 
 import Summary from './Summary';
 import Lineups from './Lineups';
 import Stats from './Stats';
 import Standings from './Standings';
-import { standingsEkstra } from '../utils/standingsEkstra';
-import { standings1liga } from '../utils/standings1liga';
+import LeagueCard from './LeagueCard';
+
+import { fetchFromAPI } from '../utils/fetchFromApi';
+import { leagues } from '../utils/constants';
+import { getDateWithHour } from '../utils/getDateWithHour';
+
+import '../styles/MatchDetail.scss';
 
 export default function MatchDetail() {
 	const { id } = useParams();
@@ -61,9 +37,7 @@ export default function MatchDetail() {
 	useEffect(() => {
 		fetchFromAPI(`/standings?league=${league?.id}&season=2022`).then((data) => {
 			setStandings(data?.response[0]);
-			console.log(data?.response[0]);
 		});
-		console.log(league?.id)
 	}, [league]);
 
 	return (
@@ -72,7 +46,7 @@ export default function MatchDetail() {
 			<div className='match-detail__result'>
 				<div className='match-detail__team'>
 					<div className='match-detail__team-logo'>
-						<img src={match?.teams?.home?.logo} alt='' />
+						<img src={match?.teams?.home?.logo} alt={`${match?.teams?.home?.name} logo`} />
 					</div>
 					<div className='match-detail__team-name'>
 						<p

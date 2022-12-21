@@ -1,9 +1,10 @@
 import React from 'react';
+
 import SummaryEvent from './SummaryEvent';
+
 import '../styles/Summary.scss';
 
 export default function Summary({ match }) {
-	// console.log(match);
 	return (
 		<div className='summary'>
 			{(match?.fixture?.status?.short === '1H' ||
@@ -36,7 +37,7 @@ export default function Summary({ match }) {
 					{match?.events.map((eventEl, id) => {
 						if (eventEl?.time?.elapsed <= 45) {
 							return <SummaryEvent match={match} eventEl={eventEl} key={id} />;
-						}
+						} else return null;
 					})}
 				</>
 			)}
@@ -70,7 +71,7 @@ export default function Summary({ match }) {
 					{match?.events.map((eventEl, id) => {
 						if (eventEl?.time?.elapsed <= 90 && eventEl?.time?.elapsed > 45) {
 							return <SummaryEvent match={match} eventEl={eventEl} key={id} />;
-						}
+						} else return null;
 					})}
 				</>
 			)}
@@ -101,7 +102,7 @@ export default function Summary({ match }) {
 							eventEl?.comments !== 'Penalty Shootout'
 						) {
 							return <SummaryEvent match={match} eventEl={eventEl} key={id} />;
-						}
+						} else return null;
 					})}
 				</>
 			)}
@@ -117,7 +118,7 @@ export default function Summary({ match }) {
 					{match?.events.map((eventEl, id) => {
 						if (eventEl?.comments === 'Penalty Shootout') {
 							return <SummaryEvent match={match} eventEl={eventEl} key={id} />;
-						}
+						} else return null;
 					})}
 				</>
 			)}

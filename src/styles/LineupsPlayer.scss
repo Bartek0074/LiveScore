@@ -11,7 +11,7 @@
 	&__number-box {
 		display: flex;
 		align-items: center;
-		justify-content: start;
+		justify-content: flex-start;
 		width: 20px;
 		height: 100%;
 		.lineups-player__number {
@@ -129,7 +129,6 @@
 @media (min-width: 768px) {
 	.lineups-player {
 		height: 30px;
-		// padding: 0.3em 0;
 		&__number-box {
 			width: 24px;
 			.lineups-player__number {

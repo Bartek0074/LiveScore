@@ -1,6 +1,8 @@
 import React from 'react';
-import { FiRefreshCcw } from 'react-icons/fi';
 import { useNavigate } from 'react-router-dom';
+
+import { FiRefreshCcw } from 'react-icons/fi';
+
 import '../styles/Nav.scss';
 
 export default function Nav() {

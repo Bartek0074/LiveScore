@@ -1,8 +1,7 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 
 import { getMatchTime } from '../utils/getMatchTime';
-
-import { useNavigate } from 'react-router-dom';
 
 import '../styles/MatchCard.scss';
 
@@ -16,9 +15,7 @@ export default function MatchCard({ match }) {
 			className='match-card'
 		>
 			<div className='match-card__time'>
-				{match?.fixture?.status?.short === 'TBD' && (
-					<p>TBD</p>
-				)}
+				{match?.fixture?.status?.short === 'TBD' && <p>TBD</p>}
 				{match?.fixture?.status?.short === 'NS' && (
 					<p>{getMatchTime(match?.fixture?.date)}</p>
 				)}
@@ -59,7 +56,10 @@ export default function MatchCard({ match }) {
 			<div className='match-card__teams'>
 				<div className='match-card__team'>
 					<div className='match-card__team-logo'>
-						<img src={match?.teams?.home?.logo} alt='' />
+						<img
+							src={match?.teams?.home?.logo}
+							alt={`${match?.teams?.home?.name} logo`}
+						/>
 					</div>
 					<div className='match-card__team-name'>
 						<p
@@ -73,7 +73,10 @@ export default function MatchCard({ match }) {
 				</div>
 				<div className='match-card__team'>
 					<div className='match-card__team-logo'>
-						<img src={match?.teams?.away?.logo} alt='' />
+						<img
+							src={match?.teams?.away?.logo}
+							alt={`${match?.teams?.away?.name} logo`}
+						/>
 					</div>
 					<div className='match-card__team-name'>
 						<p

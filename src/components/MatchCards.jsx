@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from 'react';
+
+import MatchCard from './MatchCard';
+import LeagueCard from './LeagueCard';
+
 import { leagues } from '../utils/constants';
 
 import '../styles/MatchCards.scss';
-import LeagueCard from './LeagueCard';
-import MatchCard from './MatchCard';
 
 export default function MatchCards({ matches, statuses, leagueId }) {
 	const [leagueIdArr, setLeagueIdArr] = useState([]);
@@ -25,9 +27,12 @@ export default function MatchCards({ matches, statuses, leagueId }) {
 
 	useEffect(() => {
 		const newFilteredMatches = matches.filter((match) => {
-			if (statuses.includes(match?.fixture?.status?.short) && leagueIdArr.includes(match.league.id)) {
-				return true
-			}
+			if (
+				statuses.includes(match?.fixture?.status?.short) &&
+				leagueIdArr.includes(match.league.id)
+			) {
+				return true;
+			} else return null;
 		});
 
 		setFilteredMatches(newFilteredMatches);
@@ -59,11 +64,11 @@ export default function MatchCards({ matches, statuses, leagueId }) {
 										return (
 											<MatchCard match={filteredMatch} key={filteredMatchKey} />
 										);
-									}
+									} else return null;
 								})}
 							</div>
 						);
-					}
+					} else return null;
 				})
 			) : (
 				<p>

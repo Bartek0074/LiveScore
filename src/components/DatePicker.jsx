@@ -1,11 +1,14 @@
 import React, { useEffect, useState } from 'react';
+
 import { getDateArr } from '../utils/getDateArr';
-import '../styles/DatePicker.scss';
+
 import {
 	RiArrowLeftSLine,
 	RiArrowRightSLine,
 	RiCalendar2Line,
 } from 'react-icons/ri';
+
+import '../styles/DatePicker.scss';
 
 export default function DatePicker({ setFetchDate }) {
 	const dateArr = getDateArr(Date.now());
@@ -13,6 +16,11 @@ export default function DatePicker({ setFetchDate }) {
 	const [dateIndex, setDateIndex] = useState(2);
 	const [date, setDate] = useState(dateArr[dateIndex]);
 	const [open, setOpen] = useState(false);
+
+	useEffect(() => {
+		setDate(dateArr[dateIndex]);
+		setFetchDate(dateArr[dateIndex]);
+	}, [dateIndex]);
 
 	const leftBtnHandle = () => {
 		if (dateIndex > 0) {
@@ -24,11 +32,6 @@ export default function DatePicker({ setFetchDate }) {
 			setDateIndex(dateIndex + 1);
 		}
 	};
-
-	useEffect(() => {
-		setDate(dateArr[dateIndex]);
-		setFetchDate(dateArr[dateIndex]);
-	}, [dateIndex]);
 
 	return (
 		<div className='date-picker'>
@@ -61,17 +64,17 @@ export default function DatePicker({ setFetchDate }) {
 				{dateArr.map((dateEl, id) => {
 					return (
 						<div
+							onClick={() => {
+								setOpen(!open);
+								setDate(dateEl);
+								setFetchDate(dateEl);
+							}}
 							className={
 								dateEl === date
 									? 'date-picker__element date-picker__element--active'
 									: 'date-picker__element'
 							}
 							key={id}
-							onClick={() => {
-								setOpen(!open);
-								setDate(dateEl);
-								setFetchDate(dateEl);
-							}}
 						>
 							{dateEl}
 						</div>

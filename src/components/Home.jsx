@@ -3,25 +3,13 @@ import React, { useState, useEffect } from 'react';
 import LeaguesBarMobile from './LeaguesBarMobile';
 import LeaguesBarDesktop from './LeaguesBarDesktop';
 import MatchCards from './MatchCards';
-
-import { fixtures } from '../utils/fixtures';
-import { fixtures2 } from '../utils/fixtures2';
-import { fixtures3 } from '../utils/fixtures3';
-import { fixtures4 } from '../utils/fixtures4';
-import { fixtures5 } from '../utils/fixtures5';
-import { fixtures6 } from '../utils/fixtures6';
-import { fullTimeFixture } from '../utils/fullTimeFixture';
-import { fixturesWithExtraTime } from '../utils/fixturesWithExtraTime';
-import { fixturesWithBreakTime } from '../utils/fixturesWithBreakTime';
-import { fixturesWithPenInProgress } from '../utils/fixturesWithPenInProgress';
-
-import { getDate } from '../utils/getDate';
-import { fetchFromAPI } from '../utils/fetchFromApi';
-
-import '../styles/Home.scss';
 import DatePicker from './DatePicker';
 import Filters from './Filters';
-import { penInProgressFixture } from '../utils/penInProgressFixture';
+
+import { fetchFromAPI } from '../utils/fetchFromApi';
+import { getDate } from '../utils/getDate';
+
+import '../styles/Home.scss';
 
 export default function Home() {
 	const [leagueId, setLeagueId] = useState('all');
@@ -57,8 +45,6 @@ export default function Home() {
 			}
 		);
 	}, [fetchDate]);
-
-	// const matches = fixtures5.response;
 
 	return (
 		<div className='home wrapper'>

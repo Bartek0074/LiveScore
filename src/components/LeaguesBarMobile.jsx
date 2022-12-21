@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 
-import { RiArrowDownSLine } from 'react-icons/ri';
 import { leagues } from '../utils/constants';
+
+import { RiArrowDownSLine } from 'react-icons/ri';
 
 import '../styles/LeaguesDropdownMenu.scss';
 
@@ -13,10 +14,10 @@ export default function LeaguesBarMobile({ setLeagueId }) {
 	return (
 		<div className='leagues-dropdown-menu'>
 			<div
-				className='leagues-dropdown-menu__trigger'
 				onClick={() => {
 					setOpen(!open);
 				}}
+				className='leagues-dropdown-menu__trigger'
 			>
 				{leagueFlag ? (
 					<div className='leagues-dropdown-menu__img-box'>
@@ -38,33 +39,33 @@ export default function LeaguesBarMobile({ setLeagueId }) {
 				}`}
 			>
 				<div
-					className='leagues-dropdown-menu__element'
 					onClick={() => {
 						setOpen(!open);
 						setLeagueName('All leagues');
 						setLeagueId('all');
 						setLeagueFlag('');
 					}}
+					className='leagues-dropdown-menu__element'
 				>
 					<p className='leagues-dropdown-menu__name'>All leagues</p>
 				</div>
 				{leagues.map((league, id) => (
 					<div
-						className='leagues-dropdown-menu__element'
-						value={league.name}
-						key={id}
 						onClick={() => {
 							setOpen(!open);
 							setLeagueName(league.name);
 							setLeagueId(league.id);
 							setLeagueFlag(league.logo);
 						}}
+						value={league.name}
+						className='leagues-dropdown-menu__element'
+						key={id}
 					>
 						<div className='leagues-dropdown-menu__img-box'>
 							<img
 								className='leagues-dropdown-menu__img'
 								src={league.logo}
-								alt={`${league.name} flag`}
+								alt={`${league.name} logo`}
 							/>
 						</div>
 						<p className='leagues-dropdown-menu__name'>{league.name}</p>

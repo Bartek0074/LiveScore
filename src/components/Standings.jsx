@@ -1,9 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { standingsPremier } from '../utils/standingsPremier';
-import { standingsChampionship } from '../utils/standingsChampionship';
-import { standingsEkstra } from '../utils/standingsEkstra';
-import { standings1liga } from '../utils/standings1liga';
-import { standingsItaly } from '../utils/standingsItaly';
+
 import '../styles/Standings.scss';
 
 export default function Standings({ standings }) {
@@ -22,8 +18,6 @@ export default function Standings({ standings }) {
 			setStandingsDescriptions(newStandingsDescriptions);
 		});
 	}, [standings]);
-
-	console.log(standingsDescriptions);
 
 	return (
 		<div className='standings'>
@@ -47,64 +41,32 @@ export default function Standings({ standings }) {
 					return (
 						<div className='standings__element' key={standingsElId}>
 							{standingsEl?.description === standingsDescriptions[0] && (
-								<div
-									className={'standings__rank standings__rank--first-standing'}
-								>
+								<div className={'standings__rank standings__rank--first'}>
 									<span>{standingsEl?.rank}.</span>
 								</div>
 							)}
-							{standingsEl?.description === standingsDescriptions[1] &&
-								(standingsEl?.description.includes('Promotion') ||
-									standingsEl?.description.includes('Qualifiers')) && (
-									<div
-										className={
-											'standings__rank standings__rank--second-standing-prom'
-										}
-									>
-										<span>{standingsEl?.rank}.</span>
-									</div>
-								)}
-							{standingsEl?.description === standingsDescriptions[1] &&
-								standingsEl?.description.includes('Relegation') && (
-									<div
-										className={
-											'standings__rank standings__rank--second-standing-rel'
-										}
-									>
-										<span>{standingsEl?.rank}.</span>
-									</div>
-								)}
-							{standingsEl?.description === standingsDescriptions[2] &&
-								standingsEl?.description.includes('Promotion') && (
-									<div
-										className={
-											'standings__rank standings__rank--third-standing-prom'
-										}
-									>
-										<span>{standingsEl?.rank}.</span>
-									</div>
-								)}
-							{standingsEl?.description === standingsDescriptions[2] &&
-								standingsEl?.description.includes('Relegation') && (
-									<div
-										className={
-											'standings__rank standings__rank--third-standing-rel'
-										}
-									>
-										<span>{standingsEl?.rank}.</span>
-									</div>
-								)}
+							{standingsEl?.description === standingsDescriptions[1] && (
+								<div className={'standings__rank standings__rank--second'}>
+									<span>{standingsEl?.rank}.</span>
+								</div>
+							)}
+							{standingsEl?.description === standingsDescriptions[2] && (
+								<div className={'standings__rank standings__rank--third'}>
+									<span>{standingsEl?.rank}.</span>
+								</div>
+							)}
 							{standingsEl?.description === standingsDescriptions[3] && (
-								<div
-									className={'standings__rank standings__rank--fourth-standing'}
-								>
+								<div className={'standings__rank standings__rank--fourth'}>
 									<span>{standingsEl?.rank}.</span>
 								</div>
 							)}
 							{standingsEl?.description === standingsDescriptions[4] && (
-								<div
-									className={'standings__rank standings__rank--fifth-standing'}
-								>
+								<div className={'standings__rank standings__rank--fifth'}>
+									<span>{standingsEl?.rank}.</span>
+								</div>
+							)}
+							{standingsEl?.description === standingsDescriptions[5] && (
+								<div className={'standings__rank standings__rank--sixth'}>
 									<span>{standingsEl?.rank}.</span>
 								</div>
 							)}
@@ -262,7 +224,7 @@ export default function Standings({ standings }) {
 											<span>{formMatch}</span>
 										</div>
 									);
-								}
+								} else return null;
 							})}
 						</div>
 					);
@@ -312,13 +274,9 @@ export default function Standings({ standings }) {
 								<p className='standings__legend-label'>{description}</p>
 							</div>
 						);
-					}
+					} else return null;
 				})}
 			</div>
 		</div>
 	);
 }
-// (standingsEl?.description ===
-// 	'Promotion - Champions League (Group Stage)' ||
-// 	(standingsEl?.description?.includes('Promotion') &&
-// 		!standingsEl?.description?.includes('Play Offs'))

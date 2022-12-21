@@ -1,7 +1,8 @@
 import React from 'react';
 
-import '../styles/Lineups.scss';
 import LineupsPlayer from './LineupsPlayer';
+
+import '../styles/Lineups.scss';
 
 export default function Lineups({ match }) {
 	return (
@@ -23,7 +24,7 @@ export default function Lineups({ match }) {
 							{match?.lineups[0]?.startXI.map((player, playerId) => {
 								const playerDetail = match?.players[0]?.players.filter(
 									(filteredPlayer) => {
-										return player?.player?.id == filteredPlayer.player.id;
+										return player?.player?.id === filteredPlayer.player.id;
 									}
 								)[0];
 								return (
@@ -42,7 +43,7 @@ export default function Lineups({ match }) {
 							{match?.lineups[1]?.startXI.map((player, playerId) => {
 								const playerDetail = match?.players[1]?.players.filter(
 									(filteredPlayer) => {
-										return player?.player?.id == filteredPlayer.player.id;
+										return player?.player?.id === filteredPlayer.player.id;
 									}
 								)[0];
 								return (
@@ -67,7 +68,7 @@ export default function Lineups({ match }) {
 							{match?.lineups[0]?.substitutes.map((player, playerId) => {
 								const playerDetail = match?.players[0]?.players.filter(
 									(filteredPlayer) => {
-										return player?.player?.id == filteredPlayer.player.id;
+										return player?.player?.id === filteredPlayer.player.id;
 									}
 								)[0];
 								return (
@@ -86,7 +87,7 @@ export default function Lineups({ match }) {
 							{match?.lineups[1]?.substitutes.map((player, playerId) => {
 								const playerDetail = match?.players[1]?.players.filter(
 									(filteredPlayer) => {
-										return player?.player?.id == filteredPlayer.player.id;
+										return player?.player?.id === filteredPlayer.player.id;
 									}
 								)[0];
 								return (

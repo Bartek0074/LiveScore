@@ -1,8 +1,8 @@
 import React from 'react';
+
 import Stat from './Stat';
 
 export default function Stats({ stats }) {
-	// console.log(stats[0].statistics);
 	return (
 		<div>
 			{stats[0] ? (
