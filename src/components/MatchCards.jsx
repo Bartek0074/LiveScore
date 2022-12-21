@@ -71,13 +71,25 @@ export default function MatchCards({ matches, statuses, leagueId }) {
 					} else return null;
 				})
 			) : (
-				<p>
-					{leagueId === 'all'
-						? 'No matches!'
-						: `No matches in ${
-								leagues.find((league) => league.id === leagueId).name
-						  }!`}
-				</p>
+				<>
+					{leagueId === 'all' ? (
+						<div className='match-cards__no-matches-info'>
+							<p>No matches!</p>
+						</div>
+					) : (
+						<>
+							<LeagueCard
+								league={leagues.find((league) => league.id === leagueId)}
+							/>
+							<div className='match-cards__no-matches-info'>
+								<p>
+									No matches in{' '}
+									{leagues.find((league) => league.id === leagueId).name}!
+								</p>
+							</div>
+						</>
+					)}
+				</>
 			)}
 		</div>
 	);

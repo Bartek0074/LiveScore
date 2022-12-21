@@ -116,4 +116,32 @@ export const leagues = [
 		name: 'Ligue 2',
 		logo: 'https://media-1.api-sports.io/football/leagues/62.png',
 	},
+	{
+		id: 88,
+		country: 'Netherlands',
+		flag: 'https://media-2.api-sports.io/flags/nl.svg',
+		name: 'Eredivisie',
+		logo: 'https://media-1.api-sports.io/football/leagues/88.png',
+	},
+	{
+		id: 144,
+		country: 'Belgium',
+		flag: 'https://media-2.api-sports.io/flags/be.svg',
+		name: 'Jupiler Pro League',
+		logo: 'https://media-1.api-sports.io/football/leagues/144.png',
+	},
+	{
+		id: 94,
+		country: 'Portugal',
+		flag: 'https://media-2.api-sports.io/flags/pt.svg',
+		name: 'Primeira Liga',
+		logo: 'https://media-1.api-sports.io/football/leagues/94.png',
+	},
+	{
+		id: 198,
+		country: 'Greece',
+		flag: 'https://media-2.api-sports.io/flags/gr.svg',
+		name: 'Football League',
+		logo: 'https://media-1.api-sports.io/football/leagues/198.png',
+	},
 ];

@@ -14,7 +14,12 @@ export default function Nav() {
 					LiveScore
 				</h1>
 				<button className='nav__button nav__button-refresh'>
-					<FiRefreshCcw className='icon' />
+					<FiRefreshCcw
+						onClick={() => {
+							window.location.reload(false);
+						}}
+						className='icon'
+					/>
 				</button>
 			</div>
 		</div>

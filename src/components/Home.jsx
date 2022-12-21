@@ -41,7 +41,6 @@ export default function Home() {
 		fetchFromAPI(`/fixtures?date=${fetchDate}&timezone=Europe/Warsaw`).then(
 			(data) => {
 				setMatches(data.response);
-				console.log(data);
 			}
 		);
 	}, [fetchDate]);

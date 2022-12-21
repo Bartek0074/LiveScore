@@ -3,12 +3,26 @@
 .match-cards {
 	margin-top: 0.5em;
 	padding-top: 0.5em;
+	padding-bottom: 0.1em;
 	width: 100%;
 	background-color: #f4f4f4;
 	&__element{
 		margin-bottom: .375em;
 		&:last-child{
 			margin-bottom: 0;
+		}
+	}
+	&__no-matches-info{
+		margin: 0.75em 0;
+		padding: 0.5em 0.75em;
+		background-color: #e4e4e4;
+		border-radius: 10px;
+		p {
+			font-size: 1.2rem;
+			font-weight: bold;
+			text-align: center;
+			text-transform: uppercase;
+			color: variables.$font-color-less-darker;
 		}
 	}
 }
