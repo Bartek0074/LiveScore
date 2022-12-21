@@ -20,33 +20,104 @@
 			font-size: 2rem;
 		}
 	}
-	&__element {
+	&__country {
 		display: flex;
-		flex-direction: row;
+		flex-direction: column;
+		justify-content: flex-start;
+		&-card {
+			display: flex;
+			align-items: center;
+			margin: 0.1em 0;
+			padding: 0.375em 0.5em;
+			border-radius: 5px;
+			cursor: pointer;
+			transition: background-color 0.3s;
+			&:hover {
+				background-color: variables.$secondary-color-hover;
+				.icon {
+					opacity: 1;
+				}
+			}
+			.leagues-bar-desktop__country-img {
+				margin-right: 0.5em;
+				height: 20px;
+			}
+			.leagues-bar-desktop__country-name {
+				color: variables.$font-color-dark;
+			}
+			.icon {
+				margin-left: auto;
+				font-size: 2rem;
+				opacity: 0;
+				transition: opacity 0.3s, transform 0.3s;
+			}
+		}
+		.leagues-bar-desktop__leagues {
+			height: 0;
+			opacity: 0;
+			overflow: hidden;
+			transition: opacity 0.3s;
+		}
+		&--active {
+			.leagues-bar-desktop__country-card {
+				font-weight: bold;
+				background-color: variables.$secondary-color;
+				&:hover {
+					background-color: variables.$secondary-color-hover;
+				}
+				.icon {
+					opacity: 1;
+					transform: rotate(-180deg);
+				}
+			}
+			.leagues-bar-desktop__leagues {
+				margin-bottom: 0.1em;
+				padding-bottom: 0.1em;
+				height: auto;
+				opacity: 1;
+			}
+		}
+	}
+	.leagues-bar-desktop__league,
+	.leagues-bar-desktop__league--all {
+		display: flex;
 		align-items: center;
-		padding: 0 0.75em;
-		height: 40px;
-		cursor: pointer;
+		margin: 0.25em 0;
 		border-radius: 5px;
-		transition: background-color 0.3s;
+		cursor: pointer;
+		&:first-child {
+			margin-top: 0.125em;
+		}
 		&:hover {
-			background-color: variables.$secondary-color;
+			background-color: variables.$secondary-color-hover;
 		}
 		&--active {
 			background-color: variables.$secondary-color;
+			&:hover {
+				background-color: variables.$secondary-color-hover;
+			}
 		}
-		.leagues-bar-desktop__img-box {
+		&-img-box {
 			display: flex;
 			justify-content: center;
 			align-items: center;
-			width: 30px;
-			margin-right: 10px;
-			.leagues-bar-desktop__img {
-				height: 25px;
+			margin-left: 0.125em;
+			padding: 0.25em 0.5em;
+			min-width: 40px;
+			.leagues-bar-desktop__league-img {
+				height: 18px;
 			}
 		}
-		.leagues-bar-desktop__name {
-			font-size: 1.7rem;
+		&-name {
+			font-size: 1.5rem;
+		}
+	}
+	.leagues-bar-desktop__league--all {
+		margin-bottom: 0.2em;
+		height: 26px;
+		.leagues-bar-desktop__league-name {
+			padding: 0 1em;
+			font-size: 1.6rem;
 		}
 	}
 }

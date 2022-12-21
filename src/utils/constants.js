@@ -29,6 +29,26 @@ export const countries = [
 		name: 'France',
 		flag: 'https://media-2.api-sports.io/flags/fr.svg',
 	},
+	{
+		code: 'NL',
+		name: 'Netherlands',
+		flag: 'https://media-2.api-sports.io/flags/nl.svg',
+	},
+	{
+		code: 'PT',
+		name: 'Portugal',
+		flag: 'https://media-2.api-sports.io/flags/pt.svg',
+	},
+	{
+		code: 'BE',
+		name: 'Belgium',
+		flag: 'https://media-2.api-sports.io/flags/be.svg',
+	},
+	{
+		code: 'GR',
+		name: 'Greece',
+		flag: 'https://media-2.api-sports.io/flags/gr.svg',
+	},
 ];
 
 export const leagues = [
