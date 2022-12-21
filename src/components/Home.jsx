@@ -9,6 +9,7 @@ import { fixtures2 } from '../utils/fixtures2';
 import { fixtures3 } from '../utils/fixtures3';
 import { fixtures4 } from '../utils/fixtures4';
 import { fixtures5 } from '../utils/fixtures5';
+import { fixtures6 } from '../utils/fixtures6';
 import { fullTimeFixture } from '../utils/fullTimeFixture';
 import { fixturesWithExtraTime } from '../utils/fixturesWithExtraTime';
 import { fixturesWithBreakTime } from '../utils/fixturesWithBreakTime';
@@ -35,8 +36,8 @@ export default function Home() {
 		'ET',
 		'BT',
 		'P',
-		'SUSP',
-		'INT',
+		// 'SUSP',
+		// 'INT',
 		'FT',
 		'AET',
 		'PEN',
@@ -44,18 +45,9 @@ export default function Home() {
 		'CANC',
 		'ABD',
 		'AWD',
-		'WO',
-		'LIVE',
+		// 'WO',
+		// 'LIVE',
 	]);
-
-	// useEffect(() => {
-	// 	fetchFromAPI(`/fixtures?id=979139&timezone=Europe/Warsaw`).then(
-	// 		(data) => {
-	// 			// setMatches(data.response);
-	// 			console.log(data);
-	// 		}
-	// 	);
-	// }, [fetchDate]);
 
 	// useEffect(() => {
 	// 	fetchFromAPI(`/fixtures?date=${fetchDate}&timezone=Europe/Warsaw`).then(

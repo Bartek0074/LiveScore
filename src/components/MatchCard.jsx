@@ -8,7 +8,7 @@ import '../styles/MatchCard.scss';
 
 export default function MatchCard({ match }) {
 	const navigate = useNavigate();
-	console.log(match);
+	// console.log(match);
 	return (
 		<div
 			onClick={() => {
@@ -18,6 +18,9 @@ export default function MatchCard({ match }) {
 			className='match-card'
 		>
 			<div className='match-card__time'>
+				{match?.fixture?.status?.short === 'TBD' && (
+					<p>TBD</p>
+				)}
 				{match?.fixture?.status?.short === 'NS' && (
 					<p>{getMatchTime(match?.fixture?.date)}</p>
 				)}
@@ -126,6 +129,7 @@ export default function MatchCard({ match }) {
 				</div>
 				<div className='match-card__score'>
 					<div className='match-card__score-fulltime'>
+						{match?.fixture?.status?.short === 'TBD' && <p>-</p>}
 						{match?.fixture?.status?.short === 'NS' && <p>-</p>}
 						{match?.fixture?.status?.short === '1H' && (
 							<p>{match?.goals?.home}</p>

@@ -1,48 +1,26 @@
 import React from 'react';
 
-import { IoIosPodium } from 'react-icons/io';
-import { useNavigate } from 'react-router-dom';
-
 import '../styles/LeagueCard.scss';
 
 export default function LeagueCard({ league }) {
-	const navigate = useNavigate();
 	return (
 		<div className='league-card'>
 			{league && (
 				<>
-					<div
-						onClick={() => navigate(`/standings/${league?.id}`)}
-						className='league-card__logo'
-					>
-						<img src={league.logo} alt='' />
+					<div className='league-card__logo'>
+						<img src={league.logo} alt={`${league.name} logo`} />
 					</div>
 					<div className='league-card__info'>
-						<button
-							onClick={() => navigate(`/standings/${league?.id}`)}
-							className='league-card__club-name'
-						>
-							{league.name}
-						</button>
+						<p className='league-card__club-name'>{league.name}</p>
 						<div className='league-card__country'>
-							<div className='league-card__flag'>
-								<img src={league.flag} alt='' />
-							</div>
+							{league.flag && (
+								<div className='league-card__flag'>
+									<img src={league.flag} alt={`${league.country} flag`} />
+								</div>
+							)}
 							<p className='league-card__country-name'>{league.country}</p>
 						</div>
 					</div>
-					<button
-						onClick={() => navigate(`/standings/${league?.id}`)}
-						className='league-card__standings-btn-mobile'
-					>
-						<IoIosPodium className='icon' />
-					</button>
-					<button
-						onClick={() => navigate(`/standings/${league?.id}`)}
-						className='league-card__standings-btn-desktop'
-					>
-						Standings
-					</button>
 				</>
 			)}
 		</div>

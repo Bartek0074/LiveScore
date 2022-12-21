@@ -1,36 +1,13 @@
 @use './variables.scss';
 
 .standings {
-	margin-top: 0.5em;
-	padding: 0.25em 0;
-	width: 100%;
-	background-color: #f4f4f4;
-	&__header {
-		padding: 1em 0;
-		display: flex;
-		flex-direction: column;
-		justify-content: center;
-		align-items: center;
-		.standings__league-logo {
-			height: 100px;
-			margin-bottom: 0.25em;
-		}
-		.standings__league-name {
-			font-size: 2rem;
-			font-weight: bold;
-		}
-		.standings__season {
-			font-size: 1.4rem;
-			color: variables.$font-color-less-darker;
-		}
-	}
 	&__box {
 		.standings__element {
 			display: flex;
 			align-items: center;
 			border-bottom: 1px solid variables.$light-gray;
 			font-size: 1.3rem;
-			padding: 0.375em 0.25em;
+			padding: 0.25em;
 			transition: background-color 0.3s;
 			&:hover {
 				background-color: #e4e4e4;
@@ -107,12 +84,17 @@
 		}
 		.standings__element-header {
 			background-color: #e4e4e4;
-			padding: 0.5em 0.25em;
+			padding: 0.375em 0.25em;
 			font-size: 1.2rem;
 			margin-bottom: 0.5em;
 			border-bottom: none;
 			border-radius: 10px;
+			.standings__team-name {
+				font-size: 1.2rem;
+			}
 			.standings__rank {
+				font-size: 1.3rem;
+				font-weight: normal;
 				margin-right: 0.75em;
 			}
 			.standings__value-box {
@@ -134,12 +116,14 @@
 		}
 	}
 	.standings__legend {
-		margin-top: .5em;
+		margin-top: 0.5em;
 		&-element {
 			display: flex;
 			align-items: center;
 			padding: 0.125em 0.5em;
-
+			&:last-child {
+				padding-bottom: 0;
+			}
 			.standings__legend-square {
 				width: 14px;
 				height: 14px;
@@ -168,7 +152,7 @@
 					background-color: rgb(60, 3, 14);
 				}
 			}
-			.standings__legend-label{
+			.standings__legend-label {
 				font-size: 1.2rem;
 				color: variables.$font-color-less-darker;
 			}
@@ -178,22 +162,7 @@
 
 @media (min-width: 768px) {
 	.standings {
-		margin-top: 1em;
-		padding: 0.5em;
 		border-radius: 10px;
-		height: calc(100vh - 95px);
-		overflow: scroll;
-		&__header {
-			.standings__league-logo {
-				height: 140px;
-			}
-			.standings__league-name {
-				font-size: 2.8rem;
-			}
-			.standings__season {
-				font-size: 1.8rem;
-			}
-		}
 		&__box {
 			&--mobile {
 				display: none;
@@ -202,7 +171,7 @@
 				display: block;
 			}
 			.standings__element {
-				padding: 0.375em;
+				padding: 0.5em;
 				font-size: 1.4rem;
 				.standings__team-logo {
 					img {
@@ -219,7 +188,7 @@
 					width: 20px;
 					font-size: 1.3rem;
 					height: 20px;
-					margin-right: 3px;
+					margin: 0 1.5px;
 					border-radius: 5px;
 					color: #fff;
 					background-color: red;
@@ -235,8 +204,15 @@
 				}
 			}
 			.standings__element-header {
-				padding: 0.5em 0.375em;
+				padding: 0.375em 0.5em;
 				font-size: 1.3rem;
+				.standings__team-name {
+					font-size: 1.3rem;
+				}
+				.standings__rank {
+					font-size: 1.4rem;
+					font-weight: normal;
+				}
 				.standings__form-match-label {
 					display: flex;
 					justify-content: center;

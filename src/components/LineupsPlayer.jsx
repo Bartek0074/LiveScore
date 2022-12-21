@@ -67,7 +67,6 @@ export default function LineupsPlayer({ player, playerDetail, match, home }) {
 				</div>
 			)}
 			{match?.events.map((eventEl, eventElId) => {
-				// console.log(eventEl?.player?.id)
 				if (
 					eventEl?.type === 'subst' &&
 					eventEl?.player?.id === player?.player?.id

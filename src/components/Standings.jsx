@@ -1,6 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import { useParams } from 'react-router-dom';
-import { fetchFromAPI } from '../utils/fetchFromApi';
 import { standingsPremier } from '../utils/standingsPremier';
 import { standingsChampionship } from '../utils/standingsChampionship';
 import { standingsEkstra } from '../utils/standingsEkstra';
@@ -8,46 +6,25 @@ import { standings1liga } from '../utils/standings1liga';
 import { standingsItaly } from '../utils/standingsItaly';
 import '../styles/Standings.scss';
 
-export default function Standings() {
-	const { id } = useParams();
-	// const [standings, setStandings] = useState([]);
-	// useEffect(() => {
-	// 	fetchFromAPI(`/standings?league=107&season=2022`).then(
-	// 		(data) => {
-	// 			// setStandings(data.response);
-	// 			console.log(data);
-	// 		}
-	// 	);
-	// }, [id]);
-	// console.log(standings?.response[0]?.league?.standings)
-	const standings = standings1liga;
-	let standingsDescriptions = [];
-	standings?.response[0]?.league?.standings[0].forEach((standing) => {
-		if (
-			standing.description &&
-			!standingsDescriptions.includes(standing.description)
-		) {
-			standingsDescriptions.push(standing.description);
-		}
-	});
-	// console.log(standingsDescriptions);
-	return (
-		<div className='standings match-wrapper'>
-			<div className='standings__header'>
-				<img
-					src={standings?.response[0]?.league?.logo}
-					alt={`${standings?.response[0]?.league?.name} logo`}
-					className='standings__league-logo'
-				/>
-				<p className='standings__league-name'>
-					{standings?.response[0]?.league?.name}
-				</p>
+export default function Standings({ standings }) {
+	const [standingsDescriptions, setStandingsDescriptions] = useState([]);
 
-				<p className='standings__season'>
-					{standings?.response[0]?.league?.season}/
-					{standings?.response[0]?.league?.season + 1}
-				</p>
-			</div>
+	useEffect(() => {
+		let newStandingsDescriptions = [];
+		
+		standings?.league?.standings[0].forEach((standing) => {
+			if (
+				standing.description &&
+				!newStandingsDescriptions.includes(standing.description)
+			) {
+				newStandingsDescriptions.push(standing.description);
+			}
+			setStandingsDescriptions(newStandingsDescriptions);
+		});
+	}, [standings]);
+
+	return (
+		<div className='standings'>
 			<div className='standings__box standings__box--mobile'>
 				<div className='standings__element standings__element-header'>
 					<div className='standings__rank'>
@@ -64,109 +41,101 @@ export default function Standings() {
 						<span className='standings__match-points'>P</span>
 					</div>
 				</div>
-				{standings.response[0].league.standings[0].map(
-					(standingsEl, standingsElId) => {
-						return (
-							<div className='standings__element' key={standingsElId}>
-								{standingsEl?.description === standingsDescriptions[0] && (
+				{standings?.league?.standings[0].map((standingsEl, standingsElId) => {
+					return (
+						<div className='standings__element' key={standingsElId}>
+							{standingsEl?.description === standingsDescriptions[0] && (
+								<div
+									className={'standings__rank standings__rank--first-standing'}
+								>
+									<span>{standingsEl?.rank}.</span>
+								</div>
+							)}
+							{standingsEl?.description === standingsDescriptions[1] &&
+								(standingsEl?.description.includes('Promotion') ||
+									standingsEl?.description.includes('Qualifiers')) && (
 									<div
 										className={
-											'standings__rank standings__rank--first-standing'
+											'standings__rank standings__rank--second-standing-prom'
 										}
 									>
 										<span>{standingsEl?.rank}.</span>
 									</div>
 								)}
-								{standingsEl?.description === standingsDescriptions[1] &&
-									(standingsEl?.description.includes('Promotion') ||
-										standingsEl?.description.includes('Qualifiers')) && (
-										<div
-											className={
-												'standings__rank standings__rank--second-standing-prom'
-											}
-										>
-											<span>{standingsEl?.rank}.</span>
-										</div>
-									)}
-								{standingsEl?.description === standingsDescriptions[1] &&
-									standingsEl?.description.includes('Relegation') && (
-										<div
-											className={
-												'standings__rank standings__rank--second-standing-rel'
-											}
-										>
-											<span>{standingsEl?.rank}.</span>
-										</div>
-									)}
-								{standingsEl?.description === standingsDescriptions[2] &&
-									standingsEl?.description.includes('Promotion') && (
-										<div
-											className={
-												'standings__rank standings__rank--third-standing-prom'
-											}
-										>
-											<span>{standingsEl?.rank}.</span>
-										</div>
-									)}
-								{standingsEl?.description === standingsDescriptions[2] &&
-									standingsEl?.description.includes('Relegation') && (
-										<div
-											className={
-												'standings__rank standings__rank--third-standing-rel'
-											}
-										>
-											<span>{standingsEl?.rank}.</span>
-										</div>
-									)}
-								{standingsEl?.description === standingsDescriptions[3] && (
+							{standingsEl?.description === standingsDescriptions[1] &&
+								standingsEl?.description.includes('Relegation') && (
 									<div
 										className={
-											'standings__rank standings__rank--fourth-standing'
+											'standings__rank standings__rank--second-standing-rel'
 										}
 									>
 										<span>{standingsEl?.rank}.</span>
 									</div>
 								)}
-								{standingsEl?.description === standingsDescriptions[4] && (
+							{standingsEl?.description === standingsDescriptions[2] &&
+								standingsEl?.description.includes('Promotion') && (
 									<div
 										className={
-											'standings__rank standings__rank--fifth-standing'
+											'standings__rank standings__rank--third-standing-prom'
 										}
 									>
 										<span>{standingsEl?.rank}.</span>
 									</div>
 								)}
-								{standingsEl?.description === null && (
-									<div className={'standings__rank'}>
+							{standingsEl?.description === standingsDescriptions[2] &&
+								standingsEl?.description.includes('Relegation') && (
+									<div
+										className={
+											'standings__rank standings__rank--third-standing-rel'
+										}
+									>
 										<span>{standingsEl?.rank}.</span>
 									</div>
 								)}
-								<div className='standings__team-logo'>
-									<img src={standingsEl?.team?.logo} alt='' />
+							{standingsEl?.description === standingsDescriptions[3] && (
+								<div
+									className={'standings__rank standings__rank--fourth-standing'}
+								>
+									<span>{standingsEl?.rank}.</span>
 								</div>
-								<span className='standings__team-name'>
-									{standingsEl?.team?.name}
-								</span>
-								<div className='standings__value-box'>
-									<span className='standings__match-played'>
-										{standingsEl?.all?.played}
-									</span>
+							)}
+							{standingsEl?.description === standingsDescriptions[4] && (
+								<div
+									className={'standings__rank standings__rank--fifth-standing'}
+								>
+									<span>{standingsEl?.rank}.</span>
 								</div>
-								<div className='standings__value-box'>
-									<span className='standings__goals'>
-										{standingsEl?.all?.goals?.for}:
-										{standingsEl?.all?.goals?.against}
-									</span>
+							)}
+							{standingsEl?.description === null && (
+								<div className={'standings__rank'}>
+									<span>{standingsEl?.rank}.</span>
 								</div>
-								<div className='standings__value-box'>
-									<span className='standings__match-points'>
-										{standingsEl?.points}
-									</span>
-								</div>
+							)}
+							<div className='standings__team-logo'>
+								<img src={standingsEl?.team?.logo} alt='' />
 							</div>
-						);
-					}
-				)}
+							<span className='standings__team-name'>
+								{standingsEl?.team?.name}
+							</span>
+							<div className='standings__value-box'>
+								<span className='standings__match-played'>
+									{standingsEl?.all?.played}
+								</span>
+							</div>
+							<div className='standings__value-box'>
+								<span className='standings__goals'>
+									{standingsEl?.all?.goals?.for}:
+									{standingsEl?.all?.goals?.against}
+								</span>
+							</div>
+							<div className='standings__value-box'>
+								<span className='standings__match-points'>
+									{standingsEl?.points}
+								</span>
+							</div>
+						</div>
+					);
+				})}
 			</div>
 			<div className='standings__box standings__box--desktop'>
 				<div className='standings__element standings__element-header'>
@@ -196,146 +165,138 @@ export default function Standings() {
 						<span>FORM</span>
 					</div>
 				</div>
-				{standings.response[0].league.standings[0].map(
-					(standingsEl, standingsElId) => {
-						return (
-							<div className='standings__element' key={standingsElId}>
-								{standingsEl?.description === standingsDescriptions[0] && (
+				{standings?.league?.standings[0].map((standingsEl, standingsElId) => {
+					return (
+						<div className='standings__element' key={standingsElId}>
+							{standingsEl?.description === standingsDescriptions[0] && (
+								<div
+									className={'standings__rank standings__rank--first-standing'}
+								>
+									<span>{standingsEl?.rank}.</span>
+								</div>
+							)}
+							{standingsEl?.description === standingsDescriptions[1] &&
+								(standingsEl?.description.includes('Promotion') ||
+									standingsEl?.description.includes('Qualifiers')) && (
 									<div
 										className={
-											'standings__rank standings__rank--first-standing'
+											'standings__rank standings__rank--second-standing-prom'
 										}
 									>
 										<span>{standingsEl?.rank}.</span>
 									</div>
 								)}
-								{standingsEl?.description === standingsDescriptions[1] &&
-									(standingsEl?.description.includes('Promotion') ||
-										standingsEl?.description.includes('Qualifiers')) && (
-										<div
-											className={
-												'standings__rank standings__rank--second-standing-prom'
-											}
-										>
-											<span>{standingsEl?.rank}.</span>
-										</div>
-									)}
-								{standingsEl?.description === standingsDescriptions[1] &&
-									standingsEl?.description.includes('Relegation') && (
-										<div
-											className={
-												'standings__rank standings__rank--second-standing-rel'
-											}
-										>
-											<span>{standingsEl?.rank}.</span>
-										</div>
-									)}
-								{standingsEl?.description === standingsDescriptions[2] &&
-									standingsEl?.description.includes('Promotion') && (
-										<div
-											className={
-												'standings__rank standings__rank--third-standing-prom'
-											}
-										>
-											<span>{standingsEl?.rank}.</span>
-										</div>
-									)}
-								{standingsEl?.description === standingsDescriptions[2] &&
-									standingsEl?.description.includes('Relegation') && (
-										<div
-											className={
-												'standings__rank standings__rank--third-standing-rel'
-											}
-										>
-											<span>{standingsEl?.rank}.</span>
-										</div>
-									)}
-								{standingsEl?.description === standingsDescriptions[3] && (
+							{standingsEl?.description === standingsDescriptions[1] &&
+								standingsEl?.description.includes('Relegation') && (
 									<div
 										className={
-											'standings__rank standings__rank--fourth-standing'
+											'standings__rank standings__rank--second-standing-rel'
 										}
 									>
 										<span>{standingsEl?.rank}.</span>
 									</div>
 								)}
-								{standingsEl?.description === standingsDescriptions[4] && (
+							{standingsEl?.description === standingsDescriptions[2] &&
+								standingsEl?.description.includes('Promotion') && (
 									<div
 										className={
-											'standings__rank standings__rank--fifth-standing'
+											'standings__rank standings__rank--third-standing-prom'
 										}
 									>
 										<span>{standingsEl?.rank}.</span>
 									</div>
 								)}
-								{standingsEl?.description === null && (
-									<div className={'standings__rank'}>
+							{standingsEl?.description === standingsDescriptions[2] &&
+								standingsEl?.description.includes('Relegation') && (
+									<div
+										className={
+											'standings__rank standings__rank--third-standing-rel'
+										}
+									>
 										<span>{standingsEl?.rank}.</span>
 									</div>
 								)}
-								<div className='standings__team-logo'>
-									<img src={standingsEl?.team?.logo} alt='' />
+							{standingsEl?.description === standingsDescriptions[3] && (
+								<div
+									className={'standings__rank standings__rank--fourth-standing'}
+								>
+									<span>{standingsEl?.rank}.</span>
 								</div>
-								<span className='standings__team-name'>
-									{standingsEl?.team?.name}
-								</span>
-								<div className='standings__value-box'>
-									<span>{standingsEl?.all?.played}</span>
+							)}
+							{standingsEl?.description === standingsDescriptions[4] && (
+								<div
+									className={'standings__rank standings__rank--fifth-standing'}
+								>
+									<span>{standingsEl?.rank}.</span>
 								</div>
-								<div className='standings__value-box'>
-									<span>{standingsEl?.all?.win}</span>
+							)}
+							{standingsEl?.description === null && (
+								<div className={'standings__rank'}>
+									<span>{standingsEl?.rank}.</span>
 								</div>
-								<div className='standings__value-box'>
-									<span>{standingsEl?.all?.draw}</span>
-								</div>
-								<div className='standings__value-box'>
-									<span>{standingsEl?.all?.lose}</span>
-								</div>
-								<div className='standings__value-box'>
-									<span>
-										{standingsEl?.all?.goals?.for}:
-										{standingsEl?.all?.goals?.against}
-									</span>
-								</div>
-								<div className='standings__value-box'>
-									<span className='standings__match-points'>
-										{standingsEl?.points}
-									</span>
-								</div>
-								{standingsEl.form.split('').map((formMatch, formMatchId) => {
-									if (formMatch === 'W') {
-										return (
-											<div
-												className='standings__form-match standings__form-match--won'
-												key={formMatchId}
-											>
-												<span>{formMatch}</span>
-											</div>
-										);
-									} else if (formMatch === 'D') {
-										return (
-											<div
-												className='standings__form-match standings__form-match--draw'
-												key={formMatchId}
-											>
-												<span>{formMatch}</span>
-											</div>
-										);
-									} else if (formMatch === 'L') {
-										return (
-											<div
-												className='standings__form-match standings__form-match--loss'
-												key={formMatchId}
-											>
-												<span>{formMatch}</span>
-											</div>
-										);
-									}
-								})}
+							)}
+							<div className='standings__team-logo'>
+								<img src={standingsEl?.team?.logo} alt='' />
 							</div>
-						);
-					}
-				)}
+							<span className='standings__team-name'>
+								{standingsEl?.team?.name}
+							</span>
+							<div className='standings__value-box'>
+								<span>{standingsEl?.all?.played}</span>
+							</div>
+							<div className='standings__value-box'>
+								<span>{standingsEl?.all?.win}</span>
+							</div>
+							<div className='standings__value-box'>
+								<span>{standingsEl?.all?.draw}</span>
+							</div>
+							<div className='standings__value-box'>
+								<span>{standingsEl?.all?.lose}</span>
+							</div>
+							<div className='standings__value-box'>
+								<span>
+									{standingsEl?.all?.goals?.for}:
+									{standingsEl?.all?.goals?.against}
+								</span>
+							</div>
+							<div className='standings__value-box'>
+								<span className='standings__match-points'>
+									{standingsEl?.points}
+								</span>
+							</div>
+							{standingsEl.form.split('').map((formMatch, formMatchId) => {
+								if (formMatch === 'W') {
+									return (
+										<div
+											className='standings__form-match standings__form-match--won'
+											key={formMatchId}
+										>
+											<span>{formMatch}</span>
+										</div>
+									);
+								} else if (formMatch === 'D') {
+									return (
+										<div
+											className='standings__form-match standings__form-match--draw'
+											key={formMatchId}
+										>
+											<span>{formMatch}</span>
+										</div>
+									);
+								} else if (formMatch === 'L') {
+									return (
+										<div
+											className='standings__form-match standings__form-match--loss'
+											key={formMatchId}
+										>
+											<span>{formMatch}</span>
+										</div>
+									);
+								}
+							})}
+						</div>
+					);
+				})}
 			</div>
 			<div className='standings__legend'>
 				{standingsDescriptions.map((description, descriptionId) => {

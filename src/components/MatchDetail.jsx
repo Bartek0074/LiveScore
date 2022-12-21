@@ -10,6 +10,7 @@ import '../styles/MatchDetail.scss';
 
 import { fetchFromAPI } from '../utils/fetchFromApi';
 
+import { TBDfixture } from '../utils/TBDfixture';
 import { notStartedFixture } from '../utils/notStartedFixture';
 import { firstHalfFixture } from '../utils/firstHalfFixture';
 import { halfTimeFixture } from '../utils/halfTimeFixture';
@@ -26,33 +27,44 @@ import { cancelledFixture } from '../utils/cancelledFixture';
 import { matchAbandoned } from '../utils/matchAbandoned';
 import { technicalLossFixture } from '../utils/technicalLossFixture';
 
+import { standingsPremier } from '../utils/standingsPremier';
+
 import Summary from './Summary';
 import Lineups from './Lineups';
 import Stats from './Stats';
+import Standings from './Standings';
 
 export default function MatchDetail() {
 	const { id } = useParams();
 
-	// const [match, setMatch] = useState([]);
-	// const [league, setLeague] = useState();
 	const [section, setSection] = useState('summary');
+	const [match, setMatch] = useState([]);
+	const [league, setLeague] = useState();
+	const [standings, setStandings] = useState();
+
+	// const match = fullTimeFixture.response[0];
+	// const league = leagues.find((leagueEl) => leagueEl?.id === match.league?.id);
+	// const standings = standingsPremier.response[0];
+	// console.log(league?.id);
 
 	// useEffect(() => {
 	// 	fetchFromAPI(`/fixtures?id=${id}&timezone=Europe/Warsaw`).then((data) => {
 	// 		setMatch(data?.response[0]);
-	// 		console.log(data?.response[0]);
 	// 	});
 	// }, [id]);
 
 	// useEffect(() => {
-	// 	const newLeague = leagues.find((leagueEl) => leagueEl?.id === league?.id);
+	// 	const newLeague = leagues.find(
+	// 		(leagueEl) => leagueEl?.id === match.league?.id
+	// 	);
 	// 	setLeague(newLeague);
 	// }, [match]);
 
-	const match = fullTimeFixture.response[0];
-	const league = leagues.find((leagueEl) => leagueEl?.id === match.league?.id);
-
-	// console.log(match);
+	// useEffect(() => {
+	// 	fetchFromAPI(`/standings?league=${league?.id}&season=2022`).then((data) => {
+	// 		setStandings(data?.response[0]);
+	// 	});
+	// }, [league]);
 
 	return (
 		<div className='match-detail match-wrapper'>
@@ -75,6 +87,7 @@ export default function MatchDetail() {
 				<div className='match-detail__info'>
 					<p
 						className={`${
+							match?.fixture?.status?.short !== 'TBD' &&
 							match?.fixture?.status?.short !== 'PST' &&
 							match?.fixture?.status?.short !== 'CANC' &&
 							match?.fixture?.status?.short !== 'ABD' &&
@@ -86,6 +99,9 @@ export default function MatchDetail() {
 						{getDateWithHour(match?.fixture?.date)}
 					</p>
 
+					{match?.fixture?.status?.short === 'TBD' && (
+						<p className='match-detail__score'>-</p>
+					)}
 					{match?.fixture?.status?.short === 'NS' && (
 						<p className='match-detail__score'>-</p>
 					)}
@@ -176,6 +192,9 @@ export default function MatchDetail() {
 						</p>
 					)}
 
+					{match?.fixture?.status?.short === 'TBD' && (
+						<p className='match-detail__status'>Time to be defined</p>
+					)}
 					{match?.fixture?.status?.short === 'NS' && (
 						<p className='match-detail__status'>Not started</p>
 					)}
@@ -296,16 +315,30 @@ export default function MatchDetail() {
 						>
 							Lineups
 						</button>
+						<button
+							onClick={() => {
+								setSection('standings');
+							}}
+							className={
+								section === 'standings'
+									? 'match-detail__section-btn match-detail__section-btn--active'
+									: 'match-detail__section-btn'
+							}
+						>
+							Standings
+						</button>
 					</div>
 					<div className='match-detail__section-box'>
 						{section === 'summary' && <Summary match={match} />}
 						{section === 'stats' && <Stats stats={match?.statistics} />}
 						{section === 'lineups' && <Lineups match={match} />}
+						{section === 'standings' && <Standings standings={standings} />}
 					</div>
 				</>
 			)}
 
-			{match?.fixture?.status?.short !== 'PST' &&
+			{match?.fixture?.status?.short !== 'TBD' &&
+				match?.fixture?.status?.short !== 'PST' &&
 				match?.fixture?.status?.short !== 'CANC' && (
 					<div className='match-detail__other-info'>
 						<div className='match-detail__other-info-heading'>
@@ -313,15 +346,23 @@ export default function MatchDetail() {
 						</div>
 						<div className='match-detail__other-info-element'>
 							<p className='match-detail__other-info-name'>referee:</p>
-							<p className='match-detail__other-info-value'>
-								{match?.fixture?.referee}
-							</p>
+							{match?.fixture?.referee ? (
+								<p className='match-detail__other-info-value'>
+									{match?.fixture?.referee}
+								</p>
+							) : (
+								<p className='match-detail__other-info-value'>undetermined</p>
+							)}
 						</div>
 						<div className='match-detail__other-info-element'>
 							<p className='match-detail__other-info-name'>venue:</p>
-							<p className='match-detail__other-info-value'>
-								{match?.fixture?.venue?.name} ({match?.fixture?.venue?.city})
-							</p>
+							{match?.fixture?.venue?.name ? (
+								<p className='match-detail__other-info-value'>
+									{match?.fixture?.venue?.name} ({match?.fixture?.venue?.city})
+								</p>
+							) : (
+								<p className='match-detail__other-info-value'>undetermined</p>
+							)}
 						</div>
 					</div>
 				)}

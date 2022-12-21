@@ -13,7 +13,6 @@ function App() {
 			<Routes>
 				<Route path='/' exact element={<Home />} />
 				<Route path='/match/:id' element={<MatchDetail/>} />
-				<Route path='/standings/:id' element={<Standings/>} />
 			</Routes>
 		</BrowserRouter>
 	);
