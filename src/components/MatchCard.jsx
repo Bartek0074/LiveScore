@@ -8,12 +8,10 @@ import '../styles/MatchCard.scss';
 
 export default function MatchCard({ match }) {
 	const navigate = useNavigate();
-	// console.log(match);
 	return (
 		<div
 			onClick={() => {
 				navigate(`/match/${match?.fixture?.id}`);
-				console.log(match?.fixture?.id);
 			}}
 			className='match-card'
 		>

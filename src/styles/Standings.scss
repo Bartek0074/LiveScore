@@ -31,33 +31,29 @@
 				font-weight: bold;
 				height: 22px;
 				border-radius: 5px;
-				&--first-standing {
+				&--first {
 					color: variables.$font-color-light;
-					background-color: rgb(0, 70, 130);
+					background-color: #004682;
 				}
-				&--second-standing-prom {
+				&--second {
 					color: variables.$font-color-light;
-					background-color: rgb(4, 130, 0);
+					background-color: #047700;
 				}
-				&--second-standing-rel {
+				&--third {
 					color: variables.$font-color-light;
-					background-color: rgb(130, 115, 0);
+					background-color: #b8860b;
 				}
-				&--third-standing-prom {
+				&--fourth {
 					color: variables.$font-color-light;
-					background-color: rgb(130, 115, 0);
+					background-color: #ac5702;
 				}
-				&--third-standing-rel {
+				&--fifth {
 					color: variables.$font-color-light;
-					background-color: rgb(130, 17, 0);
+					background-color: rgb(189, 0, 0);
 				}
-				&--fourth-standing {
+				&--sixth {
 					color: variables.$font-color-light;
-					background-color: rgb(130, 13, 0);
-				}
-				&--fifth-standing {
-					color: variables.$font-color-light;
-					background-color: rgb(60, 3, 14);
+					background-color: rgb(127, 0, 41);
 				}
 			}
 			.standings__team-logo {
@@ -128,28 +124,24 @@
 				width: 14px;
 				height: 14px;
 				border-radius: 4px;
-				background-color: red;
 				margin-right: 0.5em;
-				&--first-standing {
-					background-color: rgb(0, 70, 130);
+				&--first {
+					background-color: #004682;
 				}
-				&--second-standing-prom {
-					background-color: rgb(4, 130, 0);
+				&--second {
+					background-color: #047700;
 				}
-				&--second-standing-rel {
-					background-color: rgb(130, 115, 0);
+				&--third {
+					background-color: #b8860b;
 				}
-				&--third-standing-prom {
-					background-color: rgb(130, 115, 0);
+				&--fourth {
+					background-color: #ac5702;
 				}
-				&--third-standing-rel {
-					background-color: rgb(130, 17, 0);
+				&--fifth {
+					background-color: rgb(189, 0, 0);
 				}
-				&--fourth-standing {
-					background-color: rgb(130, 13, 0);
-				}
-				&--fifth-standing {
-					background-color: rgb(60, 3, 14);
+				&--sixth {
+					background-color: rgb(127, 0, 41);
 				}
 			}
 			.standings__legend-label {

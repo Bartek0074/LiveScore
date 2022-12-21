@@ -26,7 +26,7 @@ import { penInProgressFixture } from '../utils/penInProgressFixture';
 export default function Home() {
 	const [leagueId, setLeagueId] = useState('all');
 	const [fetchDate, setFetchDate] = useState(getDate(Date.now()));
-	// const [matches, setMatches] = useState([]);
+	const [matches, setMatches] = useState([]);
 	const [statuses, setStatuses] = useState([
 		'TBD',
 		'NS',
@@ -49,16 +49,16 @@ export default function Home() {
 		// 'LIVE',
 	]);
 
-	// useEffect(() => {
-	// 	fetchFromAPI(`/fixtures?date=${fetchDate}&timezone=Europe/Warsaw`).then(
-	// 		(data) => {
-	// 			setMatches(data.response);
-	// 			console.log(data);
-	// 		}
-	// 	);
-	// }, [fetchDate]);
+	useEffect(() => {
+		fetchFromAPI(`/fixtures?date=${fetchDate}&timezone=Europe/Warsaw`).then(
+			(data) => {
+				setMatches(data.response);
+				console.log(data);
+			}
+		);
+	}, [fetchDate]);
 
-	const matches = fixtures5.response;
+	// const matches = fixtures5.response;
 
 	return (
 		<div className='home wrapper'>

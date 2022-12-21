@@ -28,11 +28,14 @@ import { matchAbandoned } from '../utils/matchAbandoned';
 import { technicalLossFixture } from '../utils/technicalLossFixture';
 
 import { standingsPremier } from '../utils/standingsPremier';
+import { standingsChampionship } from '../utils/standingsChampionship';
 
 import Summary from './Summary';
 import Lineups from './Lineups';
 import Stats from './Stats';
 import Standings from './Standings';
+import { standingsEkstra } from '../utils/standingsEkstra';
+import { standings1liga } from '../utils/standings1liga';
 
 export default function MatchDetail() {
 	const { id } = useParams();
@@ -42,29 +45,26 @@ export default function MatchDetail() {
 	const [league, setLeague] = useState();
 	const [standings, setStandings] = useState();
 
-	// const match = fullTimeFixture.response[0];
-	// const league = leagues.find((leagueEl) => leagueEl?.id === match.league?.id);
-	// const standings = standingsPremier.response[0];
-	// console.log(league?.id);
+	useEffect(() => {
+		fetchFromAPI(`/fixtures?id=${id}&timezone=Europe/Warsaw`).then((data) => {
+			setMatch(data?.response[0]);
+		});
+	}, [id]);
 
-	// useEffect(() => {
-	// 	fetchFromAPI(`/fixtures?id=${id}&timezone=Europe/Warsaw`).then((data) => {
-	// 		setMatch(data?.response[0]);
-	// 	});
-	// }, [id]);
+	useEffect(() => {
+		const newLeague = leagues.find(
+			(leagueEl) => leagueEl?.id === match.league?.id
+		);
+		setLeague(newLeague);
+	}, [match]);
 
-	// useEffect(() => {
-	// 	const newLeague = leagues.find(
-	// 		(leagueEl) => leagueEl?.id === match.league?.id
-	// 	);
-	// 	setLeague(newLeague);
-	// }, [match]);
-
-	// useEffect(() => {
-	// 	fetchFromAPI(`/standings?league=${league?.id}&season=2022`).then((data) => {
-	// 		setStandings(data?.response[0]);
-	// 	});
-	// }, [league]);
+	useEffect(() => {
+		fetchFromAPI(`/standings?league=${league?.id}&season=2022`).then((data) => {
+			setStandings(data?.response[0]);
+			console.log(data?.response[0]);
+		});
+		console.log(league?.id)
+	}, [league]);
 
 	return (
 		<div className='match-detail match-wrapper'>
