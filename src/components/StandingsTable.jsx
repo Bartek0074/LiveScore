@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
+import '../styles/StandingsTable.scss';
 
-import '../styles/Standings.scss';
 
-export default function Standings({ standings }) {
-	const [standingsDescriptions, setStandingsDescriptions] = useState([]);
+export default function StandingsTable({standings}) {
+    const [standingsDescriptions, setStandingsDescriptions] = useState([]);
 
 	useEffect(() => {
 		let newStandingsDescriptions = [];
@@ -278,5 +278,5 @@ export default function Standings({ standings }) {
 				})}
 			</div>
 		</div>
-	);
+  )
 }

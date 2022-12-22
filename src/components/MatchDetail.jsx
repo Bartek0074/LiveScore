@@ -4,7 +4,7 @@ import { useParams } from 'react-router-dom';
 import Summary from './Summary';
 import Lineups from './Lineups';
 import Stats from './Stats';
-import Standings from './Standings';
+import StandingsWithTopScorers from './StandingsWithTopScorers';
 import LeagueCard from './LeagueCard';
 
 import { fetchFromAPI } from '../utils/fetchFromApi';
@@ -20,6 +20,7 @@ export default function MatchDetail() {
 	const [match, setMatch] = useState([]);
 	const [league, setLeague] = useState();
 	const [standings, setStandings] = useState();
+	const [topScorers, setTopScorers] = useState();
 
 	useEffect(() => {
 		fetchFromAPI(`/fixtures?id=${id}&timezone=Europe/Warsaw`).then((data) => {
@@ -37,6 +38,9 @@ export default function MatchDetail() {
 	useEffect(() => {
 		fetchFromAPI(`/standings?league=${league?.id}&season=2022`).then((data) => {
 			setStandings(data?.response[0]);
+		});
+		fetchFromAPI(`/players/topscorers?league=${league?.id}&season=2022`).then((data) => {
+			setTopScorers(data?.response);
 		});
 	}, [league]);
 
@@ -306,7 +310,7 @@ export default function MatchDetail() {
 						{section === 'summary' && <Summary match={match} />}
 						{section === 'stats' && <Stats stats={match?.statistics} />}
 						{section === 'lineups' && <Lineups match={match} />}
-						{section === 'standings' && <Standings standings={standings} />}
+						{section === 'standings' && <StandingsWithTopScorers standings={standings} topScorers={topScorers} />}
 					</div>
 				</>
 			)}

@@ -2,9 +2,7 @@ import Nav from './components/Nav';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Home from './components/Home.jsx';
 import './App.scss';
-import { getDateArr } from './utils/getDateArr';
 import MatchDetail from './components/MatchDetail';
-import Standings from './components/Standings';
 
 function App() {
 	return (

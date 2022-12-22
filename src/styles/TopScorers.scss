@@ -1,0 +1,162 @@
+@use './variables.scss';
+
+.top-scorers {
+	&__player-header {
+		display: flex;
+		align-items: center;
+		background-color: #e4e4e4;
+		padding: 0.75em 0.25em;
+		margin-bottom: 0.5em;
+		font-size: 1.2rem;
+		border-radius: 10px;
+		.top-scorers__header-rank-box {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			width: 22px;
+			margin-right: 0.25em;
+			span {
+				font-size: 1.3rem;
+			}
+		}
+		.top-scorers__header-player {
+			margin-right: auto;
+			span {
+				text-transform: uppercase;
+			}
+		}
+		.top-scorers__header-value-box {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			width: 40px;
+			.top-scorers__header-goals {
+				font-weight: bold;
+			}
+		}
+	}
+	&__player {
+		display: flex;
+		align-items: center;
+		border-bottom: 1px solid variables.$light-gray;
+		font-size: 1.3rem;
+		padding: 0.25em 0.25em;
+		transition: background-color 0.3s;
+		&:hover {
+			background-color: #e4e4e4;
+		}
+		&:nth-child(2) {
+			border-top-right-radius: 10px;
+			border-top-left-radius: 10px;
+		}
+		&:last-child {
+			border-bottom: none;
+			border-bottom-right-radius: 10px;
+			border-bottom-left-radius: 10px;
+		}
+		.top-scorers__rank-box {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			width: 22px;
+			margin-right: 0.25em;
+			.top-scorers__rank {
+				font-weight: bold;
+				font-size: 1.4rem;
+			}
+		}
+		.top-scorers__image-box {
+			width: 36px;
+			height: 36px;
+			border-radius: 5px;
+			border: 1px solid variables.$light-gray;
+			margin-right: 0.5em;
+			img {
+				border-radius: 5px;
+				height: 100%;
+			}
+		}
+		.top-scorers__player-info {
+			display: flex;
+			flex-direction: column;
+			margin-right: auto;
+			.top-scorers__player-name {
+				font-weight: bold;
+				margin-bottom: 0.1em;
+				font-size: 1.4rem;
+			}
+			.top-scorers__club {
+				display: flex;
+				align-items: center;
+				&-image {
+					height: 14px;
+				}
+				&-name {
+					font-size: 1.3rem;
+					// text-transform: uppercase;
+					margin-right: 0.25em;
+					color: variables.$font-color-less-darker;
+				}
+			}
+		}
+		.top-scorers__player-name--desktop,
+		.top-scorers__club--desktop {
+			display: none;
+		}
+
+		.top-scorers__value-box {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			width: 40px;
+			.top-scorers__goals {
+				font-weight: bold;
+			}
+		}
+	}
+}
+
+@media (min-width: 768px) {
+	.top-scorers {
+		&__player-header {
+			padding: 0.75em 0.5em;
+			font-size: 1.3rem;
+			.top-scorers__header-rank-box {
+				margin-right: 0.5em;
+				span {
+					font-size: 1.4rem;
+				}
+			}
+		}
+		&__player {
+			font-size: 1.4rem;
+			padding: 0.375em 0.5em;
+			.top-scorers__rank-box {
+				margin-right: 0.5em;
+			}
+			.top-scorers__image-box {
+				width: 40px;
+				height: 40px;
+				margin-right: 0.625em;
+				img {
+					border-radius: 8px;
+				}
+			}
+			.top-scorers__player-info {
+				.top-scorers__player-name {
+					margin-bottom: 0.15em;
+					font-size: 1.5rem;
+				}
+				.top-scorers__club {
+					&-image {
+						height: 16px;
+					}
+					&-name {
+						font-size: 1.4rem;
+						margin-right: 0.375em;
+					}
+				}
+			}
+		}
+	}
+}
