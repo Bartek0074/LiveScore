@@ -9,6 +9,8 @@ import '../styles/LeaguesDropdownMenu.scss';
 export default function LeaguesBarMobile({ setLeagueId }) {
 	const [leagueName, setLeagueName] = useState('All leagues');
 	const [leagueFlag, setLeagueFlag] = useState('');
+	const [countryName, setCountryName] = useState('');
+	const [countryFlag, setCountryFlag] = useState('');
 	const [open, setOpen] = useState(false);
 
 	return (
@@ -20,16 +22,29 @@ export default function LeaguesBarMobile({ setLeagueId }) {
 				className='leagues-dropdown-menu__trigger'
 			>
 				{leagueFlag ? (
-					<div className='leagues-dropdown-menu__img-box'>
+					<div className='leagues-dropdown-menu__flag-box'>
 						<img
-							className='leagues-dropdown-menu__img'
-							src={leagueFlag}
-							alt={`${leagueName} flag`}
+							className='leagues-dropdown-menu__flag'
+							src={countryFlag}
+							alt={`${countryName} flag`}
 						/>
 					</div>
 				) : null}
 				<p className='leagues-dropdown-menu__name'>{leagueName}</p>
-				<RiArrowDownSLine className='icon' />
+				{leagueFlag ? (
+					<div className='leagues-dropdown-menu__logo-box'>
+						<img
+							className='leagues-dropdown-menu__logo'
+							src={leagueFlag}
+							alt={`${leagueName} logo`}
+						/>
+					</div>
+				) : null}
+				<RiArrowDownSLine
+					className={`icon ${
+						leagueName === 'All leagues' && 'icon--margin-left'
+					}`}
+				/>
 			</div>
 			<div
 				className={`leagues-dropdown-menu__menu ${
@@ -54,21 +69,30 @@ export default function LeaguesBarMobile({ setLeagueId }) {
 						onClick={() => {
 							setOpen(!open);
 							setLeagueName(league.name);
-							setLeagueId(league.id);
 							setLeagueFlag(league.logo);
+							setCountryName(league.country);
+							setCountryFlag(league.flag);
+							setLeagueId(league.id);
 						}}
 						value={league.name}
 						className='leagues-dropdown-menu__element'
 						key={id}
 					>
-						<div className='leagues-dropdown-menu__img-box'>
+						<div className='leagues-dropdown-menu__flag-box'>
 							<img
-								className='leagues-dropdown-menu__img'
+								className='leagues-dropdown-menu__flag'
+								src={league.flag}
+								alt={`${league.country} flag`}
+							/>
+						</div>
+						<p className='leagues-dropdown-menu__name'>{league.name}</p>
+						<div className='leagues-dropdown-menu__logo-box'>
+							<img
+								className='leagues-dropdown-menu__logo'
 								src={league.logo}
 								alt={`${league.name} logo`}
 							/>
 						</div>
-						<p className='leagues-dropdown-menu__name'>{league.name}</p>
 					</div>
 				))}
 			</div>

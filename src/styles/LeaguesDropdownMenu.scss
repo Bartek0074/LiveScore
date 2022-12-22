@@ -19,8 +19,11 @@
 		}
 		cursor: pointer;
 		.icon {
-			margin-left: auto;
+			margin-left: 0.5em;
 			font-size: 2.2rem;
+			&--margin-left {
+				margin-left: auto;
+			}
 		}
 	}
 	&__menu {
@@ -38,6 +41,7 @@
 			visibility: visible;
 			transform: translateY(18px);
 			transition: 0.3s ease;
+			max-height: max-content;
 		}
 
 		&--inactive {
@@ -45,6 +49,7 @@
 			visibility: hidden;
 			transform: translateY(-px);
 			transition: 0.3s ease;
+			max-height: 0;
 		}
 
 		.leagues-dropdown-menu__element {
@@ -64,14 +69,23 @@
 			}
 		}
 	}
-	&__img-box {
+	&__logo-box,
+	&__flag-box {
 		display: flex;
 		justify-content: center;
 		align-items: center;
-		width: 25px;
-		margin-right: 10px;
-		.leagues-dropdown-menu__img {
-			height: 25px;
+	}
+	&__flag-box {
+		margin-right: 0.5em;
+		.leagues-dropdown-menu__flag {
+			height: 20px;
+		}
+	}
+	&__logo-box {
+		min-width: 30px;
+		margin-left: auto;
+		.leagues-dropdown-menu__logo {
+			height: 32px;
 		}
 	}
 	&__name {
