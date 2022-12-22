@@ -5,7 +5,7 @@
 	padding-top: 0.5em;
 	padding-bottom: 0.1em;
 	width: 100%;
-	background-color: #f4f4f4;
+	background-color: variables.$dirty-white;
 	&__element{
 		margin-bottom: .375em;
 		&:last-child{
@@ -15,7 +15,7 @@
 	&__no-matches-info{
 		margin: 0.75em 0;
 		padding: 0.5em 0.75em;
-		background-color: #e4e4e4;
+		background-color: variables.$gray-light;
 		border-radius: 10px;
 		p {
 			font-size: 1.2rem;

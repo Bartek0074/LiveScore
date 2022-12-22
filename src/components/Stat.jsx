@@ -30,7 +30,7 @@ export default function Stat({ valueHome, valueAway, type }) {
 						className='stat__bar-home-fill'
 						style={
 							valueHomePercent > valueAwayPercent
-								? { backgroundColor: '#ff0046', width: `${valueHomePercent}%` }
+								? { backgroundColor: '#5F8D4E', width: `${valueHomePercent}%` }
 								: { width: `${valueHomePercent}%` }
 						}
 					></div>
@@ -40,7 +40,7 @@ export default function Stat({ valueHome, valueAway, type }) {
 						className='stat__bar-away-fill'
 						style={
 							valueHomePercent < valueAwayPercent
-								? { backgroundColor: '#ff0046', width: `${valueAwayPercent}%` }
+								? { backgroundColor: '#5F8D4E', width: `${valueAwayPercent}%` }
 								: { width: `${valueAwayPercent}%` }
 						}
 					></div>

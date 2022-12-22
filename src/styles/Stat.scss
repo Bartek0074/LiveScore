@@ -24,7 +24,7 @@
 		&-home,
 		&-away {
 			height: 9px;
-			background-color: #33333320;
+			background-color: #48383820;
 		}
 		&-home {
 			display: flex;
@@ -32,7 +32,7 @@
 			border-radius: 3px;
 			&-fill {
 				height: 100%;
-				background-color: variables.$font-color-dark;
+				background-color: #483838;
 				border-radius: 3px;
 			}
 		}
@@ -40,7 +40,7 @@
 			border-radius: 3px;
 			&-fill {
 				height: 100%;
-				background-color: variables.$font-color-dark;
+				background-color: #483838;
 				border-radius: 3px;
 			}
 		}

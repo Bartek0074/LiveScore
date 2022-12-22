@@ -80,7 +80,7 @@
 	&__section-switcher {
 		display: flex;
 		padding: 0.5em 0;
-		border-top: 1px solid variables.$gray;
+		border-top: 1px solid variables.$border;
 		margin: 0 0.5em;
 		overflow-x: scroll;
 		.match-detail__section-btn {
@@ -102,12 +102,12 @@
 
 	&__section-box {
 		padding: 0.5em 0;
-		border-top: 1px solid variables.$gray;
+		border-top: 1px solid variables.$border;
 		margin: 0 0.5em;
 	}
 
 	&__other-info {
-		border-top: 1px solid variables.$gray;
+		border-top: 1px solid variables.$border;
 		margin: 0 0.5em;
 		padding: 0.5em 0 0;
 		&-heading {

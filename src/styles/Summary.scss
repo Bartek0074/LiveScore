@@ -7,7 +7,7 @@
         align-items: center;
         margin: 0.75em 0 0.25em;
 		padding: 0.5em 0.75em;
-		background-color: #e4e4e4;
+		background-color: variables.$gray-light;
 		border-radius: 10px;
         &:first-child{
             margin-top: 0;

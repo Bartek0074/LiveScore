@@ -5,12 +5,12 @@
 		.standings__element {
 			display: flex;
 			align-items: center;
-			border-bottom: 1px solid variables.$light-gray;
+			border-bottom: 1px solid variables.$border-light;
 			font-size: 1.3rem;
 			padding: 0.25em;
 			transition: background-color 0.3s;
 			&:hover {
-				background-color: #e4e4e4;
+				background-color: variables.$gray-light;
 			}
 			&:nth-child(2) {
 				border-top-right-radius: 10px;
@@ -79,7 +79,7 @@
 			}
 		}
 		.standings__element-header {
-			background-color: #e4e4e4;
+			background-color: variables.$gray-light;
 			padding: 0.75em 0.25em;
 			font-size: 1.2rem;
 			margin-bottom: 0.5em;
