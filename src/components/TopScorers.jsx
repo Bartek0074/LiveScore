@@ -19,8 +19,6 @@ export default function TopScorers({ topScorers }) {
 				</div>
 			</div>
 			{topScorers.map((topScorer, topScorerId) => {
-				console.log(topScorer?.statistics[0]?.goals?.total);
-
 				return (
 					<div className='top-scorers__player' key={topScorerId}>
 						<div className='top-scorers__rank-box'>

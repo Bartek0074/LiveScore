@@ -66,8 +66,7 @@ export default function DatePicker({ setFetchDate }) {
 						<div
 							onClick={() => {
 								setOpen(!open);
-								setDate(dateEl);
-								setFetchDate(dateEl);
+								setDateIndex(id);
 							}}
 							className={
 								dateEl === date
