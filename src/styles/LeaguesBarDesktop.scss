@@ -53,10 +53,13 @@
 			}
 		}
 		.leagues-bar-desktop__leagues {
-			height: 0;
-			opacity: 0;
+			max-height: 0;
+			margin-bottom: 0.1em;
+			padding-bottom: 0.1em;
 			overflow: hidden;
-			transition: opacity 0.3s;
+			opacity: 0;
+			transition: max-height 0.3s cubic-bezier(0.455, 0.03, 0.515, 0.955),
+				opacity 0.3s;
 		}
 		&--active {
 			.leagues-bar-desktop__country-card {
@@ -71,9 +74,7 @@
 				}
 			}
 			.leagues-bar-desktop__leagues {
-				margin-bottom: 0.1em;
-				padding-bottom: 0.1em;
-				height: auto;
+				max-height: 300px;
 				opacity: 1;
 			}
 		}
