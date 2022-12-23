@@ -26,7 +26,7 @@ export default function Filters({ setStatuses }) {
 				'ABD',
 				'AWD',
 				// 'WO',
-				// 'LIVE',
+				'LIVE',
 			]);
 		} else if (filter === 'live') {
 			setStatuses(['1H', 'HT', '2H', 'ET', 'BT', 'P', 'SUSP', 'INT']);

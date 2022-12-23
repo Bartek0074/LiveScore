@@ -93,6 +93,12 @@ export const countries = [
 		code: 'AT',
 		name: 'Austria',
 		flag: 'https://media-2.api-sports.io/flags/at.svg',
+	}
+	,
+	{
+		code: 'AT',
+		name: 'Egypt',
+		flag: 'https://media-2.api-sports.io/flags/eg.svg',
 	},
 ];
 
@@ -278,5 +284,12 @@ export const leagues = [
 		flag: 'https://media-2.api-sports.io/flags/at.svg',
 		name: 'Bundesliga',
 		logo: 'https://media-1.api-sports.io/football/leagues/218.png',
+	},
+	{
+		id: 888,
+		country: 'Egypt',
+		flag: 'https://media-2.api-sports.io/flags/eg.svg',
+		name: 'Secon League',
+		logo: 'https://media-1.api-sports.io/football/leagues/888.png',
 	},
 ];

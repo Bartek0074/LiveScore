@@ -34,7 +34,7 @@ export default function Home() {
 		'ABD',
 		'AWD',
 		// 'WO',
-		// 'LIVE',
+		'LIVE',
 	]);
 
 	useEffect(() => {

@@ -148,6 +148,11 @@ export default function MatchDetail() {
 							{match?.goals?.home}-{match?.goals?.away}
 						</p>
 					)}
+					{match?.fixture?.status?.short === 'LIVE' && (
+						<p className='match-detail__score match-detail__score--live'>
+							{match?.goals?.home}-{match?.goals?.away}
+						</p>
+					)}
 
 					{match?.fixture?.status?.short === 'ET' && (
 						<p className='match-detail__score-second'>
@@ -226,6 +231,11 @@ export default function MatchDetail() {
 					)}
 					{match?.fixture?.status?.short === 'AWD' && (
 						<p className='match-detail__status'>Technical loss</p>
+					)}
+					{match?.fixture?.status?.short === 'LIVE' && (
+						<p className='match-detail__status match-detail__status--live'>
+							Awaiting updates
+						</p>
 					)}
 				</div>
 				<div className='match-detail__team'>

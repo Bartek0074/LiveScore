@@ -2,6 +2,7 @@ import React from 'react';
 import { useNavigate } from 'react-router-dom';
 
 import { getMatchTime } from '../utils/getMatchTime';
+import { getDateWithoutHour } from '../utils/getDateWithoutHour';
 
 import '../styles/MatchCard.scss';
 
@@ -15,6 +16,19 @@ export default function MatchCard({ match }) {
 			className='match-card'
 		>
 			<div className='match-card__time'>
+				{(match?.fixture?.status?.short === 'TBD' ||
+					match?.fixture?.status?.short === 'NS' ||
+					match?.fixture?.status?.short === 'FT' ||
+					match?.fixture?.status?.short === 'AET' ||
+					match?.fixture?.status?.short === 'PEN' ||
+					match?.fixture?.status?.short === 'PST' ||
+					match?.fixture?.status?.short === 'CANC' ||
+					match?.fixture?.status?.short === 'ABD' ||
+					match?.fixture?.status?.short === 'AWD') && (
+					<p className='match-card__date'>
+						{getDateWithoutHour(match?.fixture?.date)}
+					</p>
+				)}
 				{match?.fixture?.status?.short === 'TBD' && <p>TBD</p>}
 				{match?.fixture?.status?.short === 'NS' && (
 					<p>{getMatchTime(match?.fixture?.date)}</p>
@@ -52,6 +66,9 @@ export default function MatchCard({ match }) {
 				{match?.fixture?.status?.short === 'CANC' && <p>Cancelled</p>}
 				{match?.fixture?.status?.short === 'ABD' && <p>Abandoned</p>}
 				{match?.fixture?.status?.short === 'AWD' && <p>Technical Loss</p>}
+				{match?.fixture?.status?.short === 'LIVE' && (
+					<p className='match-card__time-live'>Awaiting Updates</p>
+				)}
 			</div>
 			<div className='match-card__teams'>
 				<div className='match-card__team'>
@@ -173,6 +190,9 @@ export default function MatchCard({ match }) {
 						{match?.fixture?.status?.short === 'AWD' && (
 							<p>{match?.goals?.home}</p>
 						)}
+						{match?.fixture?.status?.short === 'LIVE' && (
+							<p>{match?.goals?.home}</p>
+						)}
 					</div>
 					<div className='match-card__score-fulltime'>
 						{match?.fixture?.status?.short === 'NS' && <p>-</p>}
@@ -215,6 +235,9 @@ export default function MatchCard({ match }) {
 						{match?.fixture?.status?.short === 'CANC' && <p>-</p>}
 						{match?.fixture?.status?.short === 'ABD' && <p>-</p>}
 						{match?.fixture?.status?.short === 'AWD' && (
+							<p>{match?.goals?.away}</p>
+						)}
+						{match?.fixture?.status?.short === 'LIVE' && (
 							<p>{match?.goals?.away}</p>
 						)}
 					</div>
