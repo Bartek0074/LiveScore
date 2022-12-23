@@ -1,0 +1,109 @@
+@use './variables.scss';
+
+.league-detail {
+	margin-top: 0.5em;
+	padding: 0.25em 0;
+	width: 100%;
+	background-color: #f4f4f4;
+	&__header {
+		display: flex;
+		flex-direction: row;
+		justify-content: center;
+		align-items: center;
+		padding: 0.5em 0;
+		.league-detail__logo-box {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			background-color: #fff;
+			border-radius: 10px;
+			box-shadow: 0 0 20px #00000010;
+			margin-right: 0.75em;
+			.league-detail__logo {
+				height: 75px;
+				padding: 0.25em;
+			}
+		}
+		.league-detail__info {
+			height: 75px;
+			display: flex;
+			flex-direction: column;
+			justify-content: space-around;
+			.league-detail__league-name {
+				font-size: 2rem;
+				font-weight: bold;
+				margin-bottom: -0.25em;
+			}
+			.league-detail__country {
+				display: flex;
+				flex-direction: row;
+				align-items: center;
+				.league-detail__country-flag {
+					height: 12px;
+					margin-right: 0.25em;
+					margin-left: 0.125em;
+				}
+				.league-detail__country-name {
+					text-transform: uppercase;
+					color: variables.$font-color-less-darker;
+					font-size: 1.2rem;
+				}
+			}
+			.league-detail__season-select {
+				width: min-content;
+				padding: 0.1em 0.2em;
+				border: 1px solid variables.$border-light;
+				border-radius: 5px;
+				font-size: 1.2rem;
+				font-weight: bold;
+				background-color: transparent;
+				&:focus {
+					border-color: variables.$border;
+					outline: none;
+				}
+			}
+		}
+	}
+}
+
+@media (min-width: 768px) {
+	.league-detail {
+		margin-top: 1em;
+		padding: 0.5em;
+		border-radius: 10px;
+		max-height: calc(100vh - 95px);
+		overflow: scroll;
+		&__header {
+			padding: 0.75em 0;
+			.league-detail__logo-box {
+				margin-right: 0.75em;
+				.league-detail__logo {
+					height: 90px;
+					padding: 0.5em;
+				}
+			}
+			.league-detail__info {
+				height: 90px;
+				.league-detail__league-name {
+					font-size: 2.4rem;
+					margin-bottom: -0.375em;
+				}
+				.league-detail__country {
+					.league-detail__country-flag {
+						height: 14px;
+						margin-right: 0.375em;
+					}
+					.league-detail__country-name {
+						text-transform: uppercase;
+						color: variables.$font-color-less-darker;
+						font-size: 1.3rem;
+					}
+				}
+				.league-detail__season-select {
+					padding: 0.1em 0.3em;
+					font-size: 1.3rem;
+				}
+			}
+		}
+	}
+}
