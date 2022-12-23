@@ -1,17 +1,32 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 
 import '../styles/LeagueCard.scss';
 
 export default function LeagueCard({ league }) {
+	const navigate = useNavigate();
 	return (
 		<div className='league-card'>
 			{league && (
 				<>
 					<div className='league-card__logo'>
-						<img src={league.logo} alt={`${league.name} logo`} />
+						<img
+							onClick={() => {
+								navigate(`/league/${league.id}`);
+							}}
+							src={league.logo}
+							alt={`${league.name} logo`}
+						/>
 					</div>
 					<div className='league-card__info'>
-						<p className='league-card__club-name'>{league.name}</p>
+						<p
+							onClick={() => {
+								navigate(`/league/${league.id}`);
+							}}
+							className='league-card__club-name'
+						>
+							{league.name}
+						</p>
 						<div className='league-card__country'>
 							{league.flag && (
 								<div className='league-card__flag'>

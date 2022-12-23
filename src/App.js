@@ -11,6 +11,7 @@ function App() {
 			<Routes>
 				<Route path='/' exact element={<Home />} />
 				<Route path='/match/:id' element={<MatchDetail/>} />
+				<Route path='/league/:id' element={<>league</>} />
 			</Routes>
 		</BrowserRouter>
 	);

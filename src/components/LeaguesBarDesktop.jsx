@@ -46,7 +46,6 @@ export default function LeaguesBarDesktop({ setLeagueId }) {
 								} else {
 									setCountry(countryEl.name);
 								}
-								console.log(country);
 							}}
 							className='leagues-bar-desktop__country-card'
 						>
