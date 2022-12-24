@@ -37,7 +37,6 @@
 		align-items: flex-start;
 		.league-card__club-name {
 			position: relative;
-			z-index: 1;
 			font-size: 1.6rem;
 			font-weight: 500;
 			border: none;
@@ -46,7 +45,7 @@
 			&::before {
 				position: absolute;
 				content: '';
-				z-index: -1;
+				z-index: 1;
 				bottom: 1px;
 				width: 100%;
 				height: 1px;

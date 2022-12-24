@@ -6,6 +6,7 @@
 	padding-bottom: 0.1em;
 	width: 100%;
 	background-color: variables.$dirty-white;
+	box-shadow: 0 0 10px variables.$gray;
 	&__element{
 		margin-bottom: .375em;
 		&:last-child{

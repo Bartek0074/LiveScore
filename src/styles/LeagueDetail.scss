@@ -4,7 +4,8 @@
 	margin-top: 0.5em;
 	padding: 0.25em 0;
 	width: 100%;
-	background-color: #f4f4f4;
+	background-color: variables.$dirty-white;
+	box-shadow: 0 0 10px variables.$gray;
 	&__header {
 		display: flex;
 		flex-direction: row;

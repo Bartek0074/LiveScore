@@ -127,7 +127,6 @@ export default function LeagueDetail() {
 				{section === 'results' && <Results matches={matches} />}
 				{section === 'fixtures' && <Fixtures matches={matches} />}
 			</div>
-			<p>{season}</p>
 		</div>
 	);
 }
