@@ -2,9 +2,13 @@ import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { leagues } from '../utils/constants';
 
+import StandingsWithTopScorers from './StandingsWithTopScorers';
+
 import { fetchFromAPI } from '../utils/fetchFromApi';
 
 import '../styles/LeagueDetail.scss';
+import Results from './Results';
+import Fixtures from './Fixtures';
 
 export default function LeagueDetail() {
 	const { id } = useParams();
@@ -12,19 +16,37 @@ export default function LeagueDetail() {
 	const [seasons, setSeasons] = useState();
 	const [season, setSeason] = useState();
 	const [league, setLeague] = useState();
+	const [section, setSection] = useState('standings');
+	const [standings, setStandings] = useState();
+	const [topScorers, setTopScorers] = useState();
+	const [matches, setMatches] = useState([]);
 
 	useEffect(() => {
 		fetchFromAPI(`/leagues?id=${id}`).then((data) => {
 			setSeasons(data?.response[0]?.seasons.reverse());
-      setSeason(data?.response[0]?.seasons[0].year)
+			setSeason(data?.response[0]?.seasons[0].year);
 		});
 		const newLeague = leagues.find((leagueEl) => leagueEl?.id == id);
 		setLeague(newLeague);
-	}, []);
+	}, [id]);
 
-	// useEffect(() => {
-	// 	season && setSeason(seasons[0]);
-	// }, [seasons]);
+	useEffect(() => {
+		fetchFromAPI(`/standings?league=${league?.id}&season=${season}`).then(
+			(data) => {
+				setStandings(data?.response[0]);
+			}
+		);
+		fetchFromAPI(
+			`/players/topscorers?league=${league?.id}&season=${season}`
+		).then((data) => {
+			setTopScorers(data?.response);
+		});
+		fetchFromAPI(`/fixtures?league=${league?.id}&season=${season}`).then(
+			(data) => {
+				setMatches(data?.response);
+			}
+		);
+	}, [season, league]);
 
 	return (
 		<div className='league-detail match-wrapper'>
@@ -56,6 +78,54 @@ export default function LeagueDetail() {
 						})}
 					</select>
 				</div>
+			</div>
+			<div className='league-detail__section-switcher'>
+				<button
+					onClick={() => {
+						setSection('standings');
+					}}
+					className={
+						section === 'standings'
+							? 'league-detail__section-btn league-detail__section-btn--active'
+							: 'league-detail__section-btn'
+					}
+				>
+					Standings
+				</button>
+				<button
+					onClick={() => {
+						setSection('results');
+					}}
+					className={
+						section === 'results'
+							? 'league-detail__section-btn league-detail__section-btn--active'
+							: 'league-detail__section-btn'
+					}
+				>
+					Results
+				</button>
+				<button
+					onClick={() => {
+						setSection('fixtures');
+					}}
+					className={
+						section === 'fixtures'
+							? 'league-detail__section-btn league-detail__section-btn--active'
+							: 'league-detail__section-btn'
+					}
+				>
+					Fixtures
+				</button>
+			</div>
+			<div className='league-detail__section-box'>
+				{section === 'standings' && (
+					<StandingsWithTopScorers
+						standings={standings}
+						topScorers={topScorers}
+					/>
+				)}
+				{section === 'results' && <Results matches={matches} />}
+				{section === 'fixtures' && <Fixtures matches={matches} />}
 			</div>
 			<p>{season}</p>
 		</div>

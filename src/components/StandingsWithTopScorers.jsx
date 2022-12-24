@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 
 import StandingsTable from './StandingsTable';
 import '../styles/StandingsWithTopScorers.scss';
@@ -19,7 +19,7 @@ export default function StandingsWithTopScorers({ standings, topScorers }) {
 							: 'standings-component__section-btn'
 					}
 				>
-					Standings
+					tables
 				</button>
 				<button
 					onClick={() => {
