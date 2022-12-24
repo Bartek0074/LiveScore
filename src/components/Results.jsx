@@ -33,7 +33,10 @@ export default function Results({ matches }) {
 				newResults.push(match);
 			}
 		});
-		setResults(newResults.reverse());
+
+		newResults.sort((a, b) => a?.fixture?.timestamp < b?.fixture?.timestamp);
+
+		setResults(newResults);
 	}, [matches]);
 
 	useEffect(() => {

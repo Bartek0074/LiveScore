@@ -36,6 +36,8 @@ export default function Fixtures({ matches }) {
 				newFixtures.push(match);
 			}
 		});
+		newFixtures.sort((a, b) => a?.fixture?.timestamp > b?.fixture?.timestamp);
+
 		setFixtures(newFixtures);
 	}, [matches]);
 
@@ -47,6 +49,10 @@ export default function Fixtures({ matches }) {
 				newRounds.push(result?.league?.round);
 			}
 		});
+		newRounds.sort(
+			(a, b) =>
+				parseInt(a.replace(/^\D+/g, '')) > parseInt(b.replace(/^\D+/g, ''))
+		);
 
 		setRounds(newRounds);
 	}, [fixtures]);
