@@ -7,7 +7,7 @@ export const getDateWithHour = (date) => {
 	let month = new Date(date).getMonth();
 	let monthPlus = month + 1;
 	if (monthPlus < 10) {
-		monthPlus = '0' + month;
+		monthPlus = '0' + monthPlus;
 	}
 
 	const year = new Date(date).getFullYear();
