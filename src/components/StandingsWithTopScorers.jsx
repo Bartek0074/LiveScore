@@ -34,7 +34,16 @@ export default function StandingsWithTopScorers({ standings, topScorers }) {
 					Top scorers
 				</button>
 			</div>
-			{section === 'standings' && <StandingsTable standings={standings} />}
+			{section === 'standings' &&
+				standings?.league?.standings.map((standing, standingId) => {
+					return (
+						<StandingsTable
+							standings={standings}
+							standingId={standings?.league?.standings.length - 1 - standingId}
+							key={standingId}
+						/>
+					);
+				})}
 			{section === 'top scorers' && <TopScorers topScorers={topScorers} />}
 		</div>
 	);
