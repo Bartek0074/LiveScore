@@ -3,6 +3,7 @@ import React from 'react';
 import LineupsPlayer from './LineupsPlayer';
 
 import '../styles/Lineups.scss';
+import LineupsPitch from './LineupsPitch';
 
 export default function Lineups({ match }) {
 	return (
@@ -14,6 +15,8 @@ export default function Lineups({ match }) {
 						<p>Formation</p>
 						<p>{match?.lineups[1]?.formation}</p>
 					</div>
+
+					<LineupsPitch />
 
 					<div className='lineups__starting-lineups-title'>
 						<p>starting lineups</p>
