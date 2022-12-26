@@ -1,19 +1,145 @@
 @use './variables.scss';
 
-.lineups-pitch {
+.lineups-pitch__mobile {
+	display: flex;
+	flex-direction: column;
+	position: relative;
 	width: 100%;
 	aspect-ratio: 3/4;
-	overflow: hidden;
 	border-radius: 10px;
-	&__background {
+	overflow: hidden;
+	.lineups-pitch__background {
+		position: absolute;
+		left: 0;
+		top: 0;
 		height: 100%;
 		width: 100%;
 		background-size: cover;
 		background-position: center;
 	}
+	.lineups-pitch__home,
+	.lineups-pitch__away {
+		display: grid;
+		grid-template-columns: 1fr;
+		z-index: 1;
+		height: 50%;
+		width: 100%;
+		.lineups-pitch__line {
+			display: flex;
+			flex-direction: row;
+			align-items: center;
+			justify-content: space-evenly;
+			.lineups-pitch__player {
+				display: flex;
+				flex-direction: column;
+				justify-content: center;
+				align-items: center;
+				height: 80%;
+				.lineups-pitch__jersey {
+					position: relative;
+					.icon {
+						font-size: 4rem;
+					}
+					.lineups-pitch__player-number {
+						font-size: 1.3rem;
+						font-weight: bold;
+						z-index: 1;
+						left: 50%;
+						top: 50%;
+						transform: translate(-50%, -50%);
+						color: #fff;
+						position: absolute;
+					}
+				}
+				.lineups-pitch__player-name-box {
+					margin-top: -0.05em;
+					position: relative;
+					width: 155%;
+					.lineups-pitch__player-name {
+						position: absolute;
+						left: 0;
+						right: 0;
+						z-index: 1;
+						display: flex;
+						justify-content: center;
+						align-items: center;
+						margin-top: -0.375em;
+						background-color: variables.$dirty-white;
+						padding: 0.1em 0;
+						border-radius: 5px;
+						box-shadow: 0 0 2px variables.$gray;
+						span {
+							font-size: 0.9rem;
+							font-weight: bold;
+							text-align: center;
+						}
+					}
+				}
+			}
+		}
+	}
+	.lineups-pitch__away {
+		.lineups-pitch__line {
+			flex-direction: row-reverse;
+		}
+	}
+}
+
+.lineups-pitch__desktop {
+	display: none;
+}
+
+@media (min-width: 481px) {
+	.lineups-pitch__mobile {
+		.lineups-pitch__home,
+		.lineups-pitch__away {
+			.lineups-pitch__line {
+				.lineups-pitch__player {
+					.lineups-pitch__jersey {
+						.icon {
+							font-size: 4.4rem;
+						}
+						.lineups-pitch__player-number {
+							font-size: 1.4rem;
+						}
+					}
+					.lineups-pitch__player-name-box {
+						width: 165%;
+						.lineups-pitch__player-name {
+							span {
+								font-size: 1.1rem;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
 }
 
 @media (min-width: 576px) {
+	.lineups-pitch__mobile {
+		display: none;
+	}
+	.lineups-pitch__desktop {
+		display: block;
+		position: relative;
+		width: 100%;
+		aspect-ratio: 4/3;
+		border-radius: 10px;
+		overflow: hidden;
+		.lineups-pitch__background {
+			position: absolute;
+			left: 12.5%;
+			top: -16.66%;
+			height: 133.33%;
+			width: 75%;
+			background-size: cover;
+			background-position: center;
+			transform: rotate(90deg);
+		}
+	}
+
 	.lineups-pitch {
 		position: relative;
 		aspect-ratio: 4/3;

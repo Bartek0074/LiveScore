@@ -16,7 +16,7 @@ export default function Lineups({ match }) {
 						<p>{match?.lineups[1]?.formation}</p>
 					</div>
 
-					<LineupsPitch />
+					<LineupsPitch lineups={match?.lineups} />
 
 					<div className='lineups__starting-lineups-title'>
 						<p>starting lineups</p>
