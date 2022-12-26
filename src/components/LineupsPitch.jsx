@@ -285,7 +285,7 @@ export default function LineupsPitch({ lineups }) {
 					className='lineups-pitch__away'
 					style={{
 						gridTemplateColumns: `repeat(${
-							lineups[0]?.formation.split('-').length
+							lineups[1]?.formation.split('-').length
 						}, 1fr) 20%`,
 					}}
 				>
