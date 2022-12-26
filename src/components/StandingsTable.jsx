@@ -17,7 +17,6 @@ export default function StandingsTable({ standings, standingId }) {
 			setStandingsDescriptions(newStandingsDescriptions);
 		});
 	}, [standings]);
-	console.log(standings?.league?.standings?.length)
 
 	return (
 		<div className='standings'>

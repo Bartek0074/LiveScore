@@ -1,5 +1,50 @@
 @use './variables.scss';
 
+.lineups-pitch__player {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	.lineups-pitch__jersey {
+		position: relative;
+		.icon {
+			font-size: 3.6rem;
+		}
+		.lineups-pitch__player-number {
+			position: absolute;
+			z-index: 1;
+			left: 50%;
+			top: 50%;
+			font-size: 1.3rem;
+			font-weight: 500;
+			font-family: 'Changa', sans-serif;
+			transform: translate(-50%, -50%);
+		}
+	}
+
+	.lineups-pitch__player-name-box {
+		position: relative;
+		.lineups-pitch__player-name {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			position: absolute;
+			margin-top: -0.3em;
+			padding: 0.05em 0.25em;
+			left: 0;
+			border-radius: 5px;
+			background-color: variables.$dirty-white-alpha;
+			transform: translate(-50%);
+			span {
+				font-size: 0.9rem;
+				font-weight: bold;
+				text-align: center;
+				white-space: nowrap;
+			}
+		}
+	}
+}
+
 .lineups-pitch__mobile {
 	display: flex;
 	flex-direction: column;
@@ -21,61 +66,15 @@
 	.lineups-pitch__away {
 		display: grid;
 		grid-template-columns: 1fr;
-		z-index: 1;
-		height: 50%;
 		width: 100%;
+		height: 50%;
+		z-index: 1;
+		background-color: variables.$gray-alpha;
 		.lineups-pitch__line {
 			display: flex;
 			flex-direction: row;
 			align-items: center;
-			justify-content: space-evenly;
-			.lineups-pitch__player {
-				display: flex;
-				flex-direction: column;
-				justify-content: center;
-				align-items: center;
-				height: 80%;
-				.lineups-pitch__jersey {
-					position: relative;
-					.icon {
-						font-size: 4rem;
-					}
-					.lineups-pitch__player-number {
-						font-size: 1.3rem;
-						font-weight: bold;
-						z-index: 1;
-						left: 50%;
-						top: 50%;
-						transform: translate(-50%, -50%);
-						color: #fff;
-						position: absolute;
-					}
-				}
-				.lineups-pitch__player-name-box {
-					margin-top: -0.05em;
-					position: relative;
-					width: 155%;
-					.lineups-pitch__player-name {
-						position: absolute;
-						left: 0;
-						right: 0;
-						z-index: 1;
-						display: flex;
-						justify-content: center;
-						align-items: center;
-						margin-top: -0.375em;
-						background-color: variables.$dirty-white;
-						padding: 0.1em 0;
-						border-radius: 5px;
-						box-shadow: 0 0 2px variables.$gray;
-						span {
-							font-size: 0.9rem;
-							font-weight: bold;
-							text-align: center;
-						}
-					}
-				}
-			}
+			justify-content: space-around;
 		}
 	}
 	.lineups-pitch__away {
@@ -89,40 +88,32 @@
 	display: none;
 }
 
-@media (min-width: 481px) {
-	.lineups-pitch__mobile {
-		.lineups-pitch__home,
-		.lineups-pitch__away {
-			.lineups-pitch__line {
-				.lineups-pitch__player {
-					.lineups-pitch__jersey {
-						.icon {
-							font-size: 4.4rem;
-						}
-						.lineups-pitch__player-number {
-							font-size: 1.4rem;
-						}
-					}
-					.lineups-pitch__player-name-box {
-						width: 165%;
-						.lineups-pitch__player-name {
-							span {
-								font-size: 1.1rem;
-							}
-						}
-					}
+@media (min-width: 576px) {
+	.lineups-pitch__player {
+		.lineups-pitch__jersey {
+			.icon {
+				font-size: 4.2rem;
+			}
+			.lineups-pitch__player-number {
+				font-size: 1.4rem;
+			}
+		}
+		.lineups-pitch__player-name-box {
+			.lineups-pitch__player-name {
+				span {
+					font-size: 1rem;
 				}
 			}
 		}
 	}
-}
 
-@media (min-width: 576px) {
 	.lineups-pitch__mobile {
 		display: none;
 	}
+
 	.lineups-pitch__desktop {
-		display: block;
+		display: flex;
+		flex-direction: row;
 		position: relative;
 		width: 100%;
 		aspect-ratio: 4/3;
@@ -138,18 +129,46 @@
 			background-position: center;
 			transform: rotate(90deg);
 		}
+		.lineups-pitch__home,
+		.lineups-pitch__away {
+			display: grid;
+			grid-template-rows: 1fr;
+			height: 100%;
+			width: 50%;
+			z-index: 1;
+			background-color: variables.$gray-alpha;
+			.lineups-pitch__line {
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				justify-content: space-around;
+			}
+		}
+		.lineups-pitch__home {
+			.lineups-pitch__line {
+				flex-direction: column-reverse;
+			}
+		}
 	}
+}
 
-	.lineups-pitch {
-		position: relative;
-		aspect-ratio: 4/3;
-		&__background {
-			position: absolute;
-			left: 12.5%;
-			top: -16.66%;
-			height: 133.33%;
-			width: 75%;
-			transform: rotate(90deg);
+@media (min-width: 768px) {
+	.lineups-pitch__player {
+		.lineups-pitch__jersey {
+			.icon {
+				font-size: 4.8rem;
+			}
+			.lineups-pitch__player-number {
+				font-size: 1.5rem;
+			}
+		}
+
+		.lineups-pitch__player-name-box {
+			.lineups-pitch__player-name {
+				span {
+					font-size: 1.1rem;
+				}
+			}
 		}
 	}
 }
