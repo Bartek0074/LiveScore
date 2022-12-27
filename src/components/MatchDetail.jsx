@@ -358,17 +358,19 @@ export default function MatchDetail() {
 									{match?.fixture?.referee}
 								</p>
 							) : (
-								<p className='match-detail__other-info-value'>undetermined</p>
+								<p className='match-detail__other-info-value'>Unknown</p>
 							)}
 						</div>
 						<div className='match-detail__other-info-element'>
 							<p className='match-detail__other-info-name'>venue:</p>
 							{match?.fixture?.venue?.name ? (
 								<p className='match-detail__other-info-value'>
-									{match?.fixture?.venue?.name} ({match?.fixture?.venue?.city})
+									{match?.fixture?.venue?.name}{' '}
+									{match?.fixture?.venue?.city &&
+										`(${match?.fixture?.venue?.city})`}
 								</p>
 							) : (
-								<p className='match-detail__other-info-value'>undetermined</p>
+								<p className='match-detail__other-info-value'>unknown</p>
 							)}
 						</div>
 					</div>
