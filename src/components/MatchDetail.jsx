@@ -36,10 +36,14 @@ export default function MatchDetail() {
 	}, [match]);
 
 	useEffect(() => {
-		fetchFromAPI(`/standings?league=${league?.id}&season=2022`).then((data) => {
+		fetchFromAPI(
+			`/standings?league=${league?.id}&season=${match.league?.season}`
+		).then((data) => {
 			setStandings(data?.response[0]);
 		});
-		fetchFromAPI(`/players/topscorers?league=${league?.id}&season=2022`).then((data) => {
+		fetchFromAPI(
+			`/players/topscorers?league=${league?.id}&season=${match.league?.season}`
+		).then((data) => {
 			setTopScorers(data?.response);
 		});
 	}, [league]);
@@ -50,7 +54,10 @@ export default function MatchDetail() {
 			<div className='match-detail__result'>
 				<div className='match-detail__team'>
 					<div className='match-detail__team-logo'>
-						<img src={match?.teams?.home?.logo} alt={`${match?.teams?.home?.name} logo`} />
+						<img
+							src={match?.teams?.home?.logo}
+							alt={`${match?.teams?.home?.name} logo`}
+						/>
 					</div>
 					<div className='match-detail__team-name'>
 						<p
@@ -327,7 +334,12 @@ export default function MatchDetail() {
 						{section === 'summary' && <Summary match={match} />}
 						{section === 'stats' && <Stats stats={match?.statistics} />}
 						{section === 'lineups' && <Lineups match={match} />}
-						{section === 'standings' && <StandingsWithTopScorers standings={standings} topScorers={topScorers} />}
+						{section === 'standings' && (
+							<StandingsWithTopScorers
+								standings={standings}
+								topScorers={topScorers}
+							/>
+						)}
 					</div>
 				</>
 			)}

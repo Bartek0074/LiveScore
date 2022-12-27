@@ -10,13 +10,16 @@ export default function Lineups({ match }) {
 		<div className='lineups'>
 			{match.lineups[0] ? (
 				<>
-					<div className='lineups__formation'>
-						<p>{match?.lineups[0]?.formation}</p>
-						<p>Formation</p>
-						<p>{match?.lineups[1]?.formation}</p>
-					</div>
-
-					<LineupsPitch lineups={match?.lineups} />
+					{match.lineups[0]?.formation ? (
+						<>
+							<div className='lineups__formation'>
+								<p>{match?.lineups[0]?.formation}</p>
+								<p>Formation</p>
+								<p>{match?.lineups[1]?.formation}</p>
+							</div>
+							<LineupsPitch lineups={match?.lineups} />
+						</>
+					) : null}
 
 					<div className='lineups__starting-lineups-title'>
 						<p>starting lineups</p>

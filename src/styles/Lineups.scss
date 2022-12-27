@@ -21,6 +21,9 @@
 			text-transform: uppercase;
 			color: variables.$font-color-less-darker;
 		}
+		&:first-child{
+			margin-top: 0;
+		}
 	}
 	&__formation {
 		margin-top: 0;

@@ -2,9 +2,11 @@ import React from 'react';
 
 import Stat from './Stat';
 
+import '../styles/Stats.scss'
+
 export default function Stats({ stats }) {
 	return (
-		<div>
+		<div className='stats'>
 			{stats[0] ? (
 				<>
 					<Stat
@@ -83,7 +85,11 @@ export default function Stats({ stats }) {
 						type={stats[0]?.statistics[14]?.type}
 					/>{' '}
 				</>
-			) : <p>No stats for this match</p>}
+			) : (
+				<div className='stats__no-stats-info'>
+					<p>No stats for this match!</p>
+				</div>
+			)}
 		</div>
 	);
 }

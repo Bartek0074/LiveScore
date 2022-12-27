@@ -13,7 +13,6 @@ export default function LineupsPitch({ lineups }) {
 		lineups[1]?.startXI[0]?.player?.name.split(' ')[
 			lineups[1]?.startXI[0]?.player?.name.split(' ').length - 1
 		];
-
 	return (
 		<>
 			<div className='lineups-pitch__mobile'>
