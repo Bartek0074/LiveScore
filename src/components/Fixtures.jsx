@@ -54,34 +54,43 @@ export default function Fixtures({ matches }) {
 				parseInt(a.replace(/^\D+/g, '')) > parseInt(b.replace(/^\D+/g, ''))
 		);
 
+		console.log(newRounds);
 		setRounds(newRounds);
 	}, [fixtures]);
 
 	return (
 		<div className='fixtures'>
-			{rounds.map((round, roundId) => {
-				if (roundId < numberOfRounds) {
-					return (
-						<div className='fixtures__element' key={roundId}>
-							<div className='fixtures__round'>
-								<p>Round {round.replace(/^\D+/g, '')}</p>
-							</div>
-							{fixtures.map((result, resultId) => {
-								if (result?.league?.round === round) {
-									return <MatchCard match={result} key={resultId} />;
-								} else return null;
-							})}
+			{rounds[0] ? (
+				<>
+					{rounds.map((round, roundId) => {
+						if (roundId < numberOfRounds) {
+							return (
+								<div className='fixtures__element' key={roundId}>
+									<div className='fixtures__round'>
+										<p>Round {round.replace(/^\D+/g, '')}</p>
+									</div>
+									{fixtures.map((result, resultId) => {
+										if (result?.league?.round === round) {
+											return <MatchCard match={result} key={resultId} />;
+										} else return null;
+									})}
+								</div>
+							);
+						} else return null;
+					})}
+					{numberOfRounds < rounds?.length ? (
+						<div className='fixtures__button-box'>
+							<button className='fixtures__button' onClick={showMoreRounds}>
+								Show more
+							</button>
 						</div>
-					);
-				} else return null;
-			})}
-			{numberOfRounds < rounds?.length ? (
-				<div className='fixtures__button-box'>
-					<button className='fixtures__button' onClick={showMoreRounds}>
-						Show more
-					</button>
+					) : null}{' '}
+				</>
+			) : (
+				<div className='fixtures__no-matches-info'>
+					<p>No matches!</p>
 				</div>
-			) : null}
+			)}
 		</div>
 	);
 }

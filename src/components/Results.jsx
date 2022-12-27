@@ -47,35 +47,42 @@ export default function Results({ matches }) {
 				newRounds.push(result?.league?.round);
 			}
 		});
-
 		setRounds(newRounds);
 	}, [results]);
 
 	return (
 		<div className='results'>
-			{rounds.map((round, roundId) => {
-				if (roundId < numberOfRounds) {
-					return (
-						<div className='results__element' key={roundId}>
-							<div className='results__round'>
-								<p>Round {round.replace(/^\D+/g, '')}</p>
-							</div>
-							{results.map((result, resultId) => {
-								if (result?.league?.round === round) {
-									return <MatchCard match={result} key={resultId} />;
-								} else return null;
-							})}
+			{rounds[0] ? (
+				<>
+					{rounds.map((round, roundId) => {
+						if (roundId < numberOfRounds) {
+							return (
+								<div className='results__element' key={roundId}>
+									<div className='results__round'>
+										<p>Round {round.replace(/^\D+/g, '')}</p>
+									</div>
+									{results.map((result, resultId) => {
+										if (result?.league?.round === round) {
+											return <MatchCard match={result} key={resultId} />;
+										} else return null;
+									})}
+								</div>
+							);
+						} else return null;
+					})}
+					{numberOfRounds < rounds?.length ? (
+						<div className='results__button-box'>
+							<button className='results__button' onClick={showMoreRounds}>
+								Show more
+							</button>
 						</div>
-					);
-				} else return null;
-			})}
-			{numberOfRounds < rounds?.length ? (
-				<div className='results__button-box'>
-					<button className='results__button' onClick={showMoreRounds}>
-						Show more
-					</button>
+					) : null}
+				</>
+			) : (
+				<div className='results__no-matches-info'>
+					<p>No matches!</p>
 				</div>
-			) : null}
+			)}
 		</div>
 	);
 }
