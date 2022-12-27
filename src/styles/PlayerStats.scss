@@ -1,0 +1,122 @@
+@use './variables.scss';
+
+.player-stats {
+	&__element-header {
+		display: flex;
+		margin-bottom: 0.5em;
+		padding: 0.75em 0.25em;
+		font-size: 1.2rem;
+		border-bottom: none;
+		border-radius: 10px;
+		background-color: variables.$gray-light;
+		.player-stats__competition-name-header {
+			margin-left: 1em;
+			text-transform: uppercase;
+		}
+		.player-stats__value-box {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			width: 30px;
+			&:nth-child(2) {
+				margin-left: auto;
+			}
+			&:last-child {
+				width: 50px;
+			}
+		}
+		.icon {
+			font-size: 1.4rem;
+		}
+	}
+	&__element {
+		display: flex;
+		align-items: center;
+		padding: 0.25em;
+		font-size: 1.3rem;
+		border-bottom: 1px solid variables.$border-light;
+		transition: background-color 0.3s;
+		&:hover {
+			background-color: variables.$gray-light;
+		}
+		&:nth-child(2) {
+			border-top-right-radius: 10px;
+			border-top-left-radius: 10px;
+		}
+		&--total {
+			padding-left: 3.5em;
+			height: calc(30px + 0.5em);
+			font-weight: bold;
+			border-bottom: none;
+			border-bottom-right-radius: 10px;
+			border-bottom-left-radius: 10px;
+		}
+		.player-stats__logo-box {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			margin-right: 0.5em;
+			padding: 0.125em;
+			width: 35px;
+			height: 30px;
+			border-radius: 5px;
+			overflow: hidden;
+			.player-stats__logo {
+				height: 100%;
+				border-radius: 5px;
+			}
+		}
+		.player-stats__competition-name {
+			span {
+				font-size: 1.3rem;
+				font-weight: bold;
+			}
+		}
+		.player-stats__value-box {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			width: 30px;
+			&:nth-child(3) {
+				margin-left: auto;
+			}
+			&:last-child {
+				width: 50px;
+			}
+		}
+	}
+}
+
+@media (min-width: 768px) {
+	.player-stats {
+		&__element-header {
+			padding: 0.75em 0.5em;
+			font-size: 1.3rem;
+			.player-stats__value-box {
+				width: 40px;
+			}
+			.icon {
+				font-size: 1.6rem;
+			}
+		}
+		&__element {
+			padding: 0.25em 0.5em;
+			&--total {
+				padding-left: 3.5em;
+				height: calc(35px + 0.5em);
+			}
+			.player-stats__logo-box {
+				width: 40px;
+				height: 35px;
+			}
+			.player-stats__competition-name {
+				span {
+					font-size: 1.35rem;
+				}
+			}
+			.player-stats__value-box {
+				width: 40px;
+			}
+		}
+	}
+}

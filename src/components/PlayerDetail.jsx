@@ -5,6 +5,8 @@ import { countries } from '../utils/countries.js';
 import { fetchFromAPI } from '../utils/fetchFromApi';
 import { getDateWithoutHour } from '../utils/getDateWithoutHour.js';
 
+import PlayerStats from './PlayerStats.jsx';
+
 import '../styles/PlayerDetail.scss';
 
 export default function PlayerDetail() {
@@ -15,6 +17,7 @@ export default function PlayerDetail() {
 	const [nationalityFlag, setNationalityFlag] = useState();
 	const [birthFlag, setBirthFlag] = useState();
 	const [player, setPlayer] = useState();
+	const [section, setSection] = useState('stats');
 
 	useEffect(() => {
 		fetchFromAPI(`/players/seasons?player=${id}`).then((data) => {
@@ -40,7 +43,6 @@ export default function PlayerDetail() {
 		setBirthFlag(newBirthFlag?.flag);
 	}, [player]);
 
-	console.log(player?.statistics[0]?.team?.name);
 	return (
 		<div className='player-detail match-wrapper'>
 			<div className='player-detail__header'>
@@ -52,9 +54,7 @@ export default function PlayerDetail() {
 					/>
 				</div>
 				<div className='player-detail__info'>
-					<p className='player-detail__player-name'>
-						{player?.player?.firstname} {player?.player?.lastname}
-					</p>
+					<p className='player-detail__player-name'>{player?.player?.name}</p>
 					<div className='player-detail__club'>
 						<img
 							className='player-detail__club-flag'
@@ -148,9 +148,61 @@ export default function PlayerDetail() {
 					</div>
 				)}
 			</div>
-			<p>Player: {player?.player?.name}</p>
-			<p>Id: {player?.player?.id}</p>
-			<p>Season: {player?.statistics[0]?.league?.season}</p>
+			<div className='player-detail__section-switcher'>
+				<button
+					onClick={() => {
+						setSection('stats');
+					}}
+					className={
+						section === 'stats'
+							? 'player-detail__section-btn player-detail__section-btn--active'
+							: 'player-detail__section-btn'
+					}
+				>
+					Stats
+				</button>
+				<button
+					onClick={() => {
+						setSection('career');
+					}}
+					className={
+						section === 'career'
+							? 'player-detail__section-btn player-detail__section-btn--active'
+							: 'player-detail__section-btn'
+					}
+				>
+					Career
+				</button>
+				<button
+					onClick={() => {
+						setSection('transfers');
+					}}
+					className={
+						section === 'transfers'
+							? 'player-detail__section-btn player-detail__section-btn--active'
+							: 'player-detail__section-btn'
+					}
+				>
+					Transfers
+				</button>
+				<button
+					onClick={() => {
+						setSection('injuries');
+					}}
+					className={
+						section === 'injuries'
+							? 'player-detail__section-btn player-detail__section-btn--active'
+							: 'player-detail__section-btn'
+					}
+				>
+					Injuries
+				</button>
+			</div>
+			<div className='match-detail__section-box'>
+				{section === 'stats' && player?.statistics && (
+					<PlayerStats stats={player?.statistics} />
+				)}
+			</div>
 		</div>
 	);
 }

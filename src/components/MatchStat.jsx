@@ -2,7 +2,7 @@ import React from 'react';
 
 import '../styles/Stat.scss';
 
-export default function Stat({ valueHome, valueAway, type }) {
+export default function MatchStat({ valueHome, valueAway, type }) {
 	if (!valueHome) valueHome = 0;
 	if (!valueAway) valueAway = 0;
 

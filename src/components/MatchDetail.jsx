@@ -3,7 +3,7 @@ import { useParams } from 'react-router-dom';
 
 import Summary from './Summary';
 import Lineups from './Lineups';
-import Stats from './Stats';
+import MatchStats from './MatchStats';
 import StandingsWithTopScorers from './StandingsWithTopScorers';
 import LeagueCard from './LeagueCard';
 
@@ -332,7 +332,7 @@ export default function MatchDetail() {
 					</div>
 					<div className='match-detail__section-box'>
 						{section === 'summary' && <Summary match={match} />}
-						{section === 'stats' && <Stats stats={match?.statistics} />}
+						{section === 'stats' && <MatchStats stats={match?.statistics} />}
 						{section === 'lineups' && <Lineups match={match} />}
 						{section === 'standings' && (
 							<StandingsWithTopScorers
