@@ -1,10 +1,12 @@
 import React from 'react';
 
 import { BiRefresh, BiFootball } from 'react-icons/bi';
+import { useNavigate } from 'react-router-dom';
 
 import '../styles/LineupsPlayer.scss';
 
 export default function LineupsPlayer({ player, playerDetail, match, home }) {
+	const navigate = useNavigate();
 	return (
 		<div
 			className={
@@ -14,7 +16,14 @@ export default function LineupsPlayer({ player, playerDetail, match, home }) {
 			<div className='lineups-player__number-box'>
 				<span className='lineups-player__number'>{player?.player?.number}</span>
 			</div>
-			<span className='lineups-player__name'>{player?.player?.name}</span>
+			<span
+				onClick={() => {
+					navigate(`/player/${player?.player?.id}`);
+				}}
+				className='lineups-player__name'
+			>
+				{player?.player?.name}
+			</span>
 			{playerDetail?.statistics[0]?.games?.position === 'G' && (
 				<span className='lineups-player__goalkeeper'>(G)</span>
 			)}
@@ -77,8 +86,13 @@ export default function LineupsPlayer({ player, playerDetail, match, home }) {
 							<div className='lineups-player__icon'>
 								<BiRefresh className='icon icon--subst' />
 							</div>
-							<span className='lineups-player__subst-name'>
-								({eventEl?.assist?.name})
+							<span
+								onClick={() => {
+									navigate(`/player/${eventEl?.assist?.id}`);
+								}}
+								className='lineups-player__subst-name'
+							>
+								(<span>{eventEl?.assist?.name}</span>)
 							</span>
 						</>
 					);
@@ -91,8 +105,13 @@ export default function LineupsPlayer({ player, playerDetail, match, home }) {
 							<div className='lineups-player__icon'>
 								<BiRefresh className='icon icon--subst' />
 							</div>
-							<span className='lineups-player__subst-name'>
-								({eventEl?.player?.name})
+							<span
+								onClick={() => {
+									navigate(`/player/${eventEl?.player?.id}`);
+								}}
+								className='lineups-player__subst-name'
+							>
+								(<span>{eventEl?.player?.name}</span>)
 							</span>
 						</>
 					);

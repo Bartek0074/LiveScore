@@ -1,7 +1,10 @@
 import React, { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import '../styles/TopScorers.scss';
 
 export default function TopScorers({ topScorers }) {
+	const navigate = useNavigate();
+
 	const [isAssist, setIsAssist] = useState(false);
 
 	useEffect(() => {
@@ -43,6 +46,9 @@ export default function TopScorers({ topScorers }) {
 									</div>
 									<div className='top-scorers__image-box'>
 										<img
+											onClick={() => {
+												navigate(`/player/${topScorer?.player?.id}`);
+											}}
 											className='top-scorers__image'
 											src={topScorer?.player?.photo}
 											alt=''
@@ -55,7 +61,12 @@ export default function TopScorers({ topScorers }) {
 										/>
 									</div>
 									<div className='top-scorers__player-info'>
-										<span className='top-scorers__player-name'>
+										<span
+											onClick={() => {
+												navigate(`/player/${topScorer?.player?.id}`);
+											}}
+											className='top-scorers__player-name'
+										>
 											{topScorer?.player?.name}
 										</span>
 										<div className='top-scorers__club'>

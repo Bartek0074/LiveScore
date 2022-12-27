@@ -19,6 +19,10 @@
 	}
 	.lineups-player__name {
 		font-size: 1.3rem;
+		cursor: pointer;
+		&:hover {
+			text-decoration: underline;
+		}
 	}
 	.lineups-player__goalkeeper,
 	.lineups-player__captain {
@@ -172,6 +176,10 @@
 			font-size: 1.3rem;
 			color: variables.$font-color-less-darker;
 			margin-left: 0.25em;
+			cursor: pointer;
+			span:hover {
+				text-decoration: underline;
+			}
 		}
 		&--away {
 			.lineups-player__subst-name {

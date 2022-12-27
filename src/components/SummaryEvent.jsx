@@ -1,11 +1,16 @@
 import React from 'react';
 
+import { useNavigate } from 'react-router-dom';
+
 import { BiRefresh, BiFootball } from 'react-icons/bi';
 import { IoMdWarning } from 'react-icons/io';
 
 import '../styles/SummaryEvent.scss';
 
 export default function SummaryEvent({ match, eventEl }) {
+	const navigate = useNavigate();
+
+	console.log(eventEl?.assist?.id);
 	return (
 		<div
 			className={
@@ -63,10 +68,24 @@ export default function SummaryEvent({ match, eventEl }) {
 				</div>
 			)}
 
-			<span className='summary-event__player'>{eventEl?.player?.name}</span>
+			<span
+				onClick={() => {
+					navigate(`/player/${eventEl?.player?.id}`);
+				}}
+				className='summary-event__player'
+			>
+				{eventEl?.player?.name}
+			</span>
 
 			{eventEl?.assist?.name && eventEl?.detail !== 'Missed Penalty' && (
-				<span className='summary-event__assist'>{eventEl?.assist?.name}</span>
+				<span
+					onClick={() => {
+						navigate(`/player/${eventEl?.assist?.id}`);
+					}}
+					className='summary-event__assist'
+				>
+					{eventEl?.assist?.name}
+				</span>
 			)}
 
 			{eventEl?.comments && eventEl?.comments !== 'Penalty Shootout' && (

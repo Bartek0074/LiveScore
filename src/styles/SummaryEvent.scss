@@ -68,12 +68,23 @@
 		font-size: 1.3rem;
 		font-weight: bold;
 		margin-right: 0.25em;
+		cursor: pointer;
+		&:hover {
+			text-decoration: underline;
+		}
 	}
 
 	.summary-event__assist,
 	.summary-event__comment {
 		font-size: 1.3rem;
 		color: variables.$font-color-less-darker;
+	}
+
+	.summary-event__assist {
+		cursor: pointer;
+		&:hover {
+			text-decoration: underline;
+		}
 	}
 
 	&--away {

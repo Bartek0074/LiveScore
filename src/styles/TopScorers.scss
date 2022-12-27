@@ -71,6 +71,7 @@
 			border-radius: 5px;
 			border: 1px solid variables.$border-light;
 			margin-right: 0.5em;
+			cursor: pointer;
 			img {
 				border-radius: 5px;
 				height: 100%;
@@ -84,6 +85,10 @@
 				font-weight: bold;
 				margin-bottom: 0.1em;
 				font-size: 1.4rem;
+				cursor: pointer;
+				&:hover{
+					text-decoration: underline;
+				}
 			}
 			.top-scorers__club {
 				display: flex;

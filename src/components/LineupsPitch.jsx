@@ -1,10 +1,13 @@
 import React from 'react';
 
 import { FaTshirt } from 'react-icons/fa';
+import { useNavigate } from 'react-router-dom';
 
 import '../styles/LineupsPitch.scss';
 
 export default function LineupsPitch({ lineups }) {
+	const navigate = useNavigate();
+
 	const goalkeeperHomeName =
 		lineups[0]?.startXI[0]?.player?.name.split(' ')[
 			lineups[0]?.startXI[0]?.player?.name.split(' ').length - 1
@@ -51,7 +54,11 @@ export default function LineupsPitch({ lineups }) {
 							</div>
 							<div className='lineups-pitch__player-name-box'>
 								<div className='lineups-pitch__player-name'>
-									<span>
+									<span
+										onClick={() => {
+											navigate(`/player/${lineups[0]?.startXI[0]?.player?.id}`);
+										}}
+									>
 										{goalkeeperHomeName.substring(0, 10)}
 										{goalkeeperHomeName !==
 											goalkeeperHomeName.substring(0, 10) && '...'}
@@ -89,7 +96,11 @@ export default function LineupsPitch({ lineups }) {
 												</div>
 												<div className='lineups-pitch__player-name-box'>
 													<div className='lineups-pitch__player-name'>
-														<span>
+														<span
+															onClick={() => {
+																navigate(`/player/${player?.player?.id}`);
+															}}
+														>
 															{playerName.substring(0, 10)}
 															{playerName !== playerName.substring(0, 10) &&
 																'...'}
@@ -146,7 +157,11 @@ export default function LineupsPitch({ lineups }) {
 												</div>
 												<div className='lineups-pitch__player-name-box'>
 													<div className='lineups-pitch__player-name'>
-														<span>
+														<span
+															onClick={() => {
+																navigate(`/player/${player?.player?.id}`);
+															}}
+														>
 															{playerName.substring(0, 10)}
 															{playerName !== playerName.substring(0, 10) &&
 																'...'}
@@ -180,7 +195,11 @@ export default function LineupsPitch({ lineups }) {
 							</div>
 							<div className='lineups-pitch__player-name-box'>
 								<div className='lineups-pitch__player-name'>
-									<span>
+									<span
+										onClick={() => {
+											navigate(`/player/${lineups[1]?.startXI[0]?.player?.id}`);
+										}}
+									>
 										{goalkeeperAwayName.substring(0, 10)}
 										{goalkeeperAwayName !==
 											goalkeeperAwayName.substring(0, 10) && '...'}
@@ -227,7 +246,11 @@ export default function LineupsPitch({ lineups }) {
 							</div>
 							<div className='lineups-pitch__player-name-box'>
 								<div className='lineups-pitch__player-name'>
-									<span>
+									<span
+										onClick={() => {
+											navigate(`/player/${lineups[0]?.startXI[0]?.player?.id}`);
+										}}
+									>
 										{goalkeeperHomeName.substring(0, 10)}
 										{goalkeeperHomeName !==
 											goalkeeperHomeName.substring(0, 10) && '...'}
@@ -265,7 +288,11 @@ export default function LineupsPitch({ lineups }) {
 												</div>
 												<div className='lineups-pitch__player-name-box'>
 													<div className='lineups-pitch__player-name'>
-														<span>
+														<span
+															onClick={() => {
+																navigate(`/player/${player?.player?.id}`);
+															}}
+														>
 															{playerName.substring(0, 10)}
 															{playerName !== playerName.substring(0, 10) &&
 																'...'}
@@ -321,7 +348,11 @@ export default function LineupsPitch({ lineups }) {
 												</div>
 												<div className='lineups-pitch__player-name-box'>
 													<div className='lineups-pitch__player-name'>
-														<span>
+														<span
+															onClick={() => {
+																navigate(`/player/${player?.player?.id}`);
+															}}
+														>
 															{playerName.substring(0, 10)}
 															{playerName !== playerName.substring(0, 10) &&
 																'...'}
@@ -355,7 +386,11 @@ export default function LineupsPitch({ lineups }) {
 							</div>
 							<div className='lineups-pitch__player-name-box'>
 								<div className='lineups-pitch__player-name'>
-									<span>
+									<span
+										onClick={() => {
+											navigate(`/player/${lineups[1]?.startXI[0]?.player?.id}`);
+										}}
+									>
 										{goalkeeperAwayName.substring(0, 10)}
 										{goalkeeperAwayName !==
 											goalkeeperAwayName.substring(0, 10) && '...'}
