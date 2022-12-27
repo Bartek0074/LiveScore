@@ -64,14 +64,15 @@ export default function LeagueDetail() {
 						/>
 						<p className='league-detail__country-name'>{league?.country}</p>
 					</div>
-					<select className='league-detail__season-select' name='' id=''>
+					<select
+						className='league-detail__season-select'
+						name=''
+						id=''
+						onChange={(e) => setSeason(e.target.value)}
+					>
 						{seasons?.map((season, id) => {
 							return (
-								<option
-									onClick={(e) => setSeason(e.target.value)}
-									value={season?.year}
-									key={id}
-								>
+								<option value={season?.year} key={id}>
 									{season?.year}/{season?.year + 1}
 								</option>
 							);

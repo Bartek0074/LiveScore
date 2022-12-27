@@ -54,7 +54,6 @@ export default function Fixtures({ matches }) {
 				parseInt(a.replace(/^\D+/g, '')) > parseInt(b.replace(/^\D+/g, ''))
 		);
 
-		console.log(newRounds);
 		setRounds(newRounds);
 	}, [fixtures]);
 
