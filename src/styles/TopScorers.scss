@@ -114,6 +114,18 @@
 			}
 		}
 	}
+	&__no-top-scorers-info {
+		padding: 0.5em 0.75em;
+		background-color: variables.$gray-light;
+		border-radius: 10px;
+		p {
+			font-size: 1.2rem;
+			font-weight: bold;
+			text-align: center;
+			text-transform: uppercase;
+			color: variables.$font-color-less-darker;
+		}
+	}
 }
 
 @media (min-width: 768px) {
