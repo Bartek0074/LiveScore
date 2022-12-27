@@ -59,6 +59,7 @@ export default function MatchCard({ match }) {
 				{match?.fixture?.status?.short === 'P' && (
 					<p className='match-card__time-live'>Pen.</p>
 				)}
+				{match?.fixture?.status?.short === 'SUSP' && <p>Suspended</p>}
 				{match?.fixture?.status?.short === 'FT' && <p>Finished</p>}
 				{match?.fixture?.status?.short === 'AET' && <p>AET</p>}
 				{match?.fixture?.status?.short === 'PEN' && <p>Pen.</p>}
@@ -171,6 +172,9 @@ export default function MatchCard({ match }) {
 								{match?.score?.fulltime?.home}
 							</p>
 						)}
+						{match?.fixture?.status?.short === 'SUSP' && (
+							<p>{match?.goals?.home}</p>
+						)}
 						{match?.fixture?.status?.short === 'FT' && (
 							<p>{match?.score?.fulltime?.home}</p>
 						)}
@@ -217,6 +221,9 @@ export default function MatchCard({ match }) {
 							<p className='match-card__score-fulltime--not-bold'>
 								{match?.score?.fulltime?.away}
 							</p>
+						)}
+						{match?.fixture?.status?.short === 'SUSP' && (
+							<p>{match?.goals?.away}</p>
 						)}
 						{match?.fixture?.status?.short === 'FT' && (
 							<p>{match?.score?.fulltime?.away}</p>

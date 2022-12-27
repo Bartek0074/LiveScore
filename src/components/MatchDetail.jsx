@@ -113,6 +113,11 @@ export default function MatchDetail() {
 							{match?.goals?.home}-{match?.goals?.away}
 						</p>
 					)}
+					{match?.fixture?.status?.short === 'SUSP' && (
+						<p className='match-detail__score'>
+							{match?.goals?.home}-{match?.goals?.away}
+						</p>
+					)}
 					{match?.fixture?.status?.short === 'FT' && (
 						<p className='match-detail__score'>
 							{match?.goals?.home}-{match?.goals?.away}
@@ -211,6 +216,9 @@ export default function MatchDetail() {
 							Penalties
 						</p>
 					)}
+					{match?.fixture?.status?.short === 'SUSP' && (
+						<p className='match-detail__status'>Match suspended</p>
+					)}
 					{match?.fixture?.status?.short === 'FT' && (
 						<p className='match-detail__status'>Finished</p>
 					)}
@@ -260,7 +268,6 @@ export default function MatchDetail() {
 				match?.fixture?.status?.short === 'ET' ||
 				match?.fixture?.status?.short === 'BT' ||
 				match?.fixture?.status?.short === 'P' ||
-				match?.fixture?.status?.short === 'SUSP' ||
 				match?.fixture?.status?.short === 'INT' ||
 				match?.fixture?.status?.short === 'FT' ||
 				match?.fixture?.status?.short === 'AET' ||

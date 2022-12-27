@@ -24,7 +24,7 @@ export default function Home() {
 		'ET',
 		'BT',
 		'P',
-		// 'SUSP',
+		'SUSP',
 		// 'INT',
 		'FT',
 		'AET',
