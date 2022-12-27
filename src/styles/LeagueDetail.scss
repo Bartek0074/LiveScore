@@ -29,11 +29,10 @@
 			height: 75px;
 			display: flex;
 			flex-direction: column;
-			justify-content: space-around;
+			justify-content: center;
 			.league-detail__league-name {
 				font-size: 2rem;
 				font-weight: bold;
-				margin-bottom: -0.25em;
 			}
 			.league-detail__country {
 				display: flex;
@@ -51,6 +50,7 @@
 				}
 			}
 			.league-detail__season-select {
+				margin-top: 0.5em;
 				width: min-content;
 				padding: 0.1em 0.2em;
 				border: 1px solid variables.$border-light;
@@ -115,7 +115,6 @@
 				height: 90px;
 				.league-detail__league-name {
 					font-size: 2.4rem;
-					margin-bottom: -0.375em;
 				}
 				.league-detail__country {
 					.league-detail__country-flag {
