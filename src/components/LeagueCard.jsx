@@ -5,6 +5,7 @@ import '../styles/LeagueCard.scss';
 
 export default function LeagueCard({ league }) {
 	const navigate = useNavigate();
+
 	return (
 		<div className='league-card'>
 			{league && (

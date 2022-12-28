@@ -1,11 +1,13 @@
 import React, { useState } from 'react';
 
 import StandingsTable from './StandingsTable';
-import '../styles/StandingsWithTopScorers.scss';
 import TopScorers from './TopScorers';
+
+import '../styles/StandingsWithTopScorers.scss';
 
 export default function StandingsWithTopScorers({ standings, topScorers }) {
 	const [section, setSection] = useState('standings');
+
 	return (
 		<div className='standings-component'>
 			<div className='standings-component__section-switcher'>

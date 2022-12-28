@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+
 import MatchCard from './MatchCard';
 
 import '../styles/Results.scss';
@@ -6,7 +7,6 @@ import '../styles/Results.scss';
 export default function Results({ matches }) {
 	const [results, setResults] = useState([]);
 	const [rounds, setRounds] = useState([]);
-
 	const [numberOfRounds, setNumberOfRounds] = useState(3);
 
 	const showMoreRounds = () => {
@@ -33,6 +33,11 @@ export default function Results({ matches }) {
 				newResults.push(match);
 			}
 		});
+		newResults.sort(
+			(a, b) =>
+				parseInt(a?.fixture?.timestamp) > parseInt(b?.fixture?.timestamp)
+		);
+
 		setResults(newResults.reverse());
 	}, [matches]);
 

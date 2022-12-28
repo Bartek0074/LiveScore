@@ -1,12 +1,13 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 
 import { BiRefresh, BiFootball } from 'react-icons/bi';
-import { useNavigate } from 'react-router-dom';
 
 import '../styles/LineupsPlayer.scss';
 
 export default function LineupsPlayer({ player, playerDetail, match, home }) {
 	const navigate = useNavigate();
+
 	return (
 		<div
 			className={

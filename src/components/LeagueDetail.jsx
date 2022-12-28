@@ -1,14 +1,14 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
-import { leagues } from '../utils/constants';
 
+import Results from './Results';
+import Fixtures from './Fixtures';
 import StandingsWithTopScorers from './StandingsWithTopScorers';
 
 import { fetchFromAPI } from '../utils/fetchFromApi';
+import { leagues } from '../utils/constants';
 
 import '../styles/LeagueDetail.scss';
-import Results from './Results';
-import Fixtures from './Fixtures';
 
 export default function LeagueDetail() {
 	const { id } = useParams();

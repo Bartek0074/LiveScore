@@ -5,7 +5,6 @@ import { getDateWithoutHour } from '../utils/getDateWithoutHour';
 import '../styles/PlayerTransfers.scss';
 
 export default function PlayerTransfers({ transfers }) {
-	console.log(transfers);
 	return (
 		<div className='player-transfers'>
 			{transfers ? (
@@ -26,7 +25,6 @@ export default function PlayerTransfers({ transfers }) {
 					</div>
 
 					{transfers.map((transfer, transferId) => {
-						console.log(transfer?.type);
 						return (
 							<div className='player-transfers__element' key={transferId}>
 								<div className='player-transfers__value-box'>

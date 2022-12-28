@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+
 import MatchCard from './MatchCard';
 
 import '../styles/Fixtures.scss';
@@ -6,7 +7,6 @@ import '../styles/Fixtures.scss';
 export default function Fixtures({ matches }) {
 	const [fixtures, setFixtures] = useState([]);
 	const [rounds, setRounds] = useState([]);
-
 	const [numberOfRounds, setNumberOfRounds] = useState(3);
 
 	const showMoreRounds = () => {

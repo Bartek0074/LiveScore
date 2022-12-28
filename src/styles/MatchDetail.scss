@@ -7,10 +7,10 @@
 	background-color: variables.$dirty-white;
 	box-shadow: 0 0 10px variables.$gray;
 	&__result {
-		margin-top: 0.5em;
-		padding: 0.5em 0;
 		display: grid;
 		grid-template-columns: repeat(3, 1fr);
+		margin-top: 0.5em;
+		padding: 0.5em 0;
 		.match-detail__team {
 			display: flex;
 			flex-direction: column;
@@ -40,15 +40,15 @@
 			}
 		}
 		.match-detail__info {
-			height: 100%;
 			display: flex;
 			flex-direction: column;
 			align-items: center;
+			height: 100%;
 			.match-detail__date {
+				margin-bottom: 0.25em;
 				color: variables.$font-color-less-darker;
 				text-align: center;
 				font-size: 1.2rem;
-				margin-bottom: 0.25em;
 				&--line-through {
 					text-decoration: line-through;
 				}
@@ -81,8 +81,8 @@
 	&__section-switcher {
 		display: flex;
 		padding: 0.5em 0;
-		border-top: 1px solid variables.$border;
 		margin: 0 0.5em;
+		border-top: 1px solid variables.$border;
 		overflow-x: scroll;
 		.match-detail__section-btn {
 			padding: 0.75em 1.5em;
@@ -102,15 +102,15 @@
 	}
 
 	&__section-box {
+		margin: 0 0.5em;
 		padding: 0.5em 0;
 		border-top: 1px solid variables.$border;
-		margin: 0 0.5em;
 	}
 
 	&__other-info {
-		border-top: 1px solid variables.$border;
 		margin: 0 0.5em;
 		padding: 0.5em 0 0;
+		border-top: 1px solid variables.$border;
 		&-heading {
 			margin-bottom: 0.5em;
 			p {
@@ -121,10 +121,10 @@
 			}
 		}
 		&-element {
-			margin: 0.5em 0;
 			display: flex;
 			flex-direction: row;
 			justify-content: space-between;
+			margin: 0.5em 0;
 			.match-detail__other-info-name,
 			.match-detail__other-info-value {
 				font-size: 1.1rem;
@@ -143,8 +143,8 @@
 	.match-detail {
 		margin-top: 1em;
 		padding: 0.5em;
-		border-radius: 10px;
 		max-height: calc(100vh - 95px);
+		border-radius: 10px;
 		overflow: scroll;
 		&__result {
 			padding: 0.75em 0;

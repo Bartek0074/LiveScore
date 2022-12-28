@@ -1,5 +1,4 @@
 import React from 'react';
-
 import { useNavigate } from 'react-router-dom';
 
 import { BiRefresh, BiFootball } from 'react-icons/bi';
@@ -10,7 +9,6 @@ import '../styles/SummaryEvent.scss';
 export default function SummaryEvent({ match, eventEl }) {
 	const navigate = useNavigate();
 
-	console.log(eventEl?.assist?.id);
 	return (
 		<div
 			className={

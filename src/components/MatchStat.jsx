@@ -17,6 +17,7 @@ export default function MatchStat({ valueHome, valueAway, type }) {
 		valueHomePercent = 0;
 		valueAwayPercent = 0;
 	}
+
 	return (
 		<div className='stat'>
 			<div className='stat__header'>

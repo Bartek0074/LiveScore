@@ -1,7 +1,7 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 
 import { FaTshirt } from 'react-icons/fa';
-import { useNavigate } from 'react-router-dom';
 
 import '../styles/LineupsPitch.scss';
 
@@ -16,6 +16,7 @@ export default function LineupsPitch({ lineups }) {
 		lineups[1]?.startXI[0]?.player?.name.split(' ')[
 			lineups[1]?.startXI[0]?.player?.name.split(' ').length - 1
 		];
+
 	return (
 		<>
 			<div className='lineups-pitch__mobile'>

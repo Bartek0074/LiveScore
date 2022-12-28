@@ -7,6 +7,7 @@ import '../styles/Nav.scss';
 
 export default function Nav() {
 	const navigate = useNavigate();
+
 	return (
 		<div className='nav-box'>
 			<div className='nav wrapper'>

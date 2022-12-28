@@ -62,10 +62,12 @@ export default function PlayerStats({ stats }) {
 							</span>
 						</div>
 						<div className='player-stats__value-box'>
-							<span>{stat?.games?.appearences}</span>
+							<span>
+								{stat?.games?.appearences ? `${stat?.games?.appearences}` : '0'}
+							</span>
 						</div>
 						<div className='player-stats__value-box'>
-							<span>{stat?.goals?.total}</span>
+							<span>{stat?.goals?.total ? `${stat?.goals?.total}` : '0'}</span>
 						</div>
 						<div className='player-stats__value-box'>
 							<span>
@@ -75,8 +77,10 @@ export default function PlayerStats({ stats }) {
 						<div className='player-stats__value-box'>
 							<span>
 								{stat?.games?.minutes
-									.toString()
-									.replace(/\B(?=(\d{3})+(?!\d))/g, ' ')}
+									? stat?.games?.minutes
+											.toString()
+											.replace(/\B(?=(\d{3})+(?!\d))/g, ' ')
+									: '0'}
 								'
 							</span>
 						</div>

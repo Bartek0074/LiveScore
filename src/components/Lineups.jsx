@@ -1,9 +1,9 @@
 import React from 'react';
 
 import LineupsPlayer from './LineupsPlayer';
+import LineupsPitch from './LineupsPitch';
 
 import '../styles/Lineups.scss';
-import LineupsPitch from './LineupsPitch';
 
 export default function Lineups({ match }) {
 	return (

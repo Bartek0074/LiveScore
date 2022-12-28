@@ -30,8 +30,8 @@
 	}
 	.lineups-player__goalkeeper,
 	.lineups-player__captain {
-		font-weight: bold;
 		margin-right: 0.25em;
+		font-weight: bold;
 	}
 	.lineups-player__name {
 		margin-right: 0.25em;
@@ -41,21 +41,20 @@
 		display: flex;
 		justify-content: center;
 		align-items: center;
+		margin: 0 1px;
+		min-width: 20px;
+		height: 20px;
 		border: 1px solid variables.$border-light;
 		border-radius: 5px;
-		height: 20px;
-		min-width: 20px;
-		margin: 0 1px;
-
 		.icon {
 			font-size: 1.8rem;
 			&--goal {
 				color: variables.$font-color-dark;
 				&-number {
+					margin-right: 1px;
 					letter-spacing: 1px;
 					font-weight: bold;
 					font-size: 1.3rem;
-					margin-right: 1px;
 				}
 			}
 			&--own-goal {
@@ -65,16 +64,16 @@
 				color: variables.$green;
 			}
 			&--warn {
+				margin: 0 0.1em;
 				font-size: 1.5rem;
 				color: variables.$red;
-				margin: 0 0.1em;
 			}
 		}
 		.card-icon {
-			border-radius: 2px;
-			height: 14px;
 			margin: 0 0.1em;
+			height: 14px;
 			aspect-ratio: 2/3;
+			border-radius: 2px;
 			&--yellow {
 				background-color: variables.$yellow;
 			}
@@ -89,9 +88,7 @@
 					top: 0;
 					width: 0;
 					height: 0;
-					border-top: 12px solid transparent;
 					border-right: 9.5px solid transparent;
-
 					border-top: 15px solid variables.$red;
 				}
 			}
@@ -100,9 +97,9 @@
 			}
 		}
 		.var-icon {
-			font-size: 1rem;
-			color: #dc0000;
 			padding: 0 0.2em;
+			font-size: 1rem;
+			color: variables.$red;
 			font-weight: bold;
 		}
 	}
@@ -116,9 +113,9 @@
 			justify-content: end;
 		}
 		.lineups-player__name {
-			text-align: right;
 			margin-right: 0;
 			margin-left: 0.25em;
+			text-align: right;
 		}
 		.lineups-player__goalkeeper,
 		.lineups-player__captain {
@@ -145,9 +142,9 @@
 			font-size: 1.2rem;
 		}
 		&__icon {
-			border-radius: 7px;
-			height: 24px;
 			min-width: 24px;
+			height: 24px;
+			border-radius: 7px;
 			.icon {
 				font-size: 2rem;
 				&--warn {
@@ -155,9 +152,9 @@
 				}
 			}
 			.card-icon {
-				border-radius: 3px;
-				height: 16px;
 				margin: 0 0.2em;
+				height: 16px;
+				border-radius: 3px;
 				&--second-yellow {
 					&::before {
 						border-right: 10px solid transparent;
@@ -166,16 +163,16 @@
 				}
 			}
 			.var-icon {
-				font-size: 1.1rem;
 				padding: 0 0.4em;
+				font-size: 1.1rem;
 				letter-spacing: 1px;
 			}
 		}
 		.lineups-player__subst-name {
 			display: block;
+			margin-left: 0.25em;
 			font-size: 1.3rem;
 			color: variables.$font-color-less-darker;
-			margin-left: 0.25em;
 			cursor: pointer;
 			span:hover {
 				text-decoration: underline;

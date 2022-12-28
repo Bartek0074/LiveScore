@@ -1,14 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 
+import PlayerStats from './PlayerStats.jsx';
+import PlayerTransfers from './PlayerTransfers.jsx';
+
 import { countries } from '../utils/countries.js';
 import { fetchFromAPI } from '../utils/fetchFromApi';
 import { getDateWithoutHour } from '../utils/getDateWithoutHour.js';
 
-import PlayerStats from './PlayerStats.jsx';
-
 import '../styles/PlayerDetail.scss';
-import PlayerTransfers from './PlayerTransfers.jsx';
 
 export default function PlayerDetail() {
 	const { id } = useParams();

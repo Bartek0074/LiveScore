@@ -4,17 +4,17 @@
 	&__player-header {
 		display: flex;
 		align-items: center;
-		background-color: variables.$gray-light;
-		padding: 0.75em 0.25em;
 		margin-bottom: 0.5em;
+		padding: 0.75em 0.25em;
 		font-size: 1.2rem;
 		border-radius: 10px;
+		background-color: variables.$gray-light;
 		.top-scorers__header-rank-box {
 			display: flex;
 			justify-content: center;
 			align-items: center;
-			width: 22px;
 			margin-right: 0.25em;
+			width: 22px;
 			span {
 				font-size: 1.3rem;
 			}
@@ -38,9 +38,9 @@
 	&__player {
 		display: flex;
 		align-items: center;
-		border-bottom: 1px solid variables.$border-light;
-		font-size: 1.3rem;
 		padding: 0.25em 0.25em;
+		font-size: 1.3rem;
+		border-bottom: 1px solid variables.$border-light;
 		transition: background-color 0.3s;
 		&:hover {
 			background-color: variables.$gray-light;
@@ -58,23 +58,23 @@
 			display: flex;
 			justify-content: center;
 			align-items: center;
-			width: 22px;
 			margin-right: 0.25em;
+			width: 22px;
 			.top-scorers__rank {
 				font-weight: bold;
 				font-size: 1.4rem;
 			}
 		}
 		.top-scorers__image-box {
+			margin-right: 0.5em;
 			width: 36px;
 			height: 36px;
 			border-radius: 5px;
 			border: 1px solid variables.$border-light;
-			margin-right: 0.5em;
 			cursor: pointer;
 			img {
-				border-radius: 5px;
 				height: 100%;
+				border-radius: 5px;
 			}
 		}
 		.top-scorers__player-info {
@@ -82,11 +82,11 @@
 			flex-direction: column;
 			margin-right: auto;
 			.top-scorers__player-name {
-				font-weight: bold;
 				margin-bottom: 0.1em;
+				font-weight: bold;
 				font-size: 1.4rem;
 				cursor: pointer;
-				&:hover{
+				&:hover {
 					text-decoration: underline;
 				}
 			}
@@ -97,9 +97,8 @@
 					height: 14px;
 				}
 				&-name {
-					font-size: 1.3rem;
-					// text-transform: uppercase;
 					margin-right: 0.25em;
+					font-size: 1.3rem;
 					color: variables.$font-color-less-darker;
 				}
 			}
@@ -146,15 +145,15 @@
 			}
 		}
 		&__player {
-			font-size: 1.4rem;
 			padding: 0.375em 0.5em;
+			font-size: 1.4rem;
 			.top-scorers__rank-box {
 				margin-right: 0.5em;
 			}
 			.top-scorers__image-box {
+				margin-right: 0.625em;
 				width: 40px;
 				height: 40px;
-				margin-right: 0.625em;
 				img {
 					border-radius: 8px;
 				}
@@ -169,8 +168,8 @@
 						height: 16px;
 					}
 					&-name {
-						font-size: 1.4rem;
 						margin-right: 0.375em;
+						font-size: 1.4rem;
 					}
 				}
 			}

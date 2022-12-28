@@ -8,6 +8,7 @@ import '../styles/MatchCard.scss';
 
 export default function MatchCard({ match }) {
 	const navigate = useNavigate();
+
 	return (
 		<div
 			onClick={() => {

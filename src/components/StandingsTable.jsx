@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+
 import '../styles/StandingsTable.scss';
 
 export default function StandingsTable({ standings, standingId }) {
@@ -16,7 +17,7 @@ export default function StandingsTable({ standings, standingId }) {
 			}
 			setStandingsDescriptions(newStandingsDescriptions);
 		});
-	}, [standings]);
+	}, [standings, standingId]);
 
 	return (
 		<div className='standings'>

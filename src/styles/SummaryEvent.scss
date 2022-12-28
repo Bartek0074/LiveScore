@@ -21,12 +21,11 @@
 		display: flex;
 		justify-content: center;
 		align-items: center;
-		border: 1px solid variables.$border-light;
-		border-radius: 5px;
-		height: 20px;
-		min-width: 20px;
 		margin: 0 0.25em;
-
+		min-width: 20px;
+		height: 20px;
+		border-radius: 5px;
+		border: 1px solid variables.$border-light;
 		.icon {
 			font-size: 1.8rem;
 			&--goal {
@@ -39,15 +38,15 @@
 				color: variables.$green;
 			}
 			&--warn {
+				margin: 0 0.1em;
 				font-size: 1.5rem;
 				color: variables.$red;
-				margin: 0 0.1em;
 			}
 		}
 		.card-icon {
-			border-radius: 2px;
-			height: 14px;
 			margin: 0 0.1em;
+			height: 14px;
+			border-radius: 2px;
 			aspect-ratio: 2/3;
 			&--yellow {
 				background-color: variables.$yellow;
@@ -57,17 +56,17 @@
 			}
 		}
 		.var-icon {
-			font-size: 1rem;
-			color: #dc0000;
 			padding: 0 0.2em;
+			font-size: 1rem;
+			color: variables.$red;
 			font-weight: bold;
 		}
 	}
 
 	.summary-event__player {
+		margin-right: 0.25em;
 		font-size: 1.3rem;
 		font-weight: bold;
-		margin-right: 0.25em;
 		cursor: pointer;
 		&:hover {
 			text-decoration: underline;
@@ -104,10 +103,10 @@
 	.summary-event {
 		padding: 0.3em 0;
 		.summary-event__icon {
-			border-radius: 7px;
-			height: 24px;
-			min-width: 24px;
 			margin: 0 0.375em;
+			min-width: 24px;
+			height: 24px;
+			border-radius: 7px;
 			.icon {
 				font-size: 2rem;
 				&--warn {
@@ -115,13 +114,13 @@
 				}
 			}
 			.card-icon {
-				border-radius: 3px;
-				height: 16px;
 				margin: 0 0.2em;
+				height: 16px;
+				border-radius: 3px;
 			}
 			.var-icon {
-				font-size: 1.1rem;
 				padding: 0 0.4em;
+				font-size: 1.1rem;
 				letter-spacing: 1px;
 			}
 		}
