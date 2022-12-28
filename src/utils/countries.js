@@ -105,6 +105,11 @@ export const countries = [
 		flag: 'https://media.api-sports.io/flags/ba.svg',
 	},
 	{
+		name: 'Bosnia and Herzegovina',
+		code: 'BA',
+		flag: 'https://media.api-sports.io/flags/ba.svg',
+	},
+	{
 		name: 'Botswana',
 		code: 'BW',
 		flag: 'https://media-1.api-sports.io/flags/bw.svg',

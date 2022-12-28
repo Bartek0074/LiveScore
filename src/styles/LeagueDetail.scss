@@ -20,6 +20,8 @@
 			border-radius: 10px;
 			box-shadow: 0 0 20px #00000010;
 			margin-right: 0.75em;
+			max-width: 200px;
+			overflow: hidden;
 			.league-detail__logo {
 				height: 75px;
 				padding: 0.25em;
@@ -106,6 +108,7 @@
 			padding: 0.75em 0;
 			.league-detail__logo-box {
 				margin-right: 0.75em;
+				max-width: max-content;
 				.league-detail__logo {
 					height: 90px;
 					padding: 0.5em;

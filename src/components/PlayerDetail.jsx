@@ -8,21 +8,26 @@ import { getDateWithoutHour } from '../utils/getDateWithoutHour.js';
 import PlayerStats from './PlayerStats.jsx';
 
 import '../styles/PlayerDetail.scss';
+import PlayerTransfers from './PlayerTransfers.jsx';
 
 export default function PlayerDetail() {
 	const { id } = useParams();
 
+	const [section, setSection] = useState('stats');
 	const [seasons, setSeasons] = useState();
 	const [season, setSeason] = useState();
+	const [player, setPlayer] = useState();
+	const [transfers, setTransfers] = useState();
 	const [nationalityFlag, setNationalityFlag] = useState();
 	const [birthFlag, setBirthFlag] = useState();
-	const [player, setPlayer] = useState();
-	const [section, setSection] = useState('stats');
 
 	useEffect(() => {
 		fetchFromAPI(`/players/seasons?player=${id}`).then((data) => {
 			setSeasons(data?.response.reverse());
 			setSeason(data?.response[0]);
+		});
+		fetchFromAPI(`/transfers?player=${id}`).then((data) => {
+			setTransfers(data?.response[0]?.transfers);
 		});
 	}, [id]);
 
@@ -163,18 +168,6 @@ export default function PlayerDetail() {
 				</button>
 				<button
 					onClick={() => {
-						setSection('career');
-					}}
-					className={
-						section === 'career'
-							? 'player-detail__section-btn player-detail__section-btn--active'
-							: 'player-detail__section-btn'
-					}
-				>
-					Career
-				</button>
-				<button
-					onClick={() => {
 						setSection('transfers');
 					}}
 					className={
@@ -185,7 +178,7 @@ export default function PlayerDetail() {
 				>
 					Transfers
 				</button>
-				<button
+				{/* <button
 					onClick={() => {
 						setSection('injuries');
 					}}
@@ -196,12 +189,13 @@ export default function PlayerDetail() {
 					}
 				>
 					Injuries
-				</button>
+				</button> */}
 			</div>
 			<div className='match-detail__section-box'>
 				{section === 'stats' && player?.statistics && (
 					<PlayerStats stats={player?.statistics} />
 				)}
+				{section === 'transfers' && <PlayerTransfers transfers={transfers} />}
 			</div>
 		</div>
 	);

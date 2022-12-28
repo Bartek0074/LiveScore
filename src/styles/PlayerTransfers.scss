@@ -1,0 +1,125 @@
+@use './variables.scss';
+
+.player-transfers {
+	&__element-header {
+		display: flex;
+		margin-bottom: 0.5em;
+		padding: 0.75em 0.25em;
+		font-size: 1.2rem;
+		border-bottom: none;
+		border-radius: 10px;
+		background-color: variables.$gray-light;
+		.player-transfers__value-box {
+			display: flex;
+			justify-content: start;
+			align-items: center;
+			&:nth-child(1) {
+				width: 15%;
+			}
+			&:nth-child(2) {
+				width: 30%;
+			}
+			&:nth-child(3) {
+				width: 25%;
+			}
+			&:nth-child(4) {
+				width: 30%;
+			}
+			span {
+				text-transform: uppercase;
+			}
+		}
+	}
+	&__element {
+		display: flex;
+		align-items: center;
+		padding: 0.25em;
+		font-size: 1.3rem;
+		border-bottom: 1px solid variables.$border-light;
+		transition: background-color 0.3s;
+		&:hover {
+			background-color: variables.$gray-light;
+		}
+		&:nth-child(2) {
+			border-top-right-radius: 10px;
+			border-top-left-radius: 10px;
+		}
+		&:last-child {
+			border-bottom-right-radius: 10px;
+			border-bottom-left-radius: 10px;
+			border-bottom: none;
+		}
+		.player-transfers__logo {
+			height: 14px;
+			margin-right: 0.125em;
+		}
+		.player-transfers__value-box {
+			display: flex;
+			justify-content: start;
+			align-items: center;
+			color: variables.$font-color-less-darker;
+			&:nth-child(1) {
+                display: flex;
+                flex-direction: column;
+                align-items: start;
+				width: 15%;
+				font-size: 1.2rem;
+			}
+			&:nth-child(2) {
+				width: 30%;
+			}
+			&:nth-child(3) {
+				width: 25%;
+			}
+			&:nth-child(4) {
+				width: 30%;
+				color: variables.$font-color-dark;
+				font-weight: bold;
+			}
+		}
+	}
+    &__no-transfers-info {
+		padding: 0.5em 0.75em;
+		background-color: variables.$gray-light;
+		border-radius: 10px;
+		p {
+			font-size: 1.2rem;
+			font-weight: bold;
+			text-align: center;
+			text-transform: uppercase;
+			color: variables.$font-color-less-darker;
+		}
+	}
+}
+
+@media (min-width: 768px) {
+	.player-transfers {
+		&__element-header {
+			padding: 0.75em 0.5em;
+			font-size: 1.3rem;
+			.player-transfers__value-box {
+                &:nth-child(1) {
+                    padding-left: 0.25em;
+				}
+			}
+			.icon {
+				font-size: 1.6rem;
+			}
+		}
+		&__element {
+			font-size: 1.4rem;
+			padding: 0.25em 0.5em;
+			.player-transfers__value-box {
+				&:nth-child(1) {
+                    flex-direction: row;
+					font-size: 1.3rem;
+                    padding-left: 0.25em;
+				}
+				.player-transfers__logo {
+					height: 24px;
+                    margin-right: 0.25em;
+				}
+			}
+		}
+	}
+}

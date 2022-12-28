@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 
-import {HiOutlineClock} from 'react-icons/hi'
+import { HiOutlineClock } from 'react-icons/hi';
 
 import '../styles/PlayerStats.scss';
 
@@ -20,8 +20,7 @@ export default function PlayerStats({ stats }) {
 		});
 		setFilteredStats(newStats);
 	}, [stats]);
-	console.log(filteredStats.reduce((a, b) => a + b.games?.appearences, 0));
-	console.log(stats[0]?.goals?.total);
+
 	return (
 		<div className='player-stats'>
 			<div className='player-stats__element-header'>
@@ -38,7 +37,7 @@ export default function PlayerStats({ stats }) {
 					<span>A</span>
 				</div>
 				<div className='player-stats__value-box'>
-					<HiOutlineClock className='icon'/>
+					<HiOutlineClock className='icon' />
 				</div>
 			</div>
 			{filteredStats.map((stat, statId) => {
@@ -47,7 +46,11 @@ export default function PlayerStats({ stats }) {
 						<div className='player-stats__logo-box'>
 							<img
 								className='player-stats__logo'
-								src={stat?.league?.logo}
+								src={
+									stat?.league?.logo
+										? stat?.league?.logo
+										: 'https://media.api-sports.io/football/teams/5276.png'
+								}
 								alt={`${stat?.league?.name} logo`}
 							/>
 						</div>
