@@ -32,7 +32,7 @@ export default function Filters({ setStatuses }) {
 			setStatuses(['1H', 'HT', '2H', 'ET', 'BT', 'P', 'SUSP', 'INT']);
 		} else if (filter === 'finished') {
 			setStatuses(['FT', 'AET', 'PEN']);
-		} else if (filter === 'sheduled') {
+		} else if (filter === 'scheduled') {
 			setStatuses(['TBD', 'NS']);
 		}
 	}, [filter]);
@@ -77,15 +77,15 @@ export default function Filters({ setStatuses }) {
 			</button>
 			<button
 				onClick={() => {
-					setFilter('sheduled');
+					setFilter('scheduled');
 				}}
 				className={
-					filter === 'sheduled'
+					filter === 'scheduled'
 						? 'filters__btn filters__btn--active'
 						: 'filters__btn'
 				}
 			>
-				Sheduled
+				Scheduled
 			</button>
 		</div>
 	);
