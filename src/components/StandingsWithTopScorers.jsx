@@ -37,7 +37,7 @@ export default function StandingsWithTopScorers({ standings, topScorers }) {
 				</button>
 			</div>
 			{section === 'standings' &&
-				standings?.league?.standings.map((standing, standingId) => {
+				standings?.league?.standings?.map((standing, standingId) => {
 					return (
 						<StandingsTable
 							standings={standings}

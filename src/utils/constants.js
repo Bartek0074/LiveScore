@@ -189,11 +189,11 @@ export const leagues = [
 		logo: 'https://media-1.api-sports.io/football/leagues/94.png',
 	},
 	{
-		id: 236,
+		id: 235,
 		country: 'Russia',
 		flag: 'https://media-2.api-sports.io/flags/ru.svg',
-		name: 'Premjer-Liga',
-		logo: 'https://media-1.api-sports.io/football/leagues/236.png',
+		name: 'Premier League',
+		logo: 'https://media-1.api-sports.io/football/leagues/235.png',
 	},
 	{
 		id: 333,
