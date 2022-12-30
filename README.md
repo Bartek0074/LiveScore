@@ -1,4 +1,4 @@
-# MeteoApp 
+# LiveScore 
 
 
 Football live scores web app to watch scores, standings, fixtures, match
@@ -9,6 +9,7 @@ uses data from [API-Football](https://www.api-football.com/). It is essentially 
 
 Live Demo [here](https://bartek0074-livescore.netlify.app/).
 
+![livescoregif1](https://user-images.githubusercontent.com/88652468/210113897-1912b06d-a5a5-433a-89e0-c7cf7c061d0c.gif)
 ## Instructions
 
 First clone this repository.
@@ -50,4 +51,9 @@ $ npm start # or yarn start
 - Node packages.
 
 ## Gifs from app
-No gifs yet...
+
+![livescoregif2](https://user-images.githubusercontent.com/88652468/210114287-642da385-6685-47e8-a717-8e16ccc0f251.gif)
+
+![livescoregif3](https://user-images.githubusercontent.com/88652468/210114596-c27f8b84-f4a4-4958-8d4b-2320d5a0ccb7.gif)
+
+![livescoregif4](https://user-images.githubusercontent.com/88652468/210115007-b534afea-daf2-43d1-88a0-56b1c7f867d0.gif)
