@@ -19,11 +19,13 @@
 			font-weight: bold;
 			border: none;
 			background: none;
-			cursor: pointer;
 			height: 100%;
-			transition: background-color 0.3s;
-			&:hover {
-				background-color: variables.$secondary-color-hover;
+			&--active {
+				cursor: pointer;
+				transition: background-color 0.3s;
+				&:hover {
+					background-color: variables.$secondary-color-hover;
+				}
 			}
 			.icon {
 				font-size: 2.2rem;
@@ -33,6 +35,7 @@
 		.date-picker__right-btn {
 			width: 45px;
 		}
+
 		.date-picker__trigger-btn {
 			width: calc(100% - 90px);
 			.icon {

@@ -38,9 +38,13 @@ export default function DatePicker({ setFetchDate }) {
 			<div className='date-picker__buttons'>
 				<button
 					onClick={leftBtnHandle}
-					className='date-picker__btn date-picker__left-btn'
+					className={
+						dateIndex === 0
+							? 'date-picker__btn date-picker__left-btn'
+							: 'date-picker__btn date-picker__btn--active date-picker__left-btn'
+					}
 				>
-					<RiArrowLeftSLine className='icon' />
+					{dateIndex === 0 ? null : <RiArrowLeftSLine className='icon' />}
 				</button>
 				<button
 					onClick={() => setOpen(!open)}
@@ -51,9 +55,13 @@ export default function DatePicker({ setFetchDate }) {
 				</button>
 				<button
 					onClick={rightBtnHandle}
-					className='date-picker__btn date-picker__left-btn'
+					className={
+						dateIndex === 4
+							? 'date-picker__btn date-picker__right-btn'
+							: 'date-picker__btn date-picker__btn--active date-picker__right-btn'
+					}
 				>
-					<RiArrowRightSLine className='icon' />
+					{dateIndex === 4 ? null : <RiArrowRightSLine className='icon' />}
 				</button>
 			</div>
 			<div
